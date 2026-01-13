@@ -67,5 +67,6 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "CnD-Jam-Game.slnx"
+    "dotnet.defaultSolution": "CnD-Jam-Game.sln",
+    "dotnet.preferCSharpExtension": true
 }
