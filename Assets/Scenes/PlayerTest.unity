@@ -292,10 +292,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 369320865}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 209b7b5b661688941acf110f005d79bc, type: 3}
+  m_Script: {fileID: 11500000, guid: 07c0dfb2d8983a742ac10c2d9a8d7c95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  moveSettings: {fileID: 11400000, guid: 7ec7e7347f21e1d4d9a87a091a3fd944, type: 2}
+  moveSettings: {fileID: 11400000, guid: 2800395e516e87e4dbc909bb8b7438d3, type: 2}
   bodyCollider: {fileID: 123898610}
   groundCollider: {fileID: 1635798705}
 --- !u!50 &369320871
@@ -354,10 +354,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1682ec0395c91084ab711f26b5326a92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InputManager
-  moveActionRef: {fileID: 1798969338}
-  jumpActionRef: {fileID: 1433398204}
-  throwActionRef: {fileID: 0}
-  useActionRef: {fileID: 0}
 --- !u!4 &491626712
 Transform:
   m_ObjectHideFlags: 0
@@ -603,20 +599,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1433398204
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
-  m_Name: Player/Jump
-  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.InputActionReference
-  m_Asset: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
-  m_ActionId: f1ba0d36-48eb-4cd5-b651-1c94a6531f70
 --- !u!1 &1635798703
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,20 +677,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.75, y: 0.3}
   m_EdgeRadius: 0
---- !u!114 &1798969338
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
-  m_Name: Player/Move
-  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.InputActionReference
-  m_Asset: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
-  m_ActionId: 351f2ccd-1f9f-44bf-9bec-d62ac5c5f408
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
