@@ -26,7 +26,13 @@ public class EnemyChase : EnemyState
         {
             Vector2 moveDirection;
             moveDirection = (_playerTransform.position - enemy.transform.position).normalized;
-            enemy.MoveEnemy(moveDirection *_moveSpeed);
+            enemy.MoveEnemy(new Vector2(moveDirection.x * _moveSpeed, 0f));
+        }
+
+        if(!enemy.IsAggroed)
+        {
+            stateMachine.ChangeState(enemy.enemyPatrol);
+            Debug.Log("Player Gone");
         }
 
         base.FrameUpdate();

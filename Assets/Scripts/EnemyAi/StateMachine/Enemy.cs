@@ -22,12 +22,11 @@ public class Enemy : MonoBehaviour, IDamagable, IMovebale, ITriggerCheckable
     [Header("States")]
 
     StateMachine stateMachine;
-    EnemyPatrol enemyPatrol;
-    EnemyChase enemyChase;
+    public EnemyPatrol enemyPatrol;
+    public EnemyChase enemyChase;
 
     public Rigidbody2D enemyRb { get ; set ; }
-    
-
+    public bool IsAggroed { get ; set ; }
 
     public float enemySpeed = 5.2f;
 
@@ -80,8 +79,13 @@ public class Enemy : MonoBehaviour, IDamagable, IMovebale, ITriggerCheckable
 
     private void FlipSprite()
     {
-        facingDir = facingDir * -1;
+        facingDir = -facingDir;
         isFacingRight = !isFacingRight;
         transform.Rotate(0,180,0);
+    }
+
+    public void SetAgroStatus(bool isAggroed)
+    {
+        IsAggroed = isAggroed;
     }
 }
