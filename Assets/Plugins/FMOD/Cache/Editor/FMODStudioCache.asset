@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7263fbcbf215f974589448d5657e93d3, type: 3}
+  m_Script: {fileID: 11500000, guid: f848cca256359f947855162a9d5d4624, type: 3}
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EventCache
   EditorBanks: []
