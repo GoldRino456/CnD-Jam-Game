@@ -29,13 +29,18 @@ public class EnemyPatrol : EnemyState
             stateMachine.ChangeState(enemy.enemyChase);
             Debug.Log("Player Spotted");
         }
-        
-        enemy.MoveEnemy(direction * enemy.enemySpeed);
-        if(enemy.IsThereWall())
-        {
+        if(enemy.IsTherGround())
+        {   
+            Debug.Log("I Hit The Ground");
+            enemy.MoveEnemy(direction * enemy.enemySpeed);
+
+            if(enemy.IsThereWall())
+            {
             direction = -direction;
             enemy.MoveEnemy(direction * enemy.enemySpeed);
+            }    
         }
+        
 
        
 

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -9,6 +10,10 @@ public class Enemy : MonoBehaviour, IDamagable, IMovebale, ITriggerCheckable
         [SerializeField] Transform wallCheckPostion;
         [SerializeField] private float wallCheckDistance;
         [SerializeField] LayerMask IsThatWall; 
+        
+        [SerializeField] Transform groundCheckPosition;
+        [SerializeField] float radius;
+        [SerializeField] LayerMask IsThatGround;
 
     #endregion
 
@@ -70,11 +75,15 @@ public class Enemy : MonoBehaviour, IDamagable, IMovebale, ITriggerCheckable
     }
 
     public bool IsThereWall() => Physics2D.Raycast(wallCheckPostion.position, Vector2.right * facingDir, wallCheckDistance * facingDir, IsThatWall);
+    public bool IsTherGround() => Physics2D.CircleCast(groundCheckPosition.position, radius, Vector2.down, IsThatGround);
 
     void OnDrawGizmos()
     {   Gizmos.color = Color.red;
         Vector3 rayDir = Vector3.right * facingDir * wallCheckDistance;
         Gizmos.DrawLine(wallCheckPostion.position, wallCheckPostion.position + rayDir);
+
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(groundCheckPosition.position, radius);
     }
 
     private void FlipSprite()
