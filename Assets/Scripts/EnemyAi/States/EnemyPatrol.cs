@@ -10,10 +10,14 @@ public class EnemyPatrol : EnemyState
     } 
 
     private Vector2 direction;
+    private float decisionTimer;
 
+   
+   
     public override void EnterState()
     {   
         direction = Vector2.right;
+        decisionTimer = Random.Range(enemy.minDectime, enemy.maxDectime);
         base.EnterState();
     }
 
@@ -27,23 +31,43 @@ public class EnemyPatrol : EnemyState
          if(enemy.IsAggroed)
         {
             stateMachine.ChangeState(enemy.enemyChase);
-            Debug.Log("Player Spotted");
+           
         }
-        if(enemy.IsTherGround())
-        {   
-            Debug.Log("I Hit The Ground");
-            enemy.MoveEnemy(direction * enemy.enemySpeed);
 
-            if(enemy.IsThereWall())
+        decisionTimer -= Time.deltaTime;
+
+        if(decisionTimer <= 0f)
+        {
+            decisionTimer = Random.Range(enemy.minDectime, enemy.maxDectime);
+            enemy.MoveEnemy(Vector2.zero);
+
+            if(enemy.RandomChance(35f))
             {
-            direction = -direction;
-            enemy.MoveEnemy(direction * enemy.enemySpeed);
-            }    
+                stateMachine.ChangeState(enemy.enemyIdle);
+            }
+
+            else
+
+            {
+                enemy.MoveEnemy(direction * enemy.enemySpeed * enemy.facingDir); 
+            }
         }
+
+        if(enemy.IsThereWall())
+            {
+                stateMachine.ChangeState(enemy.enemyIdle);
+                direction = -direction;  
+            }  
+
+         if(enemy.IsTherGround())
+        {   
+            enemy.MoveEnemy(direction * enemy.enemySpeed * enemy.facingDir); 
+        }
+
         
-
-       
-
+        
+        
+              
         base.FrameUpdate(); 
     }
 

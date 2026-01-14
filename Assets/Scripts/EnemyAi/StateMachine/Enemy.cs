@@ -1,9 +1,15 @@
 using System;
-using System.Collections;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour, IDamagable, IMovebale, ITriggerCheckable
 {   
+
+    #region Movement 
+
+    public Vector2 currentVelocity;
+    private float acceleration = 12f;
+    public float enemySpeed = 5.2f;
+    #endregion
     
     #region  Collision check
         
@@ -19,9 +25,14 @@ public class Enemy : MonoBehaviour, IDamagable, IMovebale, ITriggerCheckable
 
     #region Flip Sprite
            
-           private int facingDir {get; set;} = 1;
+           public int facingDir {get; set;} = 1;
            public bool isFacingRight { get ; set ; } = true;
          
+    #endregion
+
+    #region Misc
+    [SerializeField] public float minDectime;
+    [SerializeField] public float maxDectime;
     #endregion
 
     [Header("States")]
@@ -29,11 +40,12 @@ public class Enemy : MonoBehaviour, IDamagable, IMovebale, ITriggerCheckable
     StateMachine stateMachine;
     public EnemyPatrol enemyPatrol;
     public EnemyChase enemyChase;
+    public EnemyIdleState enemyIdle;
 
     public Rigidbody2D enemyRb { get ; set ; }
     public bool IsAggroed { get ; set ; }
 
-    public float enemySpeed = 5.2f;
+    
 
 
     void Awake()
@@ -41,6 +53,7 @@ public class Enemy : MonoBehaviour, IDamagable, IMovebale, ITriggerCheckable
         stateMachine = new StateMachine();
         enemyPatrol = new EnemyPatrol(this, stateMachine);
         enemyChase = new EnemyChase(this, stateMachine);
+        enemyIdle = new EnemyIdleState(this, stateMachine);
     }
     void Start()
     {
@@ -69,13 +82,14 @@ public class Enemy : MonoBehaviour, IDamagable, IMovebale, ITriggerCheckable
     }
 
     public void MoveEnemy(Vector2 velocity)
-    {
+    {  
+        currentVelocity.x = Mathf.Lerp(currentVelocity.x, velocity.x, acceleration * Time.deltaTime);
         enemyRb.linearVelocity = velocity;
         CheckIsFacingRight(velocity);
     }
 
     public bool IsThereWall() => Physics2D.Raycast(wallCheckPostion.position, Vector2.right * facingDir, wallCheckDistance * facingDir, IsThatWall);
-    public bool IsTherGround() => Physics2D.CircleCast(groundCheckPosition.position, radius, Vector2.down, IsThatGround);
+    public bool IsTherGround() => Physics2D.CircleCast(groundCheckPosition.position, radius, Vector2.down, 0f, IsThatGround);
 
     void OnDrawGizmos()
     {   Gizmos.color = Color.red;
@@ -86,7 +100,7 @@ public class Enemy : MonoBehaviour, IDamagable, IMovebale, ITriggerCheckable
         Gizmos.DrawWireSphere(groundCheckPosition.position, radius);
     }
 
-    private void FlipSprite()
+    public void FlipSprite()
     {
         facingDir = -facingDir;
         isFacingRight = !isFacingRight;
@@ -96,5 +110,10 @@ public class Enemy : MonoBehaviour, IDamagable, IMovebale, ITriggerCheckable
     public void SetAgroStatus(bool isAggroed)
     {
         IsAggroed = isAggroed;
+    }
+
+    public bool RandomChance(float percent)
+    {
+        return UnityEngine.Random.value * 100 < percent;
     }
 }
