@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c50c1fc9ffd6ce6409df322e1fa1c05f, type: 3}
+  m_Script: {fileID: 11500000, guid: 1448ccff840c9b24daa024ff7d5e4c0d, type: 3}
   m_Name: HumanMoveSettings
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMoveSettings
   maxMoveSpeed: 15
@@ -19,23 +19,7 @@ MonoBehaviour:
   airDeceleration: 5
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   groundDetectionRayLength: 0.02
   headDetectionRayLength: 0.02
   headWidth: 0.75
-  jumpHeight: 7
-  jumpHeightCompensationFactor: 1.054
-  timeUntilJumpApex: 0.35
-  gravityOnReleaseMultiplier: 2
-  maxFallSpeed: 26
-  numJumpsAllowed: 2
-  timeForUpwardsCancel: 0.027
-  apexThreshold: 0.97
-  apexHangTime: 0.075
-  jumpBufferTime: 0.125
-  jumpCoyoteTime: 0.1
-  showJumpArc: 0
-  stopOnCollision: 1
-  drawRight: 1
-  arcResolution: 20
-  visualizationSteps: 90
