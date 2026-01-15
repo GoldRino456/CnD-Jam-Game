@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1448ccff840c9b24daa024ff7d5e4c0d, type: 3}
-  m_Name: HumanMoveSettings
+  m_Name: WerewolfMoveSettings
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMoveSettings
   PlayerLayer:
     serializedVersion: 2
@@ -18,14 +18,14 @@ MonoBehaviour:
   SnapInput: 1
   VerticalDeadZoneThreshold: 0.3
   HorizontalDeadZoneThreshold: 0.1
-  MaxSpeed: 14
-  Acceleration: 120
+  MaxSpeed: 8
+  Acceleration: 80
   GroundDeceleration: 60
   AirDeceleration: 30
   GroundingForce: -1.5
   GrounderDistance: 0.05
-  JumpPower: 36
-  MaxFallSpeed: 40
+  JumpPower: 50
+  MaxFallSpeed: 35
   FallAcceleration: 110
   JumpEndEarlyGravityModifier: 3
   CoyoteTime: 0.15
