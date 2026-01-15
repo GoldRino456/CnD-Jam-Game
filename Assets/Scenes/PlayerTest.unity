@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 369320871}
   - component: {fileID: 369320874}
   - component: {fileID: 369320870}
+  - component: {fileID: 369320876}
   - component: {fileID: 369320875}
   m_Layer: 6
   m_Name: Player
@@ -185,6 +186,7 @@ MonoBehaviour:
   _stats: {fileID: 11400000, guid: 7ec7e7347f21e1d4d9a87a091a3fd944, type: 2}
   _spRen: {fileID: 369320873}
   _anim: {fileID: 369320875}
+  _grounded: 0
 --- !u!50 &369320871
 Rigidbody2D:
   serializedVersion: 5
@@ -349,6 +351,26 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &369320876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369320865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8e16bdcb09914d1d89bdb48496b6360, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAudio
+  _playerMovement: {fileID: 369320870}
+  _footstepEvent:
+    Guid:
+      Data1: -501050477
+      Data2: 1113085781
+      Data3: -636865638
+      Data4: 2074653873
+    Path: event:/Footstep
 --- !u!1 &491626710
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,6 +432,7 @@ GameObject:
   - component: {fileID: 1252090381}
   - component: {fileID: 1252090380}
   - component: {fileID: 1252090383}
+  - component: {fileID: 1252090384}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -535,6 +558,20 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &1252090384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1252090379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8d2ff21875a4ef41a9c2888a05dee87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioListener
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 0}
 --- !u!1 &1260129148
 GameObject:
   m_ObjectHideFlags: 0
@@ -622,7 +659,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -2, z: 0}
-  m_LocalScale: {x: 12, y: 1, z: 1}
+  m_LocalScale: {x: 20, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
