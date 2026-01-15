@@ -1,37 +1,46 @@
 fileFormatVersion: 2
-guid: 426c5d654119645518155c4dfd8ba7de
+guid: 59b954f211905436195a8cc72056689f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1246655571800289824
-    second: MC_Walk_0
+      213: -8475268404425040490
+    second: spritesheetPlayerH_0
   - first:
-      213: -6962850012399476028
-    second: MC_Walk_1
+      213: -5734676677470657370
+    second: spritesheetPlayerH_1
   - first:
-      213: 1940221624142577078
-    second: MC_Walk_2
+      213: -6237801838264957630
+    second: spritesheetPlayerH_2
   - first:
-      213: -5417002690035269187
-    second: MC_Walk_3
+      213: -3732561123806288066
+    second: spritesheetPlayerH_3
   - first:
-      213: 774337924026978959
-    second: MC_Walk_4
+      213: 5746750767926474060
+    second: spritesheetPlayerH_4
   - first:
-      213: -834189383699312189
-    second: MC_Walk_5
+      213: 7952757885847117193
+    second: spritesheetPlayerH_5
   - first:
-      213: 7722284099649549748
-    second: MC_Walk_6
+      213: -4244702562448760280
+    second: spritesheetPlayerH_6
   - first:
-      213: 805629190895282845
-    second: MC_Walk_7
+      213: -9058935215146928183
+    second: spritesheetPlayerH_7
   - first:
-      213: -8603707579257146128
-    second: MC_Walk_8
+      213: 1301853834458829007
+    second: spritesheetPlayerH_8
   - first:
-      213: 1769681202131596695
-    second: MC_Walk_9
+      213: -8688182904773726825
+    second: spritesheetPlayerH_9
+  - first:
+      213: 5656041589584633557
+    second: spritesheetPlayerH_10
+  - first:
+      213: 7044047684445767618
+    second: spritesheetPlayerH_11
+  - first:
+      213: 2565545854434280322
+    second: spritesheetPlayerH_12
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -102,7 +111,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -140,7 +149,139 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MC_Walk_0
+      name: spritesheetPlayerH_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69d57224a4cc16a80800000000000000
+      internalID: -8475268404425040490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetPlayerH_1
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a4e4a902f55a60b0800000000000000
+      internalID: -5734676677470657370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetPlayerH_2
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 1000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24540f20740ee69a0800000000000000
+      internalID: -6237801838264957630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetPlayerH_3
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 1000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e37e7111f67433cc0800000000000000
+      internalID: -3732561123806288066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetPlayerH_4
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 1000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c45f5f6306f80cf40800000000000000
+      internalID: 5746750767926474060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetPlayerH_5
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 1000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98d9a92692fdd5e60800000000000000
+      internalID: 7952757885847117193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetPlayerH_6
       rect:
         serializedVersion: 2
         x: 0
@@ -155,14 +296,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0ed059dcc5df2bee0800000000000000
-      internalID: -1246655571800289824
+      spriteID: 8222d044289c715c0800000000000000
+      internalID: -4244702562448760280
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MC_Walk_1
+      name: spritesheetPlayerH_7
       rect:
         serializedVersion: 2
         x: 500
@@ -177,14 +318,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4c2ea92fdccfe5f90800000000000000
-      internalID: -6962850012399476028
+      spriteID: 9c7f3e90b62384280800000000000000
+      internalID: -9058935215146928183
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MC_Walk_2
+      name: spritesheetPlayerH_8
       rect:
         serializedVersion: 2
         x: 1000
@@ -199,14 +340,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6bdbc84994d0dea10800000000000000
-      internalID: 1940221624142577078
+      spriteID: fc016683a2d111210800000000000000
+      internalID: 1301853834458829007
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MC_Walk_3
+      name: spritesheetPlayerH_9
       rect:
         serializedVersion: 2
         x: 1500
@@ -221,14 +362,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: db1cc1101c0f2d4b0800000000000000
-      internalID: -5417002690035269187
+      spriteID: 79d27591eaf5d6780800000000000000
+      internalID: -8688182904773726825
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MC_Walk_4
+      name: spritesheetPlayerH_10
       rect:
         serializedVersion: 2
         x: 2000
@@ -243,14 +384,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f82ddb14d300fba00800000000000000
-      internalID: 774337924026978959
+      spriteID: 5de1706dbdb4e7e40800000000000000
+      internalID: 5656041589584633557
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MC_Walk_5
+      name: spritesheetPlayerH_11
       rect:
         serializedVersion: 2
         x: 2500
@@ -265,14 +406,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3c1533ddc2d5c64f0800000000000000
-      internalID: -834189383699312189
+      spriteID: 2c78d4c4c0c71c160800000000000000
+      internalID: 7044047684445767618
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MC_Walk_6
+      name: spritesheetPlayerH_12
       rect:
         serializedVersion: 2
         x: 0
@@ -287,14 +428,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4b5324669701b2b60800000000000000
-      internalID: 7722284099649549748
+      spriteID: 283088c9c56aa9320800000000000000
+      internalID: 2565545854434280322
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MC_Walk_7
+      name: spritesheetPlayerH_13
       rect:
         serializedVersion: 2
         x: 500
@@ -307,16 +448,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d9aafff0b7b2e2b00800000000000000
-      internalID: 805629190895282845
+      spriteID: f651f5b018cff4641a16f8be5e9973d0
+      internalID: 438508730
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MC_Walk_8
+      name: spritesheetPlayerH_14
       rect:
         serializedVersion: 2
         x: 1000
@@ -329,16 +470,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 0f4ba038a8d799880800000000000000
-      internalID: -8603707579257146128
+      spriteID: 7fc2a83a9871d44de89cc35d74ef532c
+      internalID: -1597569725
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MC_Walk_9
+      name: spritesheetPlayerH_15
       rect:
         serializedVersion: 2
         x: 1500
@@ -351,16 +492,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7957dba5dab2f8810800000000000000
-      internalID: 1769681202131596695
+      spriteID: 1b9e19da6663c45168ad7da67be80fb5
+      internalID: -1648723790
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MC_Walk_10
+      name: spritesheetPlayerH_16
       rect:
         serializedVersion: 2
         x: 2000
@@ -375,14 +516,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c7e593cea3fac40358fab962cd249dca
-      internalID: 1668223075
+      spriteID: 46e61d0acbbfc46b4853a0d7d02f0fcc
+      internalID: 683056017
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MC_Walk_11
+      name: spritesheetPlayerH_17
       rect:
         serializedVersion: 2
         x: 2500
@@ -397,8 +538,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cabd0341ea3af4cb9b72c837b613900e
-      internalID: 906216412
+      spriteID: 05a4d32466bf846e3a3d38881c60d9d3
+      internalID: 1449009912
       vertices: []
       indices: 
       edges: []
@@ -407,7 +548,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: d87301cd2ab43434d9795ff93bc7bf87
+    spriteID: 62e92d65a281445e99bf0c61aad8fdd4
     internalID: 0
     vertices: []
     indices: 
@@ -417,20 +558,26 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":6.0,"y":2.0},"gridSpriteSize":{"x":500.0,"y":500.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":1,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":6.0,"y":3.0},"gridSpriteSize":{"x":500.0,"y":500.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      MC_Walk_0: -1246655571800289824
-      MC_Walk_1: -6962850012399476028
-      MC_Walk_10: 1668223075
-      MC_Walk_11: 906216412
-      MC_Walk_2: 1940221624142577078
-      MC_Walk_3: -5417002690035269187
-      MC_Walk_4: 774337924026978959
-      MC_Walk_5: -834189383699312189
-      MC_Walk_6: 7722284099649549748
-      MC_Walk_7: 805629190895282845
-      MC_Walk_8: -8603707579257146128
-      MC_Walk_9: 1769681202131596695
+      spritesheetPlayerH_0: -8475268404425040490
+      spritesheetPlayerH_1: -5734676677470657370
+      spritesheetPlayerH_10: 5656041589584633557
+      spritesheetPlayerH_11: 7044047684445767618
+      spritesheetPlayerH_12: 2565545854434280322
+      spritesheetPlayerH_13: 438508730
+      spritesheetPlayerH_14: -1597569725
+      spritesheetPlayerH_15: -1648723790
+      spritesheetPlayerH_16: 683056017
+      spritesheetPlayerH_17: 1449009912
+      spritesheetPlayerH_2: -6237801838264957630
+      spritesheetPlayerH_3: -3732561123806288066
+      spritesheetPlayerH_4: 5746750767926474060
+      spritesheetPlayerH_5: 7952757885847117193
+      spritesheetPlayerH_6: -4244702562448760280
+      spritesheetPlayerH_7: -9058935215146928183
+      spritesheetPlayerH_8: 1301853834458829007
+      spritesheetPlayerH_9: -8688182904773726825
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
