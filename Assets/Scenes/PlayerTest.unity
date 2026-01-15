@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 369320870}
   - component: {fileID: 369320876}
   - component: {fileID: 369320875}
+  - component: {fileID: 369320877}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -371,6 +372,30 @@ MonoBehaviour:
       Data3: -636865638
       Data4: 2074653873
     Path: event:/Footstep
+  _parameter: isLanding
+  _jumpEvent:
+    Guid:
+      Data1: -946422758
+      Data2: 1178145040
+      Data3: -76691806
+      Data4: 1768642312
+    Path: event:/Jump
+--- !u!114 &369320877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369320865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13f728c558c5cab4fa59a4295436d331, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioGlobalParameterTrigger
+  CollisionTag: 
+  Parameter: isLanding
+  TriggerEvent: 0
+  Value: 0
 --- !u!1 &491626710
 GameObject:
   m_ObjectHideFlags: 0

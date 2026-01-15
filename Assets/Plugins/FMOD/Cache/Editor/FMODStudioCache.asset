@@ -1,5 +1,29 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8220927927478557347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fcfab8a98b1d5d418d164e964555c81, type: 3}
+  m_Name: parameter:/Footstep/isLanding
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: isLanding
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2363747097
+    data2: 1906438993
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17,16 +41,20 @@ MonoBehaviour:
   - {fileID: 7985266394684641298}
   EditorEvents:
   - {fileID: 2907422357147871016}
-  EditorParameters: []
+  - {fileID: 7814982328357482477}
+  EditorParameters:
+  - {fileID: 6659027116337689556}
   MasterBanks:
   - {fileID: 7985266394684641298}
   StringsBanks:
   - {fileID: 286442563730320417}
   cacheVersion: 131857
-  cacheTime: 639040182268563050
+  cacheTime: 639040213597444162
   SerializableEventsDict:
   - key: event:/Footstep
     index: 0
+  - key: event:/Jump
+    index: 1
 --- !u!114 &286442563730320417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42,10 +70,10 @@ MonoBehaviour:
   Path: CnD-Jam-Game-FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639040182268563050
+  lastModified: 639040213597444162
   FileSizes:
   - Name: Desktop
-    Value: 770
+    Value: 868
   Exists: 1
 --- !u!114 &2907422357147871016
 MonoBehaviour:
@@ -70,6 +98,58 @@ MonoBehaviour:
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
+  Parameters:
+  - {fileID: -8220927927478557347}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &6659027116337689556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fcfab8a98b1d5d418d164e964555c81, type: 3}
+  m_Name: parameter:/isLanding
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: isLanding
+  StudioPath: parameter:/isLanding
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2363747097
+    data2: 1906438993
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &7814982328357482477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e14b1d0f626bda4ebc0fb8b91c96e8c, type: 3}
+  m_Name: event:/Jump
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Jump
+  Guid:
+    Data1: -946422758
+    Data2: 1178145040
+    Data3: -76691806
+    Data4: 1768642312
+  Banks:
+  - {fileID: 7985266394684641298}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
@@ -89,8 +169,8 @@ MonoBehaviour:
   Path: CnD-Jam-Game-FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639040182268558072
+  lastModified: 639040213597439889
   FileSizes:
   - Name: Desktop
-    Value: 37120
+    Value: 54112
   Exists: 1
