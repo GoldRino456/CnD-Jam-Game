@@ -79,6 +79,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void ChangeInfection(int amount)
+    {
+        _infectionProgress += amount;
+        _infectionProgress = Mathf.Clamp(_infectionProgress, 0, 100);
+
+        ResetInfectionTimer();
+    }
+
     private void ResetInfectionTimer()
     {
         _infectionTimer = _infectionRate;

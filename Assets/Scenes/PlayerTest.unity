@@ -144,6 +144,7 @@ GameObject:
   - component: {fileID: 369320868}
   - component: {fileID: 369320873}
   - component: {fileID: 369320872}
+  - component: {fileID: 369320878}
   - component: {fileID: 369320871}
   - component: {fileID: 369320874}
   - component: {fileID: 369320870}
@@ -185,6 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   _stats: {fileID: 11400000, guid: 7ec7e7347f21e1d4d9a87a091a3fd944, type: 2}
+  _detectionCollider: {fileID: 369320878}
   _spRen: {fileID: 369320873}
   _anim: {fileID: 369320875}
   _grounded: 0
@@ -396,6 +398,42 @@ MonoBehaviour:
   Parameter: isLanding
   TriggerEvent: 0
   Value: 0
+--- !u!58 &369320878
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369320865}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 3
 --- !u!1 &491626710
 GameObject:
   m_ObjectHideFlags: 0

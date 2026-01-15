@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [Tooltip("This is the default move settings the script will use.")]
     [SerializeField] private PlayerMoveSettings _stats;
+    [SerializeField] private CircleCollider2D _detectionCollider;
     [SerializeField] private SpriteRenderer _spRen;
     [SerializeField] private Animator _anim;
     private Rigidbody2D _rb;
@@ -24,12 +25,15 @@ public class PlayerMovement : MonoBehaviour
     public event Action<bool, float> GroundedChanged;
     public event Action Jumped;
 
+    public bool IsCrouching { get { return _isCrouchHeld; } }
+
     private float _time;
 
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
         _col = GetComponent<CapsuleCollider2D>();
+        _detectionCollider.radius = _stats.DetectionRadius;
 
         _cachedQueryStartInColliders = Physics2D.queriesStartInColliders;
     }
@@ -43,9 +47,23 @@ public class PlayerMovement : MonoBehaviour
     private void GatherInput()
     {
         _moveInput = InputManager.moveDirection;
-        _isCrouchHeld = InputManager.isCrouchHeld;
         _isJumpPressed = InputManager.isJumpPressed;
         _isJumpHeld = InputManager.isJumpHeld;
+
+        var newIsCrouchHeld = InputManager.isCrouchHeld;
+        if(newIsCrouchHeld != _isCrouchHeld)
+        {
+            _isCrouchHeld = newIsCrouchHeld;
+
+            if(_isCrouchHeld)
+            {
+                _detectionCollider.radius = _stats.CrouchedDetectionRadius;
+            }
+            else
+            {
+                _detectionCollider.radius = _stats.DetectionRadius;
+            }
+        }
 
         if (_stats.SnapInput)
         {

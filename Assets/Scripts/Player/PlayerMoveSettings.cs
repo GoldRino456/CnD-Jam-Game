@@ -17,6 +17,13 @@ public class PlayerMoveSettings : ScriptableObject
     [Tooltip("Minimum input required before a left or right is recognized. Avoids drifting with sticky controllers"), Range(0.01f, 0.99f)]
     public float HorizontalDeadZoneThreshold = 0.1f;
 
+    [Header("STEALTH")]
+    [Tooltip("How far away enemies should be able to detect the player.")]
+    public float DetectionRadius = 2.5f;
+    [Tooltip("How far away enemies should be able to detect the player while crouched.")]
+    public float CrouchedDetectionRadius = 1f;
+
+
     [Header("MOVEMENT")]
     [Tooltip("The top horizontal movement speed")]
     public float MaxSpeed = 14;
