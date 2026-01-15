@@ -7,6 +7,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
 public class PlayerMovement : MonoBehaviour
 {
+    [Tooltip("This is the default move settings the script will use.")]
     [SerializeField] private PlayerMoveSettings _stats;
     private Rigidbody2D _rb;
     private CapsuleCollider2D _col;
@@ -14,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     private bool _cachedQueryStartInColliders;
 
     private Vector2 _moveInput;
+    private bool _isCrouchHeld;
     private bool _isJumpPressed;
     private bool _isJumpHeld;
 
@@ -39,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
     private void GatherInput()
     {
         _moveInput = InputManager.moveDirection;
+        _isCrouchHeld = InputManager.isCrouchHeld;
         _isJumpPressed = InputManager.isJumpPressed;
         _isJumpHeld = InputManager.isJumpHeld;
 
@@ -150,7 +153,8 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            _frameVelocity.x = Mathf.MoveTowards(_frameVelocity.x, _moveInput.x * _stats.MaxSpeed, _stats.Acceleration * Time.fixedDeltaTime);
+            float moveSpeed = _isCrouchHeld ? _stats.MaxCrouchedSpeed : _stats.MaxSpeed;
+            _frameVelocity.x = Mathf.MoveTowards(_frameVelocity.x, _moveInput.x * moveSpeed, _stats.Acceleration * Time.fixedDeltaTime);
         }
     }
 
@@ -175,6 +179,8 @@ public class PlayerMovement : MonoBehaviour
     #endregion
 
     private void ApplyMovement() => _rb.linearVelocity = _frameVelocity;
+
+    public void UpdateMoveSettings(PlayerMoveSettings settings) => _stats = settings;
 
 #if UNITY_EDITOR
     private void OnValidate()

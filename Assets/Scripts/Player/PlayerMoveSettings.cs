@@ -21,6 +21,9 @@ public class PlayerMoveSettings : ScriptableObject
     [Tooltip("The top horizontal movement speed")]
     public float MaxSpeed = 14;
 
+    [Tooltip("The top horizontal movement speed while the player is crouched")]
+    public float MaxCrouchedSpeed = 8;
+
     [Tooltip("The player's capacity to gain horizontal speed")]
     public float Acceleration = 120;
 
