@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
 {
     [Tooltip("This is the default move settings the script will use.")]
     [SerializeField] private PlayerMoveSettings _stats;
+    [SerializeField] private SpriteRenderer _spRen;
+    [SerializeField] private Animator _anim;
     private Rigidbody2D _rb;
     private CapsuleCollider2D _col;
     private Vector2 _frameVelocity;
@@ -150,11 +152,16 @@ public class PlayerMovement : MonoBehaviour
         {
             var deceleration = _grounded ? _stats.GroundDeceleration : _stats.AirDeceleration;
             _frameVelocity.x = Mathf.MoveTowards(_frameVelocity.x, 0, deceleration * Time.fixedDeltaTime);
+
+            _anim.SetBool("moving", false);
         }
         else
         {
             float moveSpeed = _isCrouchHeld ? _stats.MaxCrouchedSpeed : _stats.MaxSpeed;
             _frameVelocity.x = Mathf.MoveTowards(_frameVelocity.x, _moveInput.x * moveSpeed, _stats.Acceleration * Time.fixedDeltaTime);
+
+            _spRen.flipX = _moveInput.x > 0;
+            _anim.SetBool("moving", true);
         }
     }
 

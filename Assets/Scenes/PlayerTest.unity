@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 369320871}
   - component: {fileID: 369320874}
   - component: {fileID: 369320870}
+  - component: {fileID: 369320875}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -182,6 +183,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   _stats: {fileID: 11400000, guid: 7ec7e7347f21e1d4d9a87a091a3fd944, type: 2}
+  _spRen: {fileID: 369320873}
+  _anim: {fileID: 369320875}
 --- !u!50 &369320871
 Rigidbody2D:
   serializedVersion: 5
@@ -244,7 +247,7 @@ CapsuleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 0.5, y: 1}
   m_Direction: 0
 --- !u!212 &369320873
 SpriteRenderer:
@@ -295,7 +298,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
+  m_Sprite: {fileID: -1246655571800289824, guid: 426c5d654119645518155c4dfd8ba7de, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -324,6 +327,28 @@ MonoBehaviour:
   _infectionThreshold: 50
   _humanMoveSettings: {fileID: 11400000, guid: 7ec7e7347f21e1d4d9a87a091a3fd944, type: 2}
   _werewolfMoveSettings: {fileID: 11400000, guid: 480407c1e88e79042801509b00606b1e, type: 2}
+--- !u!95 &369320875
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369320865}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d5467a68e12fd43209cdbbbc55d66e70, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &491626710
 GameObject:
   m_ObjectHideFlags: 0
