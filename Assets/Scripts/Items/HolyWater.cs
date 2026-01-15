@@ -9,7 +9,7 @@ public class HolyWater : MonoBehaviour, IItem
     [SerializeField] private Rigidbody2D _projectileRb;
     [SerializeField] private CircleCollider2D _aoeRadius; //Should be Trigger
     [SerializeField] private int infectionCureAmount = 35;
-
+    [SerializeField] private FMODUnity.EventReference _splashSFX;
     public void OnPickup()
     {
         
@@ -23,7 +23,8 @@ public class HolyWater : MonoBehaviour, IItem
 
     public void OnCollisionEnter2D(Collision2D collision) //Collision of Holy Water
     {
-        
+        FMODUnity.RuntimeManager.PlayOneShot(_splashSFX, transform.position);
+        _projectileRb.linearVelocity = Vector2.zero;
     }
 
     public void OnTriggerEnter2D(Collider2D collision) //AOE Effect Range

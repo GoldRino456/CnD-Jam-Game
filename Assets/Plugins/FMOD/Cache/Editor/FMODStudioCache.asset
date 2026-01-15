@@ -1,5 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8479314060803946477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e14b1d0f626bda4ebc0fb8b91c96e8c, type: 3}
+  m_Name: event:/Ambience
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Ambience
+  Guid:
+    Data1: -1905173896
+    Data2: 1250496796
+    Data3: 1716447641
+    Data4: -1466450466
+  Banks:
+  - {fileID: 7985266394684641298}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-8220927927478557347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42,6 +69,8 @@ MonoBehaviour:
   EditorEvents:
   - {fileID: 2907422357147871016}
   - {fileID: 7814982328357482477}
+  - {fileID: 3191397237733946774}
+  - {fileID: -8479314060803946477}
   EditorParameters:
   - {fileID: 6659027116337689556}
   MasterBanks:
@@ -49,12 +78,16 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 286442563730320417}
   cacheVersion: 131857
-  cacheTime: 639040213597444162
+  cacheTime: 639040875310251222
   SerializableEventsDict:
   - key: event:/Footstep
     index: 0
   - key: event:/Jump
     index: 1
+  - key: event:/HolyWaterBreak
+    index: 2
+  - key: event:/Ambience
+    index: 3
 --- !u!114 &286442563730320417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70,10 +103,10 @@ MonoBehaviour:
   Path: CnD-Jam-Game-FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639040213597444162
+  lastModified: 639040875310251222
   FileSizes:
   - Name: Desktop
-    Value: 868
+    Value: 1056
   Exists: 1
 --- !u!114 &2907422357147871016
 MonoBehaviour:
@@ -102,6 +135,33 @@ MonoBehaviour:
   - {fileID: -8220927927478557347}
   MinDistance: 1
   MaxDistance: 20
+  Length: 0
+--- !u!114 &3191397237733946774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e14b1d0f626bda4ebc0fb8b91c96e8c, type: 3}
+  m_Name: event:/HolyWaterBreak
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/HolyWaterBreak
+  Guid:
+    Data1: -883155763
+    Data2: 1197806637
+    Data3: -364976768
+    Data4: -2129407244
+  Banks:
+  - {fileID: 7985266394684641298}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 25
   Length: 0
 --- !u!114 &6659027116337689556
 MonoBehaviour:
@@ -169,8 +229,8 @@ MonoBehaviour:
   Path: CnD-Jam-Game-FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639040213597439889
+  lastModified: 639040875310246424
   FileSizes:
   - Name: Desktop
-    Value: 54112
+    Value: 1303648
   Exists: 1

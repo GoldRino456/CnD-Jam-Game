@@ -5,7 +5,7 @@
 			<value>2</value>
 		</property>
 		<property name="name">
-			<value>Reverb</value>
+			<value>PlayerVerb</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{e1ca1d54-b792-4b14-a507-1d0b99b96383}</destination>
