@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -11,9 +12,31 @@ public class PlayerController : MonoBehaviour
     [SerializeField][Range(25, 75)] private int _startingInfectionProgress = 25;
     [SerializeField] private int _infectionIncrement = 5;
     [SerializeField] private float _infectionRate = 2.5f;
-    [SerializeField] private int _infectionThreshold = 50;
-    private bool _isHumanForm = true; //We can swap this for an enum if we want more than two forms
-    private bool _isFormChangeThisFrame = false;
+    [SerializeField] private int _infectionThreshold1 = 50;
+    [SerializeField] private int _infectionThreshold2 = 75;
+    private enum Form
+    {
+        Human = 0,
+        Middle = 1,
+        Werewolf = 2
+    };
+    [SerializeField] private Form currentForm;
+    private Form _currentForm
+    {
+        get => currentForm;
+        set
+        {
+            if(value != currentForm)
+            {
+                transformParticle.Play();
+                anim.SetInteger("form", (int)value);
+                
+                currentForm = value;
+            }
+        }
+    }
+    [SerializeField] private ParticleSystem transformParticle;
+    [SerializeField] private Animator anim;
     private float _infectionTimer;
 
     [Header("Movement Settings")]
@@ -31,41 +54,25 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         ProcessInfection();
-        CheckForPlayerFormChange();
-        ProcessFormChange();
-    }
-
-    private void CheckForPlayerFormChange()
-    {
-        if(_isHumanForm && _infectionProgress > _infectionThreshold)
-        {
-            _isFormChangeThisFrame = true;
-        }
-        else if(!_isHumanForm && _infectionProgress <= _infectionThreshold)
-        {
-            _isFormChangeThisFrame = true;
-        }
     }
 
     private void ProcessFormChange()
     {
-        if(!_isFormChangeThisFrame) { return; }
-
-        _isHumanForm = !_isHumanForm; 
-
-        //Swap for switch statement if more than two states
-        if(_isHumanForm)
+        switch(_infectionProgress)
         {
-            //Do change to Human stuff here
-            _movement.UpdateMoveSettings(_humanMoveSettings);
+            case int n when (n >= _infectionThreshold2):
+                _currentForm = Form.Werewolf;
+                _movement.UpdateMoveSettings(_werewolfMoveSettings);
+                break;
+            case int n when (n >= _infectionThreshold1):
+                _currentForm = Form.Middle;
+                _movement.UpdateMoveSettings(_humanMoveSettings);
+                break;
+            default:
+                _currentForm = Form.Human;
+                _movement.UpdateMoveSettings(_humanMoveSettings);
+                break;
         }
-        else
-        {
-            //Do change to werewolf stuff here
-            _movement.UpdateMoveSettings(_werewolfMoveSettings);
-        }
-
-        _isFormChangeThisFrame = false;
     }
 
     private void ProcessInfection()
@@ -77,6 +84,8 @@ public class PlayerController : MonoBehaviour
             _infectionProgress += _infectionIncrement;
             ResetInfectionTimer();
         }
+
+        ProcessFormChange();
     }
 
     public void ChangeInfection(int amount)
@@ -85,6 +94,8 @@ public class PlayerController : MonoBehaviour
         _infectionProgress = Mathf.Clamp(_infectionProgress, 0, 100);
 
         ResetInfectionTimer();
+
+        ProcessFormChange();
     }
 
     private void ResetInfectionTimer()
