@@ -106,7 +106,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 286442563730320417}
   cacheVersion: 131857
-  cacheTime: 639042388005602672
+  cacheTime: 639042805346382748
   SerializableEventsDict:
   - key: event:/Footstep
     index: 0
@@ -133,7 +133,7 @@ MonoBehaviour:
   Path: CnD-Jam-Game-FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639042388005602672
+  lastModified: 639042805346382748
   FileSizes:
   - Name: Desktop
     Value: 1096
@@ -259,7 +259,7 @@ MonoBehaviour:
   Path: CnD-Jam-Game-FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639042388005592439
+  lastModified: 639042805346382748
   FileSizes:
   - Name: Desktop
     Value: 1343520
