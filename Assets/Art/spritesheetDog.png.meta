@@ -66,7 +66,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 500
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -131,12 +131,12 @@ TextureImporter:
       name: spritesheetDog_0
       rect:
         serializedVersion: 2
-        x: 33
-        y: 999
-        width: 960
-        height: 453
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 1000
+        width: 1000
+        height: 500
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -153,12 +153,12 @@ TextureImporter:
       name: spritesheetDog_1
       rect:
         serializedVersion: 2
-        x: 1023
-        y: 999
-        width: 957
-        height: 445
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1000
+        y: 1000
+        width: 1000
+        height: 500
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -175,12 +175,12 @@ TextureImporter:
       name: spritesheetDog_2
       rect:
         serializedVersion: 2
-        x: 2020
-        y: 999
-        width: 973
-        height: 448
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2000
+        y: 1000
+        width: 1000
+        height: 500
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -197,12 +197,12 @@ TextureImporter:
       name: spritesheetDog_3
       rect:
         serializedVersion: 2
-        x: 33
-        y: 499
-        width: 960
-        height: 453
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 500
+        width: 1000
+        height: 500
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -219,12 +219,12 @@ TextureImporter:
       name: spritesheetDog_4
       rect:
         serializedVersion: 2
-        x: 1023
-        y: 499
-        width: 957
-        height: 445
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1000
+        y: 500
+        width: 1000
+        height: 500
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -241,12 +241,12 @@ TextureImporter:
       name: spritesheetDog_5
       rect:
         serializedVersion: 2
-        x: 2020
-        y: 499
-        width: 973
-        height: 448
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2000
+        y: 500
+        width: 1000
+        height: 500
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -259,11 +259,77 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: spritesheetDog_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1000
+        height: 500
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49dd5068555254e0a96908b5d280e6ff
+      internalID: 1075391094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetDog_7
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 0
+        width: 1000
+        height: 500
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b27c2baaa68c243e0aabcbd245bd89b8
+      internalID: 1380946041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetDog_8
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 0
+        width: 1000
+        height: 500
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6888f810c27174e34a1cbf9c9cd1f3a7
+      internalID: 965580431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b370b99121cdd451386c7adaedc76a39
     internalID: 0
     vertices: []
     indices: 
@@ -271,7 +337,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":3.0},"gridSpriteSize":{"x":1000.0,"y":500.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       spritesheetDog_0: -8111775152901152603
       spritesheetDog_1: -4678954043398633321
@@ -279,6 +347,9 @@ TextureImporter:
       spritesheetDog_3: 2856712261661992409
       spritesheetDog_4: 2454344941327055886
       spritesheetDog_5: -889007274718369449
+      spritesheetDog_6: 1075391094
+      spritesheetDog_7: 1380946041
+      spritesheetDog_8: 965580431
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
