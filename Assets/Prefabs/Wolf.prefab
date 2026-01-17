@@ -285,18 +285,27 @@ MonoBehaviour:
   idleTimeMin: 2.5
   idleTimeMax: 7.5
   patrolTime: 15
-  suspicionThreshold: 2
-  suspicionDecayFactor: 2
+  suspicionSettings: {fileID: 11400000, guid: f60fc3d6b2c8a476ca14c99371e2ca93, type: 2}
+  suspicionSound:
+    Guid:
+      Data1: 1282619529
+      Data2: 1298194155
+      Data3: 1147107748
+      Data4: -611088799
+    Path: event:/WolfGrowl
   rb: {fileID: 4993581753300544171}
   spRen: {fileID: 3050047757654047747}
   anim: {fileID: 6340060795648200533}
-  suspicionMeter: {fileID: 2183332842102469499}
   _currentState: 0
   pounceDistance: 4
-  pounceForce: 12.5
+  pounceForce: 15
   pounceCooldown: 2
   damageRadius: 0.5
   infectionDamage: 10
+  pounceArcTimeStep: 0.05
+  pounceArcMaxTime: 1.25
+  pounceArcRadius: 0.2
+  minPounceForwardDistance: 0
 --- !u!95 &6340060795648200533
 Animator:
   serializedVersion: 7

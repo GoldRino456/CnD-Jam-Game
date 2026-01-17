@@ -27,15 +27,16 @@ public class EnemyTest : MonoBehaviour
     [SerializeField] private float patrolTime = 2f;
 
     [Header("Suspicion Settings")]
-    [SerializeField] protected float suspicionThreshold = 2f;
-    [SerializeField] protected float suspicionDecayFactor = 2f;
+    [SerializeField] protected Suspicion suspicionSettings;
 
+    [Header("Audio Settings")]
+    [SerializeField] private FMODUnity.EventReference suspicionSound;
+
+    [Header("Misc References")]
     [SerializeField] protected Rigidbody2D rb;
     [SerializeField] protected SpriteRenderer spRen;
-    [SerializeField] protected Animator anim;
-    [SerializeField] private Transform suspicionMeter;
-    protected bool _active;
-    protected float _suspicion;
+    [SerializeField] protected Animator anim; protected bool _active;
+    private bool _inSight;
     protected float _facingDirection;
     protected Vector2 _lastPlayerPosition;
     protected enum State
@@ -49,6 +50,9 @@ public class EnemyTest : MonoBehaviour
     private Coroutine _currentCoroutine;
     private void Start()
     {
+        suspicionSettings.noticedPlayer = 0;
+        suspicionSettings.suspicion = 0;
+
         _currentCoroutine = StartCoroutine(IdleState());
         _facingDirection = Random.value < 0.5f ? -1f : 1f;
         spRen.flipX = _facingDirection == 1f ? true : false;
@@ -61,20 +65,13 @@ public class EnemyTest : MonoBehaviour
 
         _currentState = State.Idle;
 
-        while (rb.linearVelocity.x > 0.1f || rb.linearVelocity.x < -0.1f)
-        {
-            rb.linearVelocity = new Vector2(Mathf.MoveTowards(rb.linearVelocity.x, 0f, deceleration * Time.deltaTime), rb.linearVelocity.y);
-            yield return null;
-        }
-
-        anim.SetBool("moving", false);
+        yield return Stop();
 
         yield return new WaitForSeconds(Random.Range(idleTimeMin, idleTimeMax));
 
         if (_active) _currentCoroutine = StartCoroutine(PatrolState());
         else _currentCoroutine = StartCoroutine(IdleState());
     }
-
     private IEnumerator PatrolState()
     {
         _currentState = State.Patrol;
@@ -87,15 +84,7 @@ public class EnemyTest : MonoBehaviour
             rb.linearVelocity = new Vector2(Mathf.MoveTowards(rb.linearVelocity.x, _facingDirection * patrolSpeed, acceleration * Time.deltaTime), rb.linearVelocity.y);
             elapsed += Time.deltaTime;
 
-            float edgeDistance = transform.position.x + (_facingDirection * edgeDetectDistance);
-
-            RaycastHit2D edgeHit =
-                Physics2D.Raycast(new Vector2(edgeDistance, transform.position.y + edgeDetectHeight), Vector2.down, edgeDetectHeight + 0.1f, groundLayer);
-
-            RaycastHit2D obstacleHit =
-                Physics2D.Raycast(new Vector2(edgeDistance, transform.position.y), Vector2.right * _facingDirection, edgeDetectDistance + 0.1f, obstacleLayer);
-
-            if (edgeHit.collider == null || obstacleHit.collider != null)
+            if (IsEdgeOrObstacleAhead())
             {
                 float breakChance = Random.value;
 
@@ -119,31 +108,44 @@ public class EnemyTest : MonoBehaviour
     {
         _currentState = State.Suspicious;
         anim.SetBool("moving", false);
+        FMODUnity.RuntimeManager.PlayOneShot(suspicionSound, transform.position);
 
-        while (_suspicion > 0f)
+        while (_inSight)
         {
-            if (RaycastSweep()) _suspicion += Time.deltaTime;
-            else _suspicion -= Time.deltaTime * (suspicionThreshold / suspicionDecayFactor);
+            if (RaycastSweep())
+            {
+                suspicionSettings.IncreaseSuspicion();
+            }
+            else
+            {
+                suspicionSettings.noticedPlayer--;
+                _inSight = false;
 
-            suspicionMeter.localScale = new Vector3(Mathf.Clamp01(_suspicion / suspicionThreshold) * 0.95f, 0.5f, 1f);
+                if (suspicionSettings.noticedPlayer == 0) suspicionSettings.decayRoutine = StartCoroutine(suspicionSettings.DecayRoutine());
+
+                break;
+            }
 
             _facingDirection = _lastPlayerPosition.x > transform.position.x ? 1f : -1f;
             spRen.flipX = _facingDirection == 1f ? true : false;
 
-            if (_suspicion >= suspicionThreshold)
+            if (suspicionSettings.suspicion > 0.5f * suspicionSettings.suspicionThreshold)
             {
-                if (_currentCoroutine != null) StopCoroutine(_currentCoroutine);
+                if (!IsEdgeOrObstacleAhead())
+                {
+                    rb.linearVelocity = new Vector2(Mathf.MoveTowards(rb.linearVelocity.x, _facingDirection * patrolSpeed * 0.5f, acceleration * Time.deltaTime), rb.linearVelocity.y);
+                }
+            }
 
+            if (suspicionSettings.suspicion > suspicionSettings.suspicionThreshold)
+            {
                 AggroState();
                 yield break;
             }
 
-            if (_suspicion <= 0f) break;
-
             yield return null;
         }
 
-        _suspicion = 0f;
         _currentCoroutine = StartCoroutine(IdleState());
     }
 
@@ -151,21 +153,52 @@ public class EnemyTest : MonoBehaviour
     {
         _currentState = State.Aggro;
     }
+    protected bool IsEdgeOrObstacleAhead()
+    {
+        float edgeDistance = transform.position.x + (_facingDirection * edgeDetectDistance);
+
+        RaycastHit2D edgeHit =
+            Physics2D.Raycast(new Vector2(edgeDistance, transform.position.y + edgeDetectHeight), Vector2.down, edgeDetectHeight + 0.1f, groundLayer);
+
+        RaycastHit2D obstacleHit =
+            Physics2D.Raycast(new Vector2(edgeDistance, transform.position.y), Vector2.right * _facingDirection, edgeDetectDistance + 0.1f, obstacleLayer);
+
+        if(obstacleHit.collider != null) Debug.Log(obstacleHit.collider.name);
+
+        return edgeHit.collider == null || obstacleHit.collider != null;
+    }
+    protected IEnumerator Stop()
+    {
+        while (rb.linearVelocity.x > 0.1f || rb.linearVelocity.x < -0.1f)
+        {
+            rb.linearVelocity = new Vector2(Mathf.MoveTowards(rb.linearVelocity.x, 0f, deceleration * Time.deltaTime), rb.linearVelocity.y);
+            yield return null;
+        }
+
+        anim.SetBool("moving", false);
+    }
 
     private void Update()
     {
         if (_active && (int)_currentState < 2)
         {
-            if (RaycastSweep())
+            if (RaycastSweep() && !_inSight)
             {
                 if (_currentCoroutine != null) StopCoroutine(_currentCoroutine);
 
-                _suspicion += 0.25f;
+                if (suspicionSettings.noticedPlayer == 0)
+                {
+                    if (suspicionSettings.decayRoutine != null) StopCoroutine(suspicionSettings.decayRoutine);
+                    suspicionSettings.suspicion += 0.25f;
+                }
+
+                suspicionSettings.noticedPlayer++;
+                _inSight = true;
 
                 _currentCoroutine = StartCoroutine(SuspicionState());
             }
         }
-        else if (!_active && _currentState != State.Idle)
+        else if ((!_active && _currentState != State.Idle) || _currentCoroutine == null)
         {
             if (_currentCoroutine != null) StopCoroutine(_currentCoroutine);
 

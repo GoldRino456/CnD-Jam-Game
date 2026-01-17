@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{3699885a-6b60-45fa-b3c0-b0b89c1f5320}">
+		<property name="assetPath">
+			<value>SFX_WolfGrowl_02.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>2</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{85e9b998-bed5-4a5b-901c-c81409d43383}</destination>
+		</relationship>
+	</object>
+</objects>
