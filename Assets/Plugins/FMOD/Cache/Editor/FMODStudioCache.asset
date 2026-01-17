@@ -1,57 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8479314060803946477
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e14b1d0f626bda4ebc0fb8b91c96e8c, type: 3}
-  m_Name: event:/Ambience
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/Ambience
-  Guid:
-    Data1: -1905173896
-    Data2: 1250496796
-    Data3: 1716447641
-    Data4: -1466450466
-  Banks:
-  - {fileID: 7985266394684641298}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-8220927927478557347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fcfab8a98b1d5d418d164e964555c81, type: 3}
-  m_Name: parameter:/Footstep/isLanding
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
-  Name: isLanding
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 2363747097
-    data2: 1906438993
-  Type: 0
-  IsGlobal: 1
-  Labels: []
-  Exists: 1
---- !u!114 &-6450112328772587533
+--- !u!114 &-9163210734565628488
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -70,7 +19,7 @@ MonoBehaviour:
     Data3: 1147107748
     Data4: -611088799
   Banks:
-  - {fileID: 7985266394684641298}
+  - {fileID: 8106261129611594618}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -78,51 +27,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f848cca256359f947855162a9d5d4624, type: 3}
-  m_Name: FMODStudioCache
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EventCache
-  EditorBanks:
-  - {fileID: 286442563730320417}
-  - {fileID: 7985266394684641298}
-  EditorEvents:
-  - {fileID: 2907422357147871016}
-  - {fileID: 7814982328357482477}
-  - {fileID: 3191397237733946774}
-  - {fileID: -8479314060803946477}
-  - {fileID: -6450112328772587533}
-  EditorParameters:
-  - {fileID: 6659027116337689556}
-  MasterBanks:
-  - {fileID: 7985266394684641298}
-  StringsBanks:
-  - {fileID: 286442563730320417}
-  cacheVersion: 131857
-<<<<<<< HEAD
-  cacheTime: 639042877015265578
-=======
-  cacheTime: 639042805346382748
->>>>>>> 6ea6329079000adc50010b36fce1d7401f724ec5
-  SerializableEventsDict:
-  - key: event:/Footstep
-    index: 0
-  - key: event:/Jump
-    index: 1
-  - key: event:/HolyWaterBreak
-    index: 2
-  - key: event:/Ambience
-    index: 3
-  - key: event:/WolfGrowl
-    index: 4
---- !u!114 &286442563730320417
+--- !u!114 &-5698178402443531953
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -137,44 +42,12 @@ MonoBehaviour:
   Path: CnD-Jam-Game-FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-<<<<<<< HEAD
   lastModified: 639042877015265578
-=======
-  lastModified: 639042805346382748
->>>>>>> 6ea6329079000adc50010b36fce1d7401f724ec5
   FileSizes:
   - Name: Desktop
     Value: 1096
   Exists: 1
---- !u!114 &2907422357147871016
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e14b1d0f626bda4ebc0fb8b91c96e8c, type: 3}
-  m_Name: event:/Footstep
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/Footstep
-  Guid:
-    Data1: -501050477
-    Data2: 1113085781
-    Data3: -636865638
-    Data4: 2074653873
-  Banks:
-  - {fileID: 7985266394684641298}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters:
-  - {fileID: -8220927927478557347}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &3191397237733946774
+--- !u!114 &-3885694445682196227
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -193,7 +66,7 @@ MonoBehaviour:
     Data3: -364976768
     Data4: -2129407244
   Banks:
-  - {fileID: 7985266394684641298}
+  - {fileID: 8106261129611594618}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -201,7 +74,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 25
   Length: 0
---- !u!114 &6659027116337689556
+--- !u!114 &-3654172439631779525
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -225,7 +98,102 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
---- !u!114 &7814982328357482477
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f848cca256359f947855162a9d5d4624, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EventCache
+  EditorBanks:
+  - {fileID: -5698178402443531953}
+  - {fileID: 8106261129611594618}
+  EditorEvents:
+  - {fileID: 4675138288019561386}
+  - {fileID: 1431362868243343829}
+  - {fileID: -9163210734565628488}
+  - {fileID: 4648949151507120840}
+  - {fileID: -3885694445682196227}
+  EditorParameters:
+  - {fileID: -3654172439631779525}
+  MasterBanks:
+  - {fileID: 8106261129611594618}
+  StringsBanks:
+  - {fileID: -5698178402443531953}
+  cacheVersion: 131857
+  cacheTime: 639042877015265578
+  SerializableEventsDict:
+  - key: event:/Jump
+    index: 0
+  - key: event:/Ambience
+    index: 1
+  - key: event:/WolfGrowl
+    index: 2
+  - key: event:/Footstep
+    index: 3
+  - key: event:/HolyWaterBreak
+    index: 4
+--- !u!114 &1431362868243343829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e14b1d0f626bda4ebc0fb8b91c96e8c, type: 3}
+  m_Name: event:/Ambience
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Ambience
+  Guid:
+    Data1: -1905173896
+    Data2: 1250496796
+    Data3: 1716447641
+    Data4: -1466450466
+  Banks:
+  - {fileID: 8106261129611594618}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &4648949151507120840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e14b1d0f626bda4ebc0fb8b91c96e8c, type: 3}
+  m_Name: event:/Footstep
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Footstep
+  Guid:
+    Data1: -501050477
+    Data2: 1113085781
+    Data3: -636865638
+    Data4: 2074653873
+  Banks:
+  - {fileID: 8106261129611594618}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 7488717901373655014}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &4675138288019561386
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -244,7 +212,7 @@ MonoBehaviour:
     Data3: -76691806
     Data4: 1768642312
   Banks:
-  - {fileID: 7985266394684641298}
+  - {fileID: 8106261129611594618}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -252,7 +220,31 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &7985266394684641298
+--- !u!114 &7488717901373655014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fcfab8a98b1d5d418d164e964555c81, type: 3}
+  m_Name: parameter:/Footstep/isLanding
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: isLanding
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2363747097
+    data2: 1906438993
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &8106261129611594618
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -267,11 +259,7 @@ MonoBehaviour:
   Path: CnD-Jam-Game-FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-<<<<<<< HEAD
   lastModified: 639042877015265578
-=======
-  lastModified: 639042805346382748
->>>>>>> 6ea6329079000adc50010b36fce1d7401f724ec5
   FileSizes:
   - Name: Desktop
     Value: 1343520
