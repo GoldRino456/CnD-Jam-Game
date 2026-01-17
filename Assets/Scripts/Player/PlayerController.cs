@@ -1,8 +1,13 @@
 using System;
 using System.Collections;
 using UnityEngine;
-
-[RequireComponent (typeof(PlayerMovement))]
+public enum Form
+{
+    Human = 0,
+    Middle = 1,
+    Werewolf = 2
+};
+[RequireComponent(typeof(PlayerMovement))]
 public class PlayerController : MonoBehaviour
 {
     private PlayerMovement _movement;
@@ -15,30 +20,26 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private int _infectionThreshold1 = 50;
     [SerializeField] private int _infectionThreshold2 = 75;
     public Action<int> OnInfectionProgressChanged;
-    private enum Form
-    {
-        Human = 0,
-        Middle = 1,
-        Werewolf = 2
-    };
+    private float _infectionTimer;
+    
+    [Header("Transformation Settings")]
     [SerializeField] private Form currentForm;
-    private Form _currentForm
+    public Form _currentForm
     {
         get => currentForm;
         set
         {
-            if(value != currentForm)
+            if (value != currentForm)
             {
                 transformParticle.Play();
                 anim.SetInteger("form", (int)value);
-                
+
                 currentForm = value;
             }
         }
     }
     [SerializeField] private ParticleSystem transformParticle;
     [SerializeField] private Animator anim;
-    private float _infectionTimer;
 
     [Header("Movement Settings")]
     [SerializeField] private PlayerMoveSettings _humanMoveSettings;
@@ -65,7 +66,7 @@ public class PlayerController : MonoBehaviour
 
     private void ProcessFormChange()
     {
-        switch(_infectionProgress)
+        switch (_infectionProgress)
         {
             case int n when (n >= _infectionThreshold2):
                 _currentForm = Form.Werewolf;
@@ -86,7 +87,7 @@ public class PlayerController : MonoBehaviour
     {
         _infectionTimer -= Time.deltaTime;
 
-        if(_infectionTimer < 0)
+        if (_infectionTimer < 0)
         {
             _infectionProgress += _infectionIncrement;
             OnInfectionProgressChanged?.Invoke(_infectionProgress);
