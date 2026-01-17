@@ -39,7 +39,7 @@ public class Enemy : MonoBehaviour, IDamagable, IMovebale, ITriggerCheckable
 
     StateMachine stateMachine;
     public EnemyPatrol enemyPatrol;
-    public EnemyAggro enemyChase;
+    public EnemyChase enemyChase;
     public EnemyIdleState enemyIdle;
 
     public Rigidbody2D enemyRb { get ; set ; }
@@ -52,7 +52,7 @@ public class Enemy : MonoBehaviour, IDamagable, IMovebale, ITriggerCheckable
     {
         stateMachine = new StateMachine();
         enemyPatrol = new EnemyPatrol(this, stateMachine);
-        enemyChase = new EnemyAggro(this, stateMachine);
+        enemyChase = new EnemyChase(this, stateMachine);
         enemyIdle = new EnemyIdleState(this, stateMachine);
     }
     void Start()
