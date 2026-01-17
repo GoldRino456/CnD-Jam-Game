@@ -5322,8 +5322,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerTracking
   trackingIndicator: {fileID: 4236033554129060093}
-  rotationSpeed: 10
-  isTrackingEnabled: 1
+  rotationSpeed: 5
+  isTrackingEnabled: 0
 --- !u!114 &3502248765952546622
 MonoBehaviour:
   m_ObjectHideFlags: 0

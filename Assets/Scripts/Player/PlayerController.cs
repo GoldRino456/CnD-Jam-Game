@@ -7,10 +7,11 @@ public enum Form
     Middle = 1,
     Werewolf = 2
 };
-[RequireComponent(typeof(PlayerMovement))]
+[RequireComponent(typeof(PlayerMovement), typeof(PlayerTracking))]
 public class PlayerController : MonoBehaviour
 {
     private PlayerMovement _movement;
+    private PlayerTracking _tracking;
 
     [Header("Infection Stats")]
     [SerializeField] private int _infectionProgress;
@@ -48,6 +49,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         _movement = GetComponent<PlayerMovement>();
+        _tracking = GetComponent<PlayerTracking>();
 
         _infectionProgress = _startingInfectionProgress;
         _infectionTimer = _infectionRate;
@@ -70,14 +72,17 @@ public class PlayerController : MonoBehaviour
         {
             case int n when (n >= _infectionThreshold2):
                 _currentForm = Form.Werewolf;
+                _tracking.SetTrackingEnabled(true);
                 _movement.UpdateMoveSettings(_werewolfMoveSettings);
                 break;
             case int n when (n >= _infectionThreshold1):
                 _currentForm = Form.Middle;
+                _tracking.SetTrackingEnabled(true);
                 _movement.UpdateMoveSettings(_humanMoveSettings);
                 break;
             default:
                 _currentForm = Form.Human;
+                _tracking.SetTrackingEnabled(false);
                 _movement.UpdateMoveSettings(_humanMoveSettings);
                 break;
         }
