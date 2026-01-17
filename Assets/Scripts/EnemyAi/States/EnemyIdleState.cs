@@ -16,6 +16,7 @@ public class EnemyIdleState : EnemyState
         stateTimer = 2f;
         hasChanged = false;
         enemy.MoveEnemy(Vector2.zero);
+        enemy.anim.SetTrigger("Idle");
     }
 
     public override void ExitState()
@@ -35,7 +36,18 @@ public class EnemyIdleState : EnemyState
             stateMachine.ChangeState(enemy.enemyPatrol);
         }
 
+        if(enemy.IsAggroed)
+        {
+            stateMachine.ChangeState(enemy.enemyChase);
+        }
+
         Debug.Log(stateTimer);
+        
+    }
+    public override void AnimationTrigger()
+    {
+        base.AnimationTrigger();
+
         
     }
 }

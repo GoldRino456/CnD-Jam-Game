@@ -13,6 +13,7 @@ public class EnemyChase : EnemyState
     public override void EnterState()
     {
         base.EnterState();
+        enemy.anim.SetTrigger("Moving");
     }
 
     public override void ExitState()
@@ -32,7 +33,13 @@ public class EnemyChase : EnemyState
         if(!enemy.IsAggroed)
         {
             stateMachine.ChangeState(enemy.enemyPatrol);
-            Debug.Log("Player Gone");
+            
+        }
+
+        if(enemy.IsAttacking)
+        {
+            stateMachine.ChangeState(enemy.enemyAttack);
+            Debug.Log("Attacking");
         }
 
         base.FrameUpdate();

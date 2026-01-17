@@ -18,6 +18,7 @@ public class EnemyPatrol : EnemyState
     {   
         direction = Vector2.right;
         decisionTimer = Random.Range(enemy.minDectime, enemy.maxDectime);
+        enemy.anim.SetTrigger("Moving");
         base.EnterState();
     }
 
@@ -41,7 +42,7 @@ public class EnemyPatrol : EnemyState
             decisionTimer = Random.Range(enemy.minDectime, enemy.maxDectime);
             enemy.MoveEnemy(Vector2.zero);
 
-            if(enemy.RandomChance(35f))
+            if(enemy.RandomChance(45f))
             {
                 stateMachine.ChangeState(enemy.enemyIdle);
             }
@@ -74,6 +75,7 @@ public class EnemyPatrol : EnemyState
     public override void AnimationTrigger()
     {
         base.AnimationTrigger();
+        
     }
 
     public override void PhysicsUpdate()

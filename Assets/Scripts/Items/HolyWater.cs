@@ -1,3 +1,4 @@
+using System.Data.Common;
 using UnityEngine;
 
 public class HolyWater : MonoBehaviour, IItem
@@ -39,7 +40,8 @@ public class HolyWater : MonoBehaviour, IItem
     }
 
     public void OnCollisionEnter2D(Collision2D collision) //Collision of Holy Water
-    {
+    {   
+        
         isThrown = false;
         FMODUnity.RuntimeManager.PlayOneShot(_splashSFX, transform.position);
         _projectileRb.linearVelocity = Vector2.zero;

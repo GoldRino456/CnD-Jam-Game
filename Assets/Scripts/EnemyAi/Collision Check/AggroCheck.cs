@@ -10,20 +10,54 @@ public class AggroCheck : MonoBehaviour
         enemy = GetComponent<Enemy>();
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    void Update()
     {
-        if(collision.gameObject == Player)
-        {
-            enemy.SetAgroStatus(true);
-            
-        }
+        AgroCheck();
+        AttackCheck();
     }
 
-    void OnTriggerExit2D(Collider2D collision)
+    private void AgroCheck()
     {
-        if(collision.gameObject == Player)
+        if (enemy.RaycastChaseSweep() == true)
+        {
+            enemy.SetAgroStatus(true);
+        }
+
+        else
         {
             enemy.SetAgroStatus(false);
         }
     }
+
+    private void AttackCheck()
+    {
+        if(enemy.RaycastAttackSweep() == true)
+        {
+            enemy.SetAttackStatus(true);
+        }
+
+        else
+        {
+            enemy.SetAttackStatus(false);
+        }
+    }
+
+
+
+    // void OnTriggerEnter2D(Collider2D collision)
+    // {
+    //     if(collision.gameObject == Player)
+    //     {
+    //         enemy.SetAgroStatus(true);
+
+    //     }
+    // }
+
+    // void OnTriggerExit2D(Collider2D collision)
+    // {
+    //     if(collision.gameObject == Player)
+    //     {
+    //         enemy.SetAgroStatus(false);
+    //     }
+    // }
 }
