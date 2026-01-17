@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
@@ -15,10 +17,18 @@ public class PlayerInventory : MonoBehaviour
     private bool isDirectionChange = false;
     private float itemUseTimer = 0f;
 
+    public Action<int> OnHolyWaterCountChanged;
+
     private void Awake()
     {
         currentHolyWater = startingHolyWater;
         playerRb = GetComponent<Rigidbody2D>();
+    }
+
+    private IEnumerator Start()
+    {
+        yield return new WaitForEndOfFrame(); //Ensures that this will invoke event once anything else has had time to subscribe
+        OnHolyWaterCountChanged?.Invoke(currentHolyWater);
     }
 
     public void Update()
@@ -69,6 +79,7 @@ public class PlayerInventory : MonoBehaviour
             newHolyWater.GetComponent<HolyWater>().OnThrown(playerRb.linearVelocity, isFacingLeft);
             itemUseTimer = itemUseCooldown;
             currentHolyWater--;
+            OnHolyWaterCountChanged?.Invoke(currentHolyWater);
         }
     }
 }
