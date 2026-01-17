@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _infectionRate = 2.5f;
     [SerializeField] private int _infectionThreshold1 = 50;
     [SerializeField] private int _infectionThreshold2 = 75;
+    public Action<int> OnInfectionProgressChanged;
     private enum Form
     {
         Human = 0,
@@ -51,6 +52,12 @@ public class PlayerController : MonoBehaviour
         _infectionTimer = _infectionRate;
     }
 
+    private IEnumerator Start()
+    {
+        yield return new WaitForEndOfFrame(); //Ensures that this will invoke event once anything else has had time to subscribe
+        OnInfectionProgressChanged?.Invoke(_infectionProgress);
+    }
+
     private void Update()
     {
         ProcessInfection();
@@ -82,6 +89,7 @@ public class PlayerController : MonoBehaviour
         if(_infectionTimer < 0)
         {
             _infectionProgress += _infectionIncrement;
+            OnInfectionProgressChanged?.Invoke(_infectionProgress);
             ResetInfectionTimer();
         }
 
@@ -92,6 +100,7 @@ public class PlayerController : MonoBehaviour
     {
         _infectionProgress += amount;
         _infectionProgress = Mathf.Clamp(_infectionProgress, 0, 100);
+        OnInfectionProgressChanged?.Invoke(_infectionProgress);
 
         ResetInfectionTimer();
 
