@@ -51,6 +51,33 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
+--- !u!114 &-6450112328772587533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e14b1d0f626bda4ebc0fb8b91c96e8c, type: 3}
+  m_Name: event:/WolfGrowl
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/WolfGrowl
+  Guid:
+    Data1: 1282619529
+    Data2: 1298194155
+    Data3: 1147107748
+    Data4: -611088799
+  Banks:
+  - {fileID: 7985266394684641298}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,6 +98,7 @@ MonoBehaviour:
   - {fileID: 7814982328357482477}
   - {fileID: 3191397237733946774}
   - {fileID: -8479314060803946477}
+  - {fileID: -6450112328772587533}
   EditorParameters:
   - {fileID: 6659027116337689556}
   MasterBanks:
@@ -78,7 +106,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 286442563730320417}
   cacheVersion: 131857
-  cacheTime: 639040875310251222
+  cacheTime: 639042388005602672
   SerializableEventsDict:
   - key: event:/Footstep
     index: 0
@@ -88,6 +116,8 @@ MonoBehaviour:
     index: 2
   - key: event:/Ambience
     index: 3
+  - key: event:/WolfGrowl
+    index: 4
 --- !u!114 &286442563730320417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,10 +133,10 @@ MonoBehaviour:
   Path: CnD-Jam-Game-FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639040875310251222
+  lastModified: 639042388005602672
   FileSizes:
   - Name: Desktop
-    Value: 1056
+    Value: 1096
   Exists: 1
 --- !u!114 &2907422357147871016
 MonoBehaviour:
@@ -229,8 +259,8 @@ MonoBehaviour:
   Path: CnD-Jam-Game-FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639040875310246424
+  lastModified: 639042388005592439
   FileSizes:
   - Name: Desktop
-    Value: 1303648
+    Value: 1343520
   Exists: 1
