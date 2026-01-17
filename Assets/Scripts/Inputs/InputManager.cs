@@ -3,11 +3,7 @@ using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
-    [SerializeField] private InputActionReference moveActionRef;
-    [SerializeField] private InputActionReference jumpActionRef;
-    [SerializeField] private InputActionReference crouchActionRef;
-    [SerializeField] private InputActionReference throwActionRef; //Throw Item
-    [SerializeField] private InputActionReference useActionRef; //Use Item
+    public static InputActionMap playerActionMap;
 
     public static Vector2 moveDirection;
     public static bool isCrouchHeld;
@@ -21,11 +17,12 @@ public class InputManager : MonoBehaviour
 
     private void Awake()
     {
-        moveAction = moveActionRef.action;
-        crouchAction = crouchActionRef.action;
-        jumpAction = jumpActionRef.action;
-        throwAction = throwActionRef.action;
-        useAction = useActionRef.action;
+        playerActionMap = InputSystem.actions.FindActionMap("Player"); //Store AM ref if we need to disable/enable later
+        moveAction = playerActionMap.FindAction("Move");
+        jumpAction = playerActionMap.FindAction("Jump");
+        crouchAction = playerActionMap.FindAction("Crouch");
+        throwAction = playerActionMap.FindAction("Throw");
+        useAction = playerActionMap.FindAction("Use");
     }
 
     private void Update()

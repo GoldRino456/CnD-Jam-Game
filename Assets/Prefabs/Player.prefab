@@ -4944,6 +4944,7 @@ GameObject:
   - component: {fileID: 3502248765952546622}
   - component: {fileID: 6313558120882625173}
   - component: {fileID: 7269171762240257457}
+  - component: {fileID: 7565601834618243818}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -5249,3 +5250,16 @@ MonoBehaviour:
   Parameter: isLanding
   TriggerEvent: 0
   Value: 0
+--- !u!114 &7565601834618243818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8577939331296363741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8ffb1a61f9ed4d42936274405771921, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FactionMember
+  _currentFaction: 1
