@@ -47,4 +47,9 @@ public class GameManager : MonoBehaviour
             Debug.Log("You won");
         }
     }
+
+    public void CheckLoseCondition()
+    {
+        Debug.Log("You lose");
+    }
 }

@@ -63,6 +63,10 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if(_infectionProgress >= 100 || _infectionProgress <= 0)
+        {
+            GameObject.FindWithTag("GameManager").GetComponent<GameManager>().CheckLoseCondition();
+        }
         ProcessInfection();
     }
 
