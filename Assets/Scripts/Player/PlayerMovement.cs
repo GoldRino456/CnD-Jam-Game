@@ -219,9 +219,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        HolyWater holyWater = collision.gameObject.GetComponent<HolyWater>();
-
-        if(holyWater)
+        if(collision.gameObject.TryGetComponent<HolyWater>(out _))
         {
             _damageFlash.CallCouroutine();
             FindAnyObjectByType<HitStop>().StopTime(0.2f);

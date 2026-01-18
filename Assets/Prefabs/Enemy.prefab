@@ -73,7 +73,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3017369308708070328}
   - component: {fileID: 9031099526949650953}
-  - component: {fileID: 1498475915678920421}
   m_Layer: 0
   m_Name: spritesheetPlagueDoc 1_12
   m_TagString: Untagged
@@ -155,28 +154,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!95 &1498475915678920421
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2459755892779787870}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 81b1c4c753466e74cac400189331d45d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4561014421115096951
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,6 +167,9 @@ GameObject:
   - component: {fileID: 8806213525794598753}
   - component: {fileID: 6272913120188998040}
   - component: {fileID: 5013532353061169651}
+  - component: {fileID: 5986500468805106909}
+  - component: {fileID: -2758856551197821141}
+  - component: {fileID: -2395997619126517165}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Enemy
@@ -286,8 +266,8 @@ MonoBehaviour:
   playerAttackResolution: 15
   holyWaterPrefab: {fileID: 3062180124263963466, guid: cd3bc38fb31f7c040a091593a660d71e, type: 3}
   throwSpawnPoint: {fileID: 3971631793657959809}
-
-  itemUseCooldown: 2
+  itemUseCooldown: 12
+  isThrown: 0
   itemUseTimer: 0
   anim: {fileID: 0}
 --- !u!114 &6272913120188998040
@@ -339,6 +319,54 @@ CapsuleCollider2D:
   m_Offset: {x: 0.019077301, y: 0.010603577}
   m_Size: {x: 0.86329746, y: 0.97879285}
   m_Direction: 0
+--- !u!95 &5986500468805106909
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4561014421115096951}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7a4bc70ed71081244a7d3c3b5ebca0ff, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-2758856551197821141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4561014421115096951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d61d1ece16530044b643a5c6b2e927a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HitStop
+--- !u!114 &-2395997619126517165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4561014421115096951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a99942d8cff8fe41ba71f19b4e07217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DamageFlash
+  _flashColor: {r: 1, g: 1, b: 1, a: 1}
+  _flashTime: 0.25
 --- !u!1 &6541235522092502556
 GameObject:
   m_ObjectHideFlags: 0
