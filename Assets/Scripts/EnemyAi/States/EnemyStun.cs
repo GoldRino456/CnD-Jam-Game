@@ -18,7 +18,7 @@ public class EnemyStun : EnemyState
     {
         base.EnterState();
         enemy.MoveEnemy(Vector2.zero);
-        enemy.anim.SetTrigger("Idle");
+        enemy.anim.SetBool("Idle", true);
     }
 
     public override void ExitState()
