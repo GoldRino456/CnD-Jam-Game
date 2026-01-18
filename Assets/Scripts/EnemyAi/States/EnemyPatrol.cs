@@ -18,13 +18,14 @@ public class EnemyPatrol : EnemyState
     {   
         direction = Vector2.right;
         decisionTimer = Random.Range(enemy.minDectime, enemy.maxDectime);
-        enemy.anim.SetTrigger("Moving");
+        enemy.anim.SetBool("Move", true);
         base.EnterState();
     }
 
     public override void ExitState()
     {
         base.ExitState();
+         enemy.anim.SetBool("Move", false);
     }
 
     public override void FrameUpdate()

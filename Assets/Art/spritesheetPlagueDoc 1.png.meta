@@ -1,0 +1,625 @@
+fileFormatVersion: 2
+guid: b98a9fb187181b540b6b30d830be7d74
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1698023654435231877
+    second: spritesheetPlagueDoc 1_0
+  - first:
+      213: -2960231649745512663
+    second: spritesheetPlagueDoc 1_1
+  - first:
+      213: -3663162506754680598
+    second: spritesheetPlagueDoc 1_2
+  - first:
+      213: -8784559714860501655
+    second: spritesheetPlagueDoc 1_3
+  - first:
+      213: -2131045578075490329
+    second: spritesheetPlagueDoc 1_4
+  - first:
+      213: -1422863977010761985
+    second: spritesheetPlagueDoc 1_5
+  - first:
+      213: 4885132366349939917
+    second: spritesheetPlagueDoc 1_6
+  - first:
+      213: -3559126092988143946
+    second: spritesheetPlagueDoc 1_7
+  - first:
+      213: 5202690418893193280
+    second: spritesheetPlagueDoc 1_8
+  - first:
+      213: -1249318098596125689
+    second: spritesheetPlagueDoc 1_9
+  - first:
+      213: 9210517016266151400
+    second: spritesheetPlagueDoc 1_10
+  - first:
+      213: 8055594443718676689
+    second: spritesheetPlagueDoc 1_11
+  - first:
+      213: 2092369877356217643
+    second: spritesheetPlagueDoc 1_12
+  - first:
+      213: 1625539060602156558
+    second: spritesheetPlagueDoc 1_13
+  - first:
+      213: -2769044468186997168
+    second: spritesheetPlagueDoc 1_14
+  - first:
+      213: -6609164033430690280
+    second: spritesheetPlagueDoc 1_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 500
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: spritesheetPlagueDoc 1_0
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 1499
+        width: 409
+        height: 470
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58892d66487909710800000000000000
+      internalID: 1698023654435231877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetPlagueDoc 1_1
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 1499
+        width: 411
+        height: 485
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 927dc00aff42be6d0800000000000000
+      internalID: -2960231649745512663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetPlagueDoc 1_2
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 1500
+        width: 484
+        height: 483
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae89b5ebb15d92dc0800000000000000
+      internalID: -3663162506754680598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetPlagueDoc 1_3
+      rect:
+        serializedVersion: 2
+        x: 1518
+        y: 1499
+        width: 446
+        height: 466
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 965788f5b79f61680800000000000000
+      internalID: -8784559714860501655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetPlagueDoc 1_4
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 999
+        width: 474
+        height: 485
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e7b4a666510d62e0800000000000000
+      internalID: -2131045578075490329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetPlagueDoc 1_5
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 999
+        width: 494
+        height: 494
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffee29660c8f04ce0800000000000000
+      internalID: -1422863977010761985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetPlagueDoc 1_6
+      rect:
+        serializedVersion: 2
+        x: 1516
+        y: 499
+        width: 465
+        height: 501
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc43d01310a7bc340800000000000000
+      internalID: 4885132366349939917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetPlagueDoc 1_7
+      rect:
+        serializedVersion: 2
+        x: 1524
+        y: 999
+        width: 476
+        height: 492
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b62e9ceca17b9ec0800000000000000
+      internalID: -3559126092988143946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetPlagueDoc 1_8
+      rect:
+        serializedVersion: 2
+        x: 2012
+        y: 1000
+        width: 484
+        height: 492
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0400576fe5ba33840800000000000000
+      internalID: 5202690418893193280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetPlagueDoc 1_9
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 1001
+        width: 500
+        height: 489
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70426b9fec789aee0800000000000000
+      internalID: -1249318098596125689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetPlagueDoc 1_10
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 495
+        width: 437
+        height: 498
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e51c384d6452df70800000000000000
+      internalID: 9210517016266151400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetPlagueDoc 1_11
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 499
+        width: 426
+        height: 495
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d0567857783bcf60800000000000000
+      internalID: 8055594443718676689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetPlagueDoc 1_12
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 0
+        width: 409
+        height: 472
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b258b8e4157990d10800000000000000
+      internalID: 2092369877356217643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetPlagueDoc 1_13
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 0
+        width: 410
+        height: 464
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e06b6b3c9231f8610800000000000000
+      internalID: 1625539060602156558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetPlagueDoc 1_14
+      rect:
+        serializedVersion: 2
+        x: 1052
+        y: 0
+        width: 411
+        height: 459
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05e147a2ab06299d0800000000000000
+      internalID: -2769044468186997168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetPlagueDoc 1_15
+      rect:
+        serializedVersion: 2
+        x: 1556
+        y: 0
+        width: 411
+        height: 462
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 816631514588744a0800000000000000
+      internalID: -6609164033430690280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetPlagueDoc 1_16
+      rect:
+        serializedVersion: 2
+        x: 2003
+        y: 492
+        width: 496
+        height: 507
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1dcce31721b55542a80ec41694dc937
+      internalID: 545327204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetPlagueDoc 1_17
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 491
+        width: 500
+        height: 509
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaf3d72b06a0058478d7ed8469c8a711
+      internalID: -414857357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetPlagueDoc 1_18
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 1000
+        width: 492
+        height: 497
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f896ac1bce592b54a980e755a6e2c00b
+      internalID: 709665999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheetPlagueDoc 1_19
+      rect:
+        serializedVersion: 2
+        x: 1064
+        y: 494
+        width: 414
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89e10dfd77747a0458abd11f11f678eb
+      internalID: 47169503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 704565dda35eb3a45a9f2d915e0273c9
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      spritesheetPlagueDoc 1_0: 1698023654435231877
+      spritesheetPlagueDoc 1_1: -2960231649745512663
+      spritesheetPlagueDoc 1_10: 9210517016266151400
+      spritesheetPlagueDoc 1_11: 8055594443718676689
+      spritesheetPlagueDoc 1_12: 2092369877356217643
+      spritesheetPlagueDoc 1_13: 1625539060602156558
+      spritesheetPlagueDoc 1_14: -2769044468186997168
+      spritesheetPlagueDoc 1_15: -6609164033430690280
+      spritesheetPlagueDoc 1_16: 545327204
+      spritesheetPlagueDoc 1_17: -414857357
+      spritesheetPlagueDoc 1_18: 709665999
+      spritesheetPlagueDoc 1_19: 47169503
+      spritesheetPlagueDoc 1_2: -3663162506754680598
+      spritesheetPlagueDoc 1_3: -8784559714860501655
+      spritesheetPlagueDoc 1_4: -2131045578075490329
+      spritesheetPlagueDoc 1_5: -1422863977010761985
+      spritesheetPlagueDoc 1_6: 4885132366349939917
+      spritesheetPlagueDoc 1_7: -3559126092988143946
+      spritesheetPlagueDoc 1_8: 5202690418893193280
+      spritesheetPlagueDoc 1_9: -1249318098596125689
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

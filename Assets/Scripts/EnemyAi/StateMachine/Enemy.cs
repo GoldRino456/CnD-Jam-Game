@@ -66,9 +66,8 @@ public class Enemy : MonoBehaviour, IDamagable, IMovebale, ITriggerCheckable, IA
     [SerializeField] protected GameObject holyWaterPrefab;
     [SerializeField] private Transform throwSpawnPoint;
     [SerializeField] private float itemUseCooldown = 12f;
-     private bool isThrowRequested;
-     private bool hasThrown;
-     private bool isDirectionChange = false;
+   
+    public bool isThrown = false;
     public float itemUseTimer = 0f;
 
     public bool IsAggroed { get ; set ; }
@@ -102,7 +101,7 @@ public class Enemy : MonoBehaviour, IDamagable, IMovebale, ITriggerCheckable, IA
         enemyAttack = new EnemyAttack(this, stateMachine);
 
         holyWater = FindAnyObjectByType<HolyWater>();
-        anim = GetComponentInChildren<Animator>();
+        anim = GetComponent<Animator>();
     }
     void Start()
     {
@@ -131,13 +130,13 @@ public class Enemy : MonoBehaviour, IDamagable, IMovebale, ITriggerCheckable, IA
         if(velocity.x < 0 && isFacingRight)
         {
         FlipSprite();
-        isDirectionChange = true;
+        
         }
 
         if(velocity.x > 0 && !isFacingRight)
         {
         FlipSprite();
-        isDirectionChange = true;
+        
         }
     }
 
@@ -216,8 +215,6 @@ public class Enemy : MonoBehaviour, IDamagable, IMovebale, ITriggerCheckable, IA
 
             Gizmos.DrawLine(transform.position, transform.position + Vector3.up * 1f + dir * playerAttackDistance);
         }
-
-
     }
 
     public void FlipSprite()
@@ -262,12 +259,13 @@ public class Enemy : MonoBehaviour, IDamagable, IMovebale, ITriggerCheckable, IA
     
     public void ProcessThrow()
     {
-       if(itemUseTimer <=0 && !hasThrown)
-        {
+       if(itemUseTimer <=0 ) //&& !isThrown
+        {   
+            isThrown = true;
             var newHolyWater = Instantiate(holyWaterPrefab, throwSpawnPoint.position, Quaternion.identity);
             newHolyWater.GetComponent<HolyWater>().OnThrown(enemyRb.linearVelocity, !isFacingRight);
             itemUseTimer = itemUseCooldown;
-            anim.SetTrigger("Attack");        
+                 
            
         }
     }

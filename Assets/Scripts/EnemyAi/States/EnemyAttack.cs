@@ -11,12 +11,14 @@ public class EnemyAttack : EnemyState
     public override void EnterState()
     {
         base.EnterState();
+         enemy.anim.SetBool("Attack", true);
         
     }
 
     public override void ExitState()
     {
         base.ExitState();
+        enemy.anim.SetBool("Attack", false);
     }
 
     public override void FrameUpdate()
@@ -31,6 +33,11 @@ public class EnemyAttack : EnemyState
 
         
         enemy.ProcessThrow();
+        // if(enemy.isThrown == true)
+        // {
+        //    
+        //     enemy.isThrown = false;
+        // }
         
     }
 

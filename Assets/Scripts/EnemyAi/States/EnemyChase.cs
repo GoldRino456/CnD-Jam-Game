@@ -13,12 +13,13 @@ public class EnemyChase : EnemyState
     public override void EnterState()
     {
         base.EnterState();
-        enemy.anim.SetTrigger("Moving");
+        enemy.anim.SetBool("Run", true);
     }
 
     public override void ExitState()
     {
         base.ExitState();
+        enemy.anim.SetBool("Run", false);
     }
 
     public override void FrameUpdate()
