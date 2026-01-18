@@ -234,7 +234,7 @@ public class EnemyTest : MonoBehaviour
                 _currentCoroutine = StartCoroutine(SuspicionState());
             }
         }
-        else if ((!_active && _currentState != State.Idle) || _currentCoroutine == null)
+        else if ((!_active && _currentState != State.Idle) || (_currentCoroutine == null && _currentState != State.Aggro))
         {
             if (_currentCoroutine != null) StopCoroutine(_currentCoroutine);
 

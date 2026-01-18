@@ -267,7 +267,7 @@ MonoBehaviour:
   activeRange: 30
   edgeDetectDistance: 1
   edgeDetectHeight: 1
-  playerDetectDistance: 7.5
+  playerDetectDistance: 10
   playerDetectResolution: 30
   playerLayer:
     serializedVersion: 2
@@ -303,9 +303,9 @@ MonoBehaviour:
   damageRadius: 0.5
   infectionDamage: 10
   pounceArcTimeStep: 0.05
-  pounceArcMaxTime: 1.25
+  pounceArcMaxTime: 2.25
   pounceArcRadius: 0.2
-  minPounceForwardDistance: 0
+  minPounceForwardDistance: 0.05
 --- !u!95 &6340060795648200533
 Animator:
   serializedVersion: 7

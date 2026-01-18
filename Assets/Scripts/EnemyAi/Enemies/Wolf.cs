@@ -100,12 +100,15 @@ public class Wolf : EnemyTest
     private bool CanPounceToSafeLanding()
     {
         Vector2 prevPos = transform.position;
+        Vector2 velocity = GetPounceImpulse();
 
         for (float t = pounceArcTimeStep; t <= pounceArcMaxTime; t += pounceArcTimeStep)
         {
-            Vector2 nextPos =
-                (Vector2)transform.position + (rb.linearVelocity + GetPounceImpulse() / rb.mass) * (t + 0.5f) * (Physics2D.gravity.y * rb.gravityScale) * t * t * Vector2.up;
+            velocity += Physics2D.gravity * pounceArcTimeStep;
 
+            velocity /= 1 + rb.linearDamping * pounceArcTimeStep;
+
+            Vector2 nextPos = prevPos + (velocity * pounceArcTimeStep);
             Vector2 delta = nextPos - prevPos;
 
             if (delta.magnitude > 0f)
@@ -138,7 +141,7 @@ public class Wolf : EnemyTest
 
     private Vector2 GetPounceImpulse()
     {
-        return new Vector2(_facingDirection * pounceForce, pounceForce / 2f);
+        return new Vector2(_facingDirection * pounceForce, pounceForce / 4f);
     }
 
     private void OnCollisionEnter2D(Collision2D other)
