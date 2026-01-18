@@ -57,7 +57,8 @@ public class HolyWater : MonoBehaviour, IItem
 
         if(collision.gameObject.tag == "Player")
         {
-
+            var controller = collision.gameObject.GetComponent<PlayerController>();
+            controller.ChangeInfection(-infectionCureAmount);
         }
 
         if(collision.gameObject.tag == "Enemy")
@@ -86,10 +87,10 @@ public class HolyWater : MonoBehaviour, IItem
     {
         //Trigger any vfx/sfx
 
-        if(user.CompareTag("player"))
+        if(user.CompareTag("Player"))
         {
             var controller = user.GetComponent<PlayerController>();
-            controller.ChangeInfection(infectionCureAmount);
+            controller.ChangeInfection(-infectionCureAmount);
         }
     }
 
