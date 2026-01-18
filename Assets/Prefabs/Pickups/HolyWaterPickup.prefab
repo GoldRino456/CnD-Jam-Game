@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3062180124263963466
+--- !u!1 &8935360970527761551
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,25 +8,25 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7316034883670872576}
-  - component: {fileID: 2835108253150348741}
-  - component: {fileID: 3721607565027396538}
-  - component: {fileID: 3458692105890133554}
-  - component: {fileID: 3048243845418289096}
+  - component: {fileID: 2840218237703344926}
+  - component: {fileID: 2028189672989821652}
+  - component: {fileID: 8604619850617557498}
+  - component: {fileID: 531045806246160205}
+  - component: {fileID: 6454366279616889702}
   m_Layer: 0
-  m_Name: HolyWater
+  m_Name: HolyWaterPickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7316034883670872576
+--- !u!4 &2840218237703344926
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3062180124263963466}
+  m_GameObject: {fileID: 8935360970527761551}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -35,14 +35,14 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &2835108253150348741
+--- !u!212 &2028189672989821652
 SpriteRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3062180124263963466}
+  m_GameObject: {fileID: 8935360970527761551}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -94,13 +94,13 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!58 &3721607565027396538
+--- !u!58 &8604619850617557498
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3062180124263963466}
+  m_GameObject: {fileID: 8935360970527761551}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -124,20 +124,20 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 1
---- !u!50 &3458692105890133554
+--- !u!50 &531045806246160205
 Rigidbody2D:
   serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3062180124263963466}
+  m_GameObject: {fileID: 8935360970527761551}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -145,7 +145,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -157,20 +157,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &3048243845418289096
+--- !u!114 &6454366279616889702
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3062180124263963466}
+  m_GameObject: {fileID: 8935360970527761551}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0c7634968244a044d95051bf706c5fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HolyWater
-  _projectileCollider: {fileID: 3721607565027396538}
-  _projectileRb: {fileID: 3458692105890133554}
+  _projectileCollider: {fileID: 8604619850617557498}
+  _projectileRb: {fileID: 531045806246160205}
   infectionCureAmount: 35
   pickupAmount: 2
   _splashSFX:
@@ -180,5 +180,5 @@ MonoBehaviour:
       Data3: -364976768
       Data4: -2129407244
     Path: event:/HolyWaterBreak
-  _visualRotationSpeed: 10
+  _visualRotationSpeed: 5
   throwForce: 5

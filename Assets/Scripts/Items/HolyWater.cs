@@ -10,6 +10,7 @@ public class HolyWater : MonoBehaviour, IItem
     [SerializeField] private int infectionCureAmount = 35;
     [SerializeField] private int pickupAmount = 2;
     [SerializeField] private FMODUnity.EventReference _splashSFX;
+    [SerializeField] private float _visualRotationSpeed = 5f;
 
     [Header("Throw Settings")]
     [SerializeField] private float throwForce = 5f;
@@ -24,7 +25,7 @@ public class HolyWater : MonoBehaviour, IItem
             float angleRad = Mathf.Atan2(_projectileRb.linearVelocity.y, _projectileRb.linearVelocity.x);
             float angleDeg = (180 / Mathf.PI) * angleRad - 90;
 
-            transform.rotation = Quaternion.Euler(0, 0, angleDeg);
+            transform.rotation = Quaternion.Euler(0, 0, angleDeg * _visualRotationSpeed);
         }
     }
 
