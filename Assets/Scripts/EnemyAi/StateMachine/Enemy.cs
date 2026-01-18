@@ -84,6 +84,7 @@ public class Enemy : MonoBehaviour, IDamagable, IMovebale, ITriggerCheckable, IA
     public EnemyChase enemyChase;
     public EnemyIdleState enemyIdle;
     public EnemyAttack enemyAttack;
+    public EnemyStun enemyStun;
 
     [Space]
 
@@ -100,6 +101,7 @@ public class Enemy : MonoBehaviour, IDamagable, IMovebale, ITriggerCheckable, IA
         enemyChase = new EnemyChase(this, stateMachine);
         enemyIdle = new EnemyIdleState(this, stateMachine);
         enemyAttack = new EnemyAttack(this, stateMachine);
+        enemyStun = new EnemyStun(this, stateMachine);
 
         holyWater = FindAnyObjectByType<HolyWater>();
         anim = GetComponentInChildren<Animator>();
@@ -126,6 +128,17 @@ public class Enemy : MonoBehaviour, IDamagable, IMovebale, ITriggerCheckable, IA
     {
         stateMachine.currentState.PhysicsUpdate();
     }
+
+    public void Stun(float stunTime)
+    {
+        enemyStun.SetStunTime(stunTime); //Reset stun timer
+        
+        if(stateMachine.currentState != enemyStun)
+        {
+            stateMachine.ChangeState(enemyStun); //Change to stun state if not already there
+        }
+    }
+
     public void CheckIsFacingRight(Vector2 velocity)
     {
         if(velocity.x < 0 && isFacingRight)
@@ -152,6 +165,8 @@ public class Enemy : MonoBehaviour, IDamagable, IMovebale, ITriggerCheckable, IA
     public bool IsTherGround() => Physics2D.CircleCast(groundCheckPosition.position, radius, Vector2.down, 0f, IsThatGround);
     public bool RaycastChaseSweep()
     {
+        if (stateMachine.currentState == enemyStun) { return false; } //Ignore player while stunned
+
         for (int i = 0; i < playerDetectResolution; i++)
         {
             float angle = Mathf.Lerp(-45f, 45f, (float)i / (playerDetectResolution - 1));
@@ -171,6 +186,8 @@ public class Enemy : MonoBehaviour, IDamagable, IMovebale, ITriggerCheckable, IA
 
     public bool RaycastAttackSweep()
     {
+        if(stateMachine.currentState == enemyStun) { return false; } //Ignore player while stunned
+
         for (int i = 0; i < playerAttackResolution; i++)
         {
             float angle = Mathf.Lerp(-45f, 45f, (float)i / (playerAttackResolution - 1));

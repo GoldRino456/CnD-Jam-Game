@@ -14,6 +14,7 @@ public class HolyWater : MonoBehaviour, IItem
 
     [Header("Throw Settings")]
     [SerializeField] private float throwForce = 5f;
+    [SerializeField] private float stunTime = 4f;
 
     public int PickupAmount { get => pickupAmount; }
     private bool isThrown = false;
@@ -50,10 +51,29 @@ public class HolyWater : MonoBehaviour, IItem
 
     public void OnCollisionEnter2D(Collision2D collision) //Collision of Holy Water
     {   
-        
         isThrown = false;
         FMODUnity.RuntimeManager.PlayOneShot(_splashSFX, transform.position);
         _projectileRb.linearVelocity = Vector2.zero;
+
+        if(collision.gameObject.tag == "Player")
+        {
+
+        }
+
+        if(collision.gameObject.tag == "Enemy")
+        {
+            if(collision.gameObject.TryGetComponent<EnemyTest>(out var wolf))
+            {
+                Debug.Log("Applying wolf stun.");
+                wolf.Stun(stunTime);
+            }
+            else if(collision.gameObject.TryGetComponent<Enemy>(out var plagueDoctor))
+            {
+                Debug.Log("Applying plague doctor stun.");
+                plagueDoctor.Stun(stunTime);
+            }
+        }
+
         Destroy(gameObject);
     }
 

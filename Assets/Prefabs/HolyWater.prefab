@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3721607565027396538}
   - component: {fileID: 3458692105890133554}
   - component: {fileID: 3048243845418289096}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HolyWater
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ CircleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -182,3 +182,4 @@ MonoBehaviour:
     Path: event:/HolyWaterBreak
   _visualRotationSpeed: 10
   throwForce: 5
+  stunTime: 4
