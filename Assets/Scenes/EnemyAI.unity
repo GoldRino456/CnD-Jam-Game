@@ -941,6 +941,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 8806213525794598753, guid: a892c9c86d1140446863954d30469b39, type: 3}
+      propertyPath: itemUseCooldown
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8917928526234164336, guid: a892c9c86d1140446863954d30469b39, type: 3}
       propertyPath: m_FlipX
       value: 1

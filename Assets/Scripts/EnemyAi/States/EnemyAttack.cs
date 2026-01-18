@@ -7,9 +7,11 @@ public class EnemyAttack : EnemyState
         
     }
 
+
     public override void EnterState()
     {
         base.EnterState();
+        
     }
 
     public override void ExitState()
@@ -25,8 +27,11 @@ public class EnemyAttack : EnemyState
         {
             stateMachine.ChangeState(enemy.enemyChase);
         }
+        enemy.ProcessItemTimer();
 
+        
         enemy.ProcessThrow();
+        
     }
 
     public override void PhysicsUpdate()
@@ -38,4 +43,5 @@ public class EnemyAttack : EnemyState
     {
         base.AnimationTrigger();
     }
+    
  }
