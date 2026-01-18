@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3721607565027396538}
   - component: {fileID: 3458692105890133554}
   - component: {fileID: 3048243845418289096}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HolyWater
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.36, y: 0.36, z: 0.36}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -84,7 +84,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 6761164967045977113, guid: 12b77ffeeaa4de6429d0c697c6c3a86c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -110,7 +110,7 @@ CircleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -129,7 +129,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Radius: 1
 --- !u!50 &3458692105890133554
 Rigidbody2D:
   serializedVersion: 5
@@ -171,8 +171,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HolyWater
   _projectileCollider: {fileID: 3721607565027396538}
   _projectileRb: {fileID: 3458692105890133554}
-  _aoeRadius: {fileID: 0}
   infectionCureAmount: 35
+  pickupAmount: 2
   _splashSFX:
     Guid:
       Data1: -883155763
@@ -180,5 +180,6 @@ MonoBehaviour:
       Data3: -364976768
       Data4: -2129407244
     Path: event:/HolyWaterBreak
+  _visualRotationSpeed: 10
   throwForce: 5
-  throwDistance: 2
+  stunTime: 4

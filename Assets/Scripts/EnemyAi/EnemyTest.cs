@@ -16,7 +16,7 @@ public class EnemyTest : MonoBehaviour
     [Header("Movement Settings")]
     [SerializeField] protected float deceleration = 10f;
     [SerializeField] protected float acceleration = 10f;
-    [SerializeField] private float patrolSpeed = 3f;
+    [SerializeField] protected float patrolSpeed = 3f;
     [SerializeField] protected float chaseSpeed = 6f;
 
     [Header("Idle Settings")]
@@ -35,16 +35,21 @@ public class EnemyTest : MonoBehaviour
     [Header("Misc References")]
     [SerializeField] protected Rigidbody2D rb;
     [SerializeField] protected SpriteRenderer spRen;
-    [SerializeField] protected Animator anim; protected bool _active;
+    [SerializeField] protected Animator anim; 
+    protected bool _active;
     private bool _inSight;
+    protected bool _isStunned;
+    private float _stunTimer;
     protected float _facingDirection;
     protected Vector2 _lastPlayerPosition;
+
     protected enum State
     {
         Idle = 0,
         Patrol = 1,
         Suspicious = 2,
-        Aggro = 3
+        Aggro = 3,
+        Stun = 4
     }
     [SerializeField] protected State _currentState;
     private Coroutine _currentCoroutine;
@@ -57,6 +62,31 @@ public class EnemyTest : MonoBehaviour
         _facingDirection = Random.value < 0.5f ? -1f : 1f;
         spRen.flipX = _facingDirection == 1f ? true : false;
     }
+
+    private IEnumerator StunState()
+    {
+        _currentState = State.Stun;
+        anim.SetBool("moving", false);
+
+        yield return Stop();
+
+        yield return new WaitUntil(() => _stunTimer < 0);
+        _isStunned = false;
+        _currentCoroutine = StartCoroutine(PatrolState());
+    }
+
+    public void Stun(float stunTime)
+    {
+        Debug.Log("Applying wolf stun.");
+        _stunTimer = stunTime;
+        _isStunned = true;
+        _inSight = false;
+        suspicionSettings.noticedPlayer = 0;
+        suspicionSettings.suspicion = 0;
+        StopCoroutine(_currentCoroutine);
+        _currentCoroutine = StartCoroutine(StunState());
+    }
+
     private IEnumerator IdleState()
     {
         var cols = Physics2D.OverlapCircleAll(transform.position, activeRange, playerLayer);
@@ -180,6 +210,12 @@ public class EnemyTest : MonoBehaviour
 
     private void Update()
     {
+        if(_isStunned)
+        {
+            _stunTimer -= Time.deltaTime;
+            return; //Prevent changing to any other state until stun wears off
+        }
+
         if (_active && (int)_currentState < 2)
         {
             if (RaycastSweep() && !_inSight)
@@ -198,7 +234,7 @@ public class EnemyTest : MonoBehaviour
                 _currentCoroutine = StartCoroutine(SuspicionState());
             }
         }
-        else if ((!_active && _currentState != State.Idle) || _currentCoroutine == null)
+        else if ((!_active && _currentState != State.Idle) || (_currentCoroutine == null && _currentState != State.Aggro))
         {
             if (_currentCoroutine != null) StopCoroutine(_currentCoroutine);
 

@@ -192,7 +192,7 @@ GameObject:
   - component: {fileID: 5013532353061169651}
   m_Layer: 7
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -286,6 +286,7 @@ MonoBehaviour:
   playerAttackResolution: 15
   holyWaterPrefab: {fileID: 3062180124263963466, guid: cd3bc38fb31f7c040a091593a660d71e, type: 3}
   throwSpawnPoint: {fileID: 3971631793657959809}
+
   itemUseCooldown: 2
   itemUseTimer: 0
   anim: {fileID: 0}

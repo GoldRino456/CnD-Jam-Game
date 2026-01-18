@@ -9,6 +9,9 @@ public class PlayerInventory : MonoBehaviour
     [SerializeField] private int startingHolyWater = 5;
     [SerializeField] private float itemUseCooldown = 1f;
 
+    [SerializeField] private PlayerPickup _pickUpLogic;
+    [SerializeField] private float humanPickupRadius = 0.5f;
+
     private int currentHolyWater;
 
     private Rigidbody2D playerRb;
@@ -18,7 +21,6 @@ public class PlayerInventory : MonoBehaviour
     private float itemUseTimer = 0f;
 
     public Action<int> OnHolyWaterCountChanged;
-
     private void Awake()
     {
         currentHolyWater = startingHolyWater;
@@ -27,6 +29,8 @@ public class PlayerInventory : MonoBehaviour
 
     private IEnumerator Start()
     {
+        _pickUpLogic.OnHolyWaterPickup += GainHolyWater;
+
         yield return new WaitForEndOfFrame(); //Ensures that this will invoke event once anything else has had time to subscribe
         OnHolyWaterCountChanged?.Invoke(currentHolyWater);
     }
@@ -81,5 +85,11 @@ public class PlayerInventory : MonoBehaviour
             currentHolyWater--;
             OnHolyWaterCountChanged?.Invoke(currentHolyWater);
         }
+    }
+
+    private void GainHolyWater(int amount)
+    {
+        currentHolyWater += amount;
+        OnHolyWaterCountChanged?.Invoke(currentHolyWater);
     }
 }

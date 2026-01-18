@@ -3,17 +3,20 @@ using UnityEngine;
 
 public class HolyWater : MonoBehaviour, IItem
 {
-    public string Name { get; } = "Holy Water";
+    public ItemType Type { get; } = ItemType.HolyWater;
 
     [SerializeField] private CircleCollider2D _projectileCollider;
     [SerializeField] private Rigidbody2D _projectileRb;
-    [SerializeField] private CircleCollider2D _aoeRadius; //Should be Trigger
     [SerializeField] private int infectionCureAmount = 35;
+    [SerializeField] private int pickupAmount = 2;
     [SerializeField] private FMODUnity.EventReference _splashSFX;
+    [SerializeField] private float _visualRotationSpeed = 5f;
 
     [Header("Throw Settings")]
     [SerializeField] private float throwForce = 5f;
+    [SerializeField] private float stunTime = 4f;
 
+    public int PickupAmount { get => pickupAmount; }
     private bool isThrown = false;
 
     private void FixedUpdate()
@@ -23,13 +26,20 @@ public class HolyWater : MonoBehaviour, IItem
             float angleRad = Mathf.Atan2(_projectileRb.linearVelocity.y, _projectileRb.linearVelocity.x);
             float angleDeg = (180 / Mathf.PI) * angleRad - 90;
 
-            transform.rotation = Quaternion.Euler(0, 0, angleDeg);
+            transform.rotation = Quaternion.Euler(0, 0, angleDeg * _visualRotationSpeed);
         }
     }
 
-    public void OnPickup()
+    public bool OnPickup()
     {
-        
+        if(isThrown)
+        {
+            return false; //Tossed, ignore pickup so player can get damaged
+        }
+        else
+        {
+            return true;
+        }
     }
 
     public void OnThrown(Vector2 initialVelocity, bool isThrownLeft)
@@ -41,16 +51,35 @@ public class HolyWater : MonoBehaviour, IItem
 
     public void OnCollisionEnter2D(Collision2D collision) //Collision of Holy Water
     {   
-        
         isThrown = false;
         FMODUnity.RuntimeManager.PlayOneShot(_splashSFX, transform.position);
         _projectileRb.linearVelocity = Vector2.zero;
+
+        if(collision.gameObject.tag == "Player")
+        {
+
+        }
+
+        if(collision.gameObject.tag == "Enemy")
+        {
+            if(collision.gameObject.TryGetComponent<EnemyTest>(out var wolf))
+            {
+                Debug.Log("Applying wolf stun.");
+                wolf.Stun(stunTime);
+            }
+            else if(collision.gameObject.TryGetComponent<Enemy>(out var plagueDoctor))
+            {
+                Debug.Log("Applying plague doctor stun.");
+                plagueDoctor.Stun(stunTime);
+            }
+        }
+
         Destroy(gameObject);
     }
 
     public void OnTriggerEnter2D(Collider2D collision) //AOE Effect Range
     {
-        
+       
     }
 
     public void OnUse(GameObject user)
