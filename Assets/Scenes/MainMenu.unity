@@ -455,16 +455,16 @@ RectTransform:
   m_GameObject: {fileID: 288111056}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.1238, y: 1.1238, z: 1.1238}
+  m_LocalScale: {x: 1.2529247, y: 1.2529247, z: 1.2529247}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1324079369}
   - {fileID: 850806125}
   m_Father: {fileID: 1411000189}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -367, y: -43.596992}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 101.70001, y: -43.771}
   m_SizeDelta: {x: 163.2622, y: 42.6189}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &288111058
@@ -2233,17 +2233,17 @@ RectTransform:
   m_GameObject: {fileID: 1219375861}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.1238, y: 1.1238, z: 1.1238}
+  m_LocalScale: {x: 1.2529247, y: 1.2529247, z: 1.2529247}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 994178696}
   - {fileID: 585121602}
   m_Father: {fileID: 1411000189}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -367, y: 44.834007}
-  m_SizeDelta: {x: 163.2622, y: 42.6189}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 101.7, y: 54.821}
+  m_SizeDelta: {x: 163.2622, y: 42.618896}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1219375863
 Animator:
@@ -2467,16 +2467,16 @@ RectTransform:
   m_GameObject: {fileID: 1322517708}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.1238, y: 1.1238, z: 1.1238}
+  m_LocalScale: {x: 1.2529247, y: 1.2529247, z: 1.2529247}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1091817845}
   - {fileID: 331215754}
   m_Father: {fileID: 1411000189}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -367, y: -129}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 101.70001, y: -138.99}
   m_SizeDelta: {x: 163.2622, y: 42.6189}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1322517710
@@ -3084,10 +3084,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ReferenceResolution: {x: 1080, y: 1920}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
