@@ -2,7 +2,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
-    private int HowManyIngredientsArePickedUp = 0;
+    public int HowManyIngredientsArePickedUp = 0;
+    public int IngredientsNeededForWin = 3;
     public static GameManager Instance;
     private void Awake()
     {
@@ -40,12 +41,15 @@ public class GameManager : MonoBehaviour
         HowManyIngredientsArePickedUp++;
     }
 
-    public void CheckWinCondition()
+    public bool CheckWinCondition()
     {
-        if (HowManyIngredientsArePickedUp == 3)
+        if (HowManyIngredientsArePickedUp == IngredientsNeededForWin)
         {
             Debug.Log("You won");
+            return true;
         }
+
+        return false;
     }
 
     public void CheckLoseCondition()

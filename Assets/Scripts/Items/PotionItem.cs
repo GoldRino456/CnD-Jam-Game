@@ -9,6 +9,7 @@ public class PotionItem : MonoBehaviour, IItem, ITrackable
 
     public Sprite PotionSprite { get => _potionSpriteRenderer.sprite; }
     public int TrackableId { get => _trackableId; set => _trackableId = value; }
+    public bool IsAltar { get; } = false;
 
     public event Action<int> OnDestroyCalled;
 

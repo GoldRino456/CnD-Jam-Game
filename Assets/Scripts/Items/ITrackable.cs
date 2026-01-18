@@ -8,4 +8,5 @@ public interface ITrackable
     event Action<int> OnDestroyCalled;
     public Vector3 GetWorldLocation();
     public GameObject GetGameObjectRef();
+    public bool IsAltar { get; }
 }
