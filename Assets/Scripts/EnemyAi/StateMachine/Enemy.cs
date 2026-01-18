@@ -42,6 +42,7 @@ public class Enemy : MonoBehaviour, IDamagable, IMovebale, ITriggerCheckable, IA
     [SerializeField] public float maxDectime;
     protected Vector2 _lastPlayerPosition;
     public HolyWater holyWater;
+    DamageFlash damageFlash;
     #endregion
 
     [Space]
@@ -91,7 +92,13 @@ public class Enemy : MonoBehaviour, IDamagable, IMovebale, ITriggerCheckable, IA
     
     public Animator anim;
     public Rigidbody2D enemyRb { get ; set ; }
+
     
+    [Space]
+    [Header("Health Settings")]
+    float justhereforspace;
+    public float maxHealth { get; set; } = 5f;
+    public float currentHealth { get; set; }
 
     void Awake()
     {
@@ -110,6 +117,9 @@ public class Enemy : MonoBehaviour, IDamagable, IMovebale, ITriggerCheckable, IA
         enemyRb = GetComponent<Rigidbody2D>();
 
         stateMachine.InitializeState(enemyPatrol);
+        damageFlash = GetComponent<DamageFlash>();
+
+        currentHealth = maxHealth;
         
     }
 
@@ -118,7 +128,10 @@ public class Enemy : MonoBehaviour, IDamagable, IMovebale, ITriggerCheckable, IA
     {
         stateMachine.currentState.FrameUpdate();
 
-        
+         if(currentHealth <=0)
+        {
+            Die();
+        }
       
        
     }
@@ -261,7 +274,7 @@ public class Enemy : MonoBehaviour, IDamagable, IMovebale, ITriggerCheckable, IA
     public void ProcessItemTimer()
     {
         itemUseTimer -= Time.deltaTime;
-        Debug.Log(itemUseTimer);
+       
 
         if (itemUseTimer < 0f)
         {
@@ -285,6 +298,33 @@ public class Enemy : MonoBehaviour, IDamagable, IMovebale, ITriggerCheckable, IA
                  
            
         }
+    }
+
+    public void Damage(float damageAmount)
+    {
+        currentHealth -= damageAmount;
+        Debug.Log(currentHealth);
+       
+    }
+
+    public void Die()
+    {
+        Destroy(this.gameObject);
+    }
+    #endregion
+
+    #region Collision Enter
+    void OnCollisionEnter2D(Collision2D collision)
+    {   
+
+        holyWater = collision.gameObject.GetComponent<HolyWater>();
+        if(holyWater)
+        {
+            Damage(1f);
+            damageFlash.CallCouroutine();
+            FindAnyObjectByType<HitStop>().StopTime(0.2f);
+        }
+        
     }
     #endregion
 }

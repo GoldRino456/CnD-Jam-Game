@@ -29,12 +29,14 @@ public class PlayerMovement : MonoBehaviour
 
     private float _time;
 
+    DamageFlash _damageFlash;
+
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
         _col = GetComponent<CapsuleCollider2D>();
         _detectionCollider.radius = _stats.DetectionRadius;
-
+        _damageFlash = GetComponent<DamageFlash>();
         _cachedQueryStartInColliders = Physics2D.queriesStartInColliders;
     }
 
@@ -213,4 +215,16 @@ public class PlayerMovement : MonoBehaviour
         if (_stats == null) Debug.LogWarning("Please assign a ScriptableStats asset to the Player Controller's Stats slot", this);
     }
 #endif
+
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        HolyWater holyWater = collision.gameObject.GetComponent<HolyWater>();
+
+        if(holyWater)
+        {
+            _damageFlash.CallCouroutine();
+            FindAnyObjectByType<HitStop>().StopTime(0.2f);
+        }
+    }
 }
