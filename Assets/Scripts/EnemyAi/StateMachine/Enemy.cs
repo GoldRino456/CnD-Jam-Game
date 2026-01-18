@@ -65,10 +65,11 @@ public class Enemy : MonoBehaviour, IDamagable, IMovebale, ITriggerCheckable, IA
     [SerializeField] private float playerAttackResolution = 15f;
     [SerializeField] protected GameObject holyWaterPrefab;
     [SerializeField] private Transform throwSpawnPoint;
-    [SerializeField] private float itemUseCooldown = 1f;
+    [SerializeField] private float itemUseCooldown = 12f;
      private bool isThrowRequested;
+     private bool hasThrown;
      private bool isDirectionChange = false;
-    private float itemUseTimer = 0f;
+    public float itemUseTimer = 0f;
 
     public bool IsAggroed { get ; set ; }
     public bool IsAttacking { get; set; }
@@ -116,8 +117,8 @@ public class Enemy : MonoBehaviour, IDamagable, IMovebale, ITriggerCheckable, IA
     {
         stateMachine.currentState.FrameUpdate();
 
-        ProcessItemTimer();
-        Debug.Log(isDirectionChange);
+        
+      
        
     }
 
@@ -243,23 +244,31 @@ public class Enemy : MonoBehaviour, IDamagable, IMovebale, ITriggerCheckable, IA
 
 
     #region Plague Doctor Attack
-
-    private void ProcessItemTimer()
+    public void ProcessItemTimer()
     {
         itemUseTimer -= Time.deltaTime;
+        Debug.Log(itemUseTimer);
 
         if (itemUseTimer < 0f)
         {
             itemUseTimer = 0f;
+            
         }
+
+       
+
+
     }
+    
     public void ProcessThrow()
     {
-        if (itemUseTimer <= 0)
+       if(itemUseTimer <=0 && !hasThrown)
         {
             var newHolyWater = Instantiate(holyWaterPrefab, throwSpawnPoint.position, Quaternion.identity);
             newHolyWater.GetComponent<HolyWater>().OnThrown(enemyRb.linearVelocity, !isFacingRight);
             itemUseTimer = itemUseCooldown;
+            anim.SetTrigger("Attack");        
+           
         }
     }
     #endregion

@@ -39,7 +39,7 @@ public class EnemyChase : EnemyState
         if(enemy.IsAttacking)
         {
             stateMachine.ChangeState(enemy.enemyAttack);
-            Debug.Log("Attacking");
+            
         }
 
         base.FrameUpdate();
