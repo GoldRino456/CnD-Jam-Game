@@ -20,15 +20,15 @@ MonoBehaviour:
   HorizontalDeadZoneThreshold: 0.1
   DetectionRadius: 5
   CrouchedDetectionRadius: 2
-  MaxSpeed: 10
+  MaxSpeed: 5
   MaxCrouchedSpeed: 3
-  Acceleration: 120
+  Acceleration: 80
   GroundDeceleration: 60
   AirDeceleration: 30
   GroundingForce: -1.5
   GrounderDistance: 0.05
-  JumpPower: 36
-  MaxFallSpeed: 40
+  JumpPower: 25
+  MaxFallSpeed: 35
   FallAcceleration: 110
   JumpEndEarlyGravityModifier: 3
   CoyoteTime: 0.15
