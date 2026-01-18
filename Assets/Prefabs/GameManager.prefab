@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6009484474144562195}
   - component: {fileID: 7628069633009838032}
+  - component: {fileID: -6579738185721404138}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameManager
@@ -46,3 +47,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   HowManyIngredientsArePickedUp: 0
   IngredientsNeededForWin: 3
+--- !u!114 &-6579738185721404138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7936597253795495061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d61d1ece16530044b643a5c6b2e927a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HitStop
