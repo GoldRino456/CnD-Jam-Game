@@ -94,12 +94,8 @@ public class PlayerController : MonoBehaviour
 
         if (_infectionTimer < 0)
         {
-            _infectionProgress += _infectionIncrement;
-            OnInfectionProgressChanged?.Invoke(_infectionProgress);
-            ResetInfectionTimer();
+            ChangeInfection(_infectionIncrement);
         }
-
-        ProcessFormChange();
     }
 
     public void ChangeInfection(int amount)

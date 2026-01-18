@@ -6,7 +6,7 @@ public class PlayerTracking : MonoBehaviour
 {
     [SerializeField] private Transform trackingIndicator;
     [SerializeField] private float rotationSpeed = 10f;
-    [SerializeField] private bool isTrackingEnabled = true;
+    [SerializeField] private bool isTrackingEnabled = false;
 
     private List<ITrackable> trackedItems;
     private Vector3 currentlyTrackedPosition;
@@ -20,18 +20,34 @@ public class PlayerTracking : MonoBehaviour
             .OfType<ITrackable>()
             .ToList();
 
+        int idx = 0;
+        foreach(var trackable in trackedItems)
+        {
+            trackable.TrackableId = idx;
+            idx++;
+            trackable.OnDestroyCalled += RemoveItemFromTrackingList;
+        }
+
         UpdateTrackedItems();
     }
 
     public void SetTrackingEnabled(bool isEnabled)
     {
-        isTrackingEnabled = isEnabled;
-        trackingIndicator.gameObject.SetActive(isEnabled);
+        if (trackedItems == null || trackedItems.Count == 0)
+        {
+            isTrackingEnabled = false;
+            trackingIndicator.gameObject.SetActive(false);
+        }
+        else
+        {
+            isTrackingEnabled = isEnabled;
+            trackingIndicator.gameObject.SetActive(isEnabled);
+        }
     }
 
     private void Update()
     {
-        if(isTrackingEnabled)
+        if (isTrackingEnabled)
         {
             UpdatePlayerPosition();
             UpdateTrackedItems();
@@ -69,5 +85,14 @@ public class PlayerTracking : MonoBehaviour
         Quaternion targetRotation = Quaternion.Euler(0, 0, rotationZ);
 
         trackingIndicator.rotation = Quaternion.Slerp(trackingIndicator.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+    }
+
+    private void RemoveItemFromTrackingList(int trackingId)
+    {
+        var removedItem = trackedItems.Find((x) => x.TrackableId == trackingId);
+        trackedItems.Remove(removedItem);
+        removedItem.OnDestroyCalled -= RemoveItemFromTrackingList;
+        
+        if(trackedItems.Count <= 0) { SetTrackingEnabled(false); }
     }
 }

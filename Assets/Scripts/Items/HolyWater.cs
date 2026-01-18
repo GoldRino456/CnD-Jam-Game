@@ -3,17 +3,18 @@ using UnityEngine;
 
 public class HolyWater : MonoBehaviour, IItem
 {
-    public string Name { get; } = "Holy Water";
+    public ItemType Type { get; } = ItemType.HolyWater;
 
     [SerializeField] private CircleCollider2D _projectileCollider;
     [SerializeField] private Rigidbody2D _projectileRb;
-    [SerializeField] private CircleCollider2D _aoeRadius; //Should be Trigger
     [SerializeField] private int infectionCureAmount = 35;
+    [SerializeField] private int pickupAmount = 2;
     [SerializeField] private FMODUnity.EventReference _splashSFX;
 
     [Header("Throw Settings")]
     [SerializeField] private float throwForce = 5f;
 
+    public int PickupAmount { get => pickupAmount; }
     private bool isThrown = false;
 
     private void FixedUpdate()
@@ -27,9 +28,16 @@ public class HolyWater : MonoBehaviour, IItem
         }
     }
 
-    public void OnPickup()
+    public bool OnPickup()
     {
-        
+        if(isThrown)
+        {
+            return false; //Tossed, ignore pickup so player can get damaged
+        }
+        else
+        {
+            return true;
+        }
     }
 
     public void OnThrown(Vector2 initialVelocity, bool isThrownLeft)
@@ -50,7 +58,7 @@ public class HolyWater : MonoBehaviour, IItem
 
     public void OnTriggerEnter2D(Collider2D collision) //AOE Effect Range
     {
-        
+       
     }
 
     public void OnUse(GameObject user)
