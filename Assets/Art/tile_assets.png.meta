@@ -58,7 +58,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -216,8 +216,8 @@ TextureImporter:
       name: tile_assets_4
       rect:
         serializedVersion: 2
-        x: 2000
-        y: 3000
+        x: 0
+        y: 2500
         width: 500
         height: 500
       alignment: 0
@@ -238,8 +238,8 @@ TextureImporter:
       name: tile_assets_5
       rect:
         serializedVersion: 2
-        x: 2500
-        y: 3000
+        x: 500
+        y: 2500
         width: 500
         height: 500
       alignment: 0
@@ -260,8 +260,8 @@ TextureImporter:
       name: tile_assets_6
       rect:
         serializedVersion: 2
-        x: 3000
-        y: 3000
+        x: 1000
+        y: 2500
         width: 500
         height: 500
       alignment: 0
@@ -282,7 +282,7 @@ TextureImporter:
       name: tile_assets_7
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1500
         y: 2500
         width: 500
         height: 500
@@ -326,7 +326,7 @@ TextureImporter:
       name: tile_assets_8
       rect:
         serializedVersion: 2
-        x: 500
+        x: 2000
         y: 2500
         width: 500
         height: 500
@@ -348,8 +348,8 @@ TextureImporter:
       name: tile_assets_9
       rect:
         serializedVersion: 2
-        x: 1000
-        y: 2500
+        x: 0
+        y: 2000
         width: 500
         height: 500
       alignment: 0
@@ -370,8 +370,8 @@ TextureImporter:
       name: tile_assets_10
       rect:
         serializedVersion: 2
-        x: 1500
-        y: 2500
+        x: 500
+        y: 2000
         width: 500
         height: 500
       alignment: 0
@@ -392,8 +392,8 @@ TextureImporter:
       name: tile_assets_11
       rect:
         serializedVersion: 2
-        x: 2000
-        y: 2500
+        x: 1000
+        y: 2000
         width: 500
         height: 500
       alignment: 0
@@ -414,8 +414,8 @@ TextureImporter:
       name: tile_assets_12
       rect:
         serializedVersion: 2
-        x: 3000
-        y: 2500
+        x: 1500
+        y: 2000
         width: 500
         height: 500
       alignment: 0
@@ -436,7 +436,7 @@ TextureImporter:
       name: tile_assets_13
       rect:
         serializedVersion: 2
-        x: 0
+        x: 2000
         y: 2000
         width: 500
         height: 500
@@ -458,8 +458,8 @@ TextureImporter:
       name: tile_assets_14
       rect:
         serializedVersion: 2
-        x: 500
-        y: 2000
+        x: 0
+        y: 1500
         width: 500
         height: 500
       alignment: 0
@@ -480,8 +480,8 @@ TextureImporter:
       name: tile_assets_15
       rect:
         serializedVersion: 2
-        x: 1000
-        y: 2000
+        x: 500
+        y: 1500
         width: 500
         height: 500
       alignment: 0
@@ -502,8 +502,8 @@ TextureImporter:
       name: tile_assets_16
       rect:
         serializedVersion: 2
-        x: 1500
-        y: 2000
+        x: 1000
+        y: 1500
         width: 500
         height: 500
       alignment: 0
@@ -524,8 +524,8 @@ TextureImporter:
       name: tile_assets_17
       rect:
         serializedVersion: 2
-        x: 2000
-        y: 2000
+        x: 1500
+        y: 1500
         width: 500
         height: 500
       alignment: 0
@@ -546,8 +546,8 @@ TextureImporter:
       name: tile_assets_18
       rect:
         serializedVersion: 2
-        x: 3000
-        y: 2000
+        x: 2000
+        y: 1500
         width: 500
         height: 500
       alignment: 0
@@ -569,7 +569,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1500
+        y: 1000
         width: 500
         height: 500
       alignment: 0
@@ -591,7 +591,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 500
-        y: 1500
+        y: 1000
         width: 500
         height: 500
       alignment: 0
@@ -613,7 +613,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1000
-        y: 1500
+        y: 1000
         width: 500
         height: 500
       alignment: 0
@@ -635,7 +635,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1500
-        y: 1500
+        y: 1000
         width: 500
         height: 500
       alignment: 0
@@ -657,7 +657,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2000
-        y: 1500
+        y: 1000
         width: 500
         height: 500
       alignment: 0
@@ -679,7 +679,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2500
-        y: 1500
+        y: 1000
         width: 500
         height: 500
       alignment: 0
@@ -701,7 +701,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3000
-        y: 1500
+        y: 1000
         width: 500
         height: 500
       alignment: 0
@@ -723,7 +723,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1000
+        y: 500
         width: 500
         height: 500
       alignment: 0
@@ -745,7 +745,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 500
-        y: 1000
+        y: 500
         width: 500
         height: 500
       alignment: 0
@@ -767,7 +767,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1000
-        y: 1000
+        y: 500
         width: 500
         height: 500
       alignment: 0
@@ -789,7 +789,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1500
-        y: 1000
+        y: 500
         width: 500
         height: 500
       alignment: 0
@@ -811,7 +811,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2000
-        y: 1000
+        y: 500
         width: 500
         height: 500
       alignment: 0
@@ -833,7 +833,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2500
-        y: 1000
+        y: 500
         width: 500
         height: 500
       alignment: 0
@@ -855,7 +855,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3000
-        y: 1000
+        y: 500
         width: 500
         height: 500
       alignment: 0
@@ -877,7 +877,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 500
+        y: 0
         width: 500
         height: 500
       alignment: 0
@@ -899,7 +899,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 500
-        y: 500
+        y: 0
         width: 500
         height: 500
       alignment: 0
@@ -921,7 +921,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1000
-        y: 500
+        y: 0
         width: 500
         height: 500
       alignment: 0
@@ -943,7 +943,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1500
-        y: 500
+        y: 0
         width: 500
         height: 500
       alignment: 0
@@ -965,7 +965,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2000
-        y: 500
+        y: 0
         width: 500
         height: 500
       alignment: 0
@@ -987,7 +987,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2500
-        y: 500
+        y: 0
         width: 500
         height: 500
       alignment: 0
@@ -1009,7 +1009,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3000
-        y: 500
+        y: 0
         width: 500
         height: 500
       alignment: 0
@@ -1022,160 +1022,6 @@ TextureImporter:
       bones: []
       spriteID: e7230f3eb71f61f46b2ffa8c28c9336e
       internalID: -2141937663
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tile_assets_40
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 500
-        height: 500
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 78f701ac1ec27414a9b455f5bccef6d9
-      internalID: -529087997
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tile_assets_41
-      rect:
-        serializedVersion: 2
-        x: 500
-        y: 0
-        width: 500
-        height: 500
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cff2b50a6dc8ef44aac4fba9f90e8316
-      internalID: 1061069063
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tile_assets_42
-      rect:
-        serializedVersion: 2
-        x: 1000
-        y: 0
-        width: 500
-        height: 500
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3779fd046fd607f45a11d78e9f6f81c2
-      internalID: -1581034863
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tile_assets_43
-      rect:
-        serializedVersion: 2
-        x: 1500
-        y: 0
-        width: 500
-        height: 500
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 61a6c32eb7b6e4a409b92a47df42cc71
-      internalID: 569490176
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tile_assets_44
-      rect:
-        serializedVersion: 2
-        x: 2000
-        y: 0
-        width: 500
-        height: 500
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e8c271f3e6cf14349b61f67b6f1cec68
-      internalID: -1899074373
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tile_assets_45
-      rect:
-        serializedVersion: 2
-        x: 2500
-        y: 0
-        width: 500
-        height: 500
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eed7f78906facf44a8062d13d65e626c
-      internalID: -1912497271
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tile_assets_46
-      rect:
-        serializedVersion: 2
-        x: 3000
-        y: 0
-        width: 500
-        height: 500
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 21e6fa8e733c95040a24e8f45be61b36
-      internalID: 1208045168
       vertices: []
       indices: 
       edges: []
@@ -1194,7 +1040,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":500.0,"y":500.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":7.0,"y":7.0},"gridSpriteSize":{"x":500.0,"y":500.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       tile_assets_0: -328020809851741527
       tile_assets_1: 3087038855692681472
@@ -1231,13 +1077,6 @@ TextureImporter:
       tile_assets_38: -1108047357
       tile_assets_39: -2141937663
       tile_assets_4: -8256748075636356164
-      tile_assets_40: -529087997
-      tile_assets_41: 1061069063
-      tile_assets_42: -1581034863
-      tile_assets_43: 569490176
-      tile_assets_44: -1899074373
-      tile_assets_45: -1912497271
-      tile_assets_46: 1208045168
       tile_assets_5: -1737442943225937850
       tile_assets_6: 3152943600519329975
       tile_assets_7: 6219175598020771049
