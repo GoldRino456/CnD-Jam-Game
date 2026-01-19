@@ -48,7 +48,8 @@ public class GameManager : MonoBehaviour
     {
         if (HowManyIngredientsArePickedUp == IngredientsNeededForWin)
         {
-            Debug.Log("You won");
+            Instantiate(LoseScreenTransition, new Vector2(0, 0), Quaternion.identity);
+            StartCoroutine(WinTransitionDelay());
             return true;
         }
 
@@ -57,15 +58,19 @@ public class GameManager : MonoBehaviour
 
     public void CheckLoseCondition()
     {
-        Debug.Log("asd");
         Instantiate(LoseScreenTransition, new Vector2(0, 0), Quaternion.identity);
-        StartCoroutine(TransitionDelay());     
+        StartCoroutine(LostTransitionDelay());     
     }
 
-    private IEnumerator TransitionDelay()
+    private IEnumerator LostTransitionDelay()
     {
         yield return new WaitForSeconds(2.5f);
         SceneManager.LoadScene("LoseScreen");
+    }
+    private IEnumerator WinTransitionDelay()
+    {
+        yield return new WaitForSeconds(2.5f);
+        SceneManager.LoadScene("WinScreen");
     }
 
     public void BackToMainMenu()
