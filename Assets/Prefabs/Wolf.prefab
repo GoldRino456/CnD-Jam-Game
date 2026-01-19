@@ -205,7 +205,7 @@ CapsuleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 192
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -298,10 +298,10 @@ MonoBehaviour:
   spRen: {fileID: 3050047757654047747}
   anim: {fileID: 6340060795648200533}
   _currentState: 0
-  pounceDistance: 4
-  pounceForce: 15
-  pounceCooldown: 2
-  damageRadius: 0.5
+  pounceDistance: 3
+  pounceForce: 14
+  pounceCooldown: 1.5
+  damageRadius: 1
   infectionDamage: 10
   pounceArcTimeStep: 0.05
   pounceArcMaxTime: 2.25

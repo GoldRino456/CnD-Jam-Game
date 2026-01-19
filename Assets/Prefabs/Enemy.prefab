@@ -250,8 +250,8 @@ MonoBehaviour:
   minDectime: 4
   maxDectime: 8
   holyWater: {fileID: 0}
-  playerDetectDistance: 12
-  playerDetectResolution: 15
+  playerDetectDistance: 4
+  playerDetectResolution: 12
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -261,14 +261,14 @@ MonoBehaviour:
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 256
-  playerAttackDistance: 4.38
+  playerAttackDistance: 3
   playerAttackResolution: 15
   holyWaterPrefab: {fileID: 3062180124263963466, guid: cd3bc38fb31f7c040a091593a660d71e, type: 3}
   throwSpawnPoint: {fileID: 3971631793657959809}
   itemUseCooldown: 12
   isThrown: 0
   itemUseTimer: 0
-  anim: {fileID: 0}
+  anim: {fileID: 5986500468805106909}
 --- !u!114 &6272913120188998040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,7 +297,7 @@ CapsuleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 192
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2

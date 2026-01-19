@@ -41,7 +41,7 @@ public class EnemyIdleState : EnemyState
             stateMachine.ChangeState(enemy.enemyChase);
         }
 
-        Debug.Log(stateTimer);
+        //Debug.Log(stateTimer);
         
     }
     public override void AnimationTrigger()
