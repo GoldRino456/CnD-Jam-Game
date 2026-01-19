@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
 {
     private PlayerMovement _movement;
     private PlayerTracking _tracking;
+    private bool _onlyOneTransition = true;
 
     [Header("Infection Stats")]
     [SerializeField] private int _infectionProgress;
@@ -63,9 +64,15 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if(_infectionProgress >= 100 || _infectionProgress <= 0)
+        if (_infectionProgress >= 100 || _infectionProgress <= 0)
         {
-            GameObject.FindWithTag("GameManager").GetComponent<GameManager>().CheckLoseCondition();
+            if (_onlyOneTransition)
+            {
+                Debug.Log("cdc");
+                GameObject.FindWithTag("GameManager").GetComponent<GameManager>().CheckLoseCondition();
+                _onlyOneTransition = false;
+            }
+            
         }
         ProcessInfection();
     }

@@ -1,7 +1,10 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
+
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] GameObject LoseScreenTransition;
     public int HowManyIngredientsArePickedUp = 0;
     public int IngredientsNeededForWin = 3;
     public static GameManager Instance;
@@ -54,6 +57,19 @@ public class GameManager : MonoBehaviour
 
     public void CheckLoseCondition()
     {
-        Debug.Log("You lose");
+        Debug.Log("asd");
+        Instantiate(LoseScreenTransition, new Vector2(0, 0), Quaternion.identity);
+        StartCoroutine(TransitionDelay());     
+    }
+
+    private IEnumerator TransitionDelay()
+    {
+        yield return new WaitForSeconds(2.5f);
+        SceneManager.LoadScene("LoseScreen");
+    }
+
+    public void BackToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }
