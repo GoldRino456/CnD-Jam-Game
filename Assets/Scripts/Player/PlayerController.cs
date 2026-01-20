@@ -23,27 +23,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private int _infectionThreshold2 = 75;
     public Action<int> OnInfectionProgressChanged;
     private float _infectionTimer;
-    
-    [Header("Transformation Settings")]
-    [SerializeField] private Form currentForm;
-    public Form _currentForm
-    {
-        get => currentForm;
-        set
-        {
-            if (value != currentForm)
-            {
-                transformParticle.Play();
-                anim.SetInteger("form", (int)value);
-                FMODUnity.RuntimeManager.PlayOneShot(transformSFX, transform.position);
 
-                currentForm = value;
-            }
-        }
-    }
+    [Header("Transformation Settings")]
+    public Form _currentForm;
+    private Form lastForm;
     [SerializeField] private ParticleSystem transformParticle;
     [SerializeField] private FMODUnity.EventReference transformSFX;
     [SerializeField] private Animator anim;
+    [SerializeField] private Transform throwPoint;
 
     [Header("Movement Settings")]
     [SerializeField] private PlayerMoveSettings _humanMoveSettings;
@@ -75,7 +62,7 @@ public class PlayerController : MonoBehaviour
                 _onlyOneTransition = false;
                 _ambMan.StopAmbience();
             }
-            
+
         }
         ProcessInfection();
     }
@@ -88,16 +75,19 @@ public class PlayerController : MonoBehaviour
                 _currentForm = Form.Werewolf;
                 _tracking.SetTrackingEnabled(true);
                 _movement.UpdateMoveSettings(_werewolfMoveSettings);
+                throwPoint.localPosition = new Vector3(throwPoint.localPosition.x, 1.45f, 0);
                 break;
             case int n when (n >= _infectionThreshold1):
                 _currentForm = Form.Middle;
                 _tracking.SetTrackingEnabled(true);
                 _movement.UpdateMoveSettings(_humanMoveSettings);
+                throwPoint.localPosition = new Vector3(throwPoint.localPosition.x, 0.55f, 0);
                 break;
             default:
                 _currentForm = Form.Human;
                 _tracking.SetTrackingEnabled(false);
                 _movement.UpdateMoveSettings(_humanMoveSettings);
+                throwPoint.localPosition = new Vector3(throwPoint.localPosition.x, 0.55f, 0);
                 break;
         }
     }
@@ -109,6 +99,15 @@ public class PlayerController : MonoBehaviour
         if (_infectionTimer < 0)
         {
             ChangeInfection(_infectionIncrement);
+        }
+
+        if (lastForm != _currentForm && !anim.GetBool("throwing"))
+        {
+            transformParticle.Play();
+            anim.SetInteger("form", (int)_currentForm);
+            FMODUnity.RuntimeManager.PlayOneShot(transformSFX, transform.position);
+
+            lastForm = _currentForm;
         }
     }
 

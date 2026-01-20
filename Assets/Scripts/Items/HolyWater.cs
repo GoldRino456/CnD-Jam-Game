@@ -12,6 +12,7 @@ public class HolyWater : MonoBehaviour, IItem
     [SerializeField] private FMODUnity.EventReference _pickupSFX;
     [SerializeField] private FMODUnity.EventReference _splashSFX;
     [SerializeField] private float _visualRotationSpeed = 5f;
+    [SerializeField] private GameObject impactPrefab;
 
     [Header("Throw Settings")]
     [SerializeField] private float throwForce = 5f;
@@ -77,6 +78,7 @@ public class HolyWater : MonoBehaviour, IItem
             }
         }
 
+        Instantiate(impactPrefab, transform.position - Vector3.up * 0.5f, Quaternion.Euler(-90, 0, 0));
         Destroy(gameObject);
     }
 

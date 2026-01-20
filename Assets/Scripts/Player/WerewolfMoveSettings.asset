@@ -20,8 +20,8 @@ MonoBehaviour:
   HorizontalDeadZoneThreshold: 0.1
   DetectionRadius: 6
   CrouchedDetectionRadius: 4
-  MaxSpeed: 2
-  MaxCrouchedSpeed: 1
+  MaxSpeed: 4
+  MaxCrouchedSpeed: 2
   Acceleration: 35
   GroundDeceleration: 60
   AirDeceleration: 30

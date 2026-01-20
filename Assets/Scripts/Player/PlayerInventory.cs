@@ -17,6 +17,7 @@ public class PlayerInventory : MonoBehaviour
     [SerializeField] private float aimLineSpeed;
     [SerializeField] private float holyWaterDamping;
     [SerializeField] private LineRenderer aimLine;
+    [SerializeField] private Animator anim;
     [SerializeField] private LayerMask collisionLayers;
     private bool _aiming;
     private int currentHolyWater;
@@ -46,6 +47,8 @@ public class PlayerInventory : MonoBehaviour
 
         InputManager.onThrowPress += ProcessAim;
         InputManager.onThrowRelease += ProcessThrow;
+
+        anim.SetBool("facingLeft", true);
     }
 
     public void Update()
@@ -90,9 +93,10 @@ public class PlayerInventory : MonoBehaviour
             {
                 isFacingLeft = isMovingLeft;
                 isDirectionChange = true;
+                anim.SetBool("facingLeft", isFacingLeft);
             }
 
-            throwSpawnPoint.localPosition = new Vector3((isFacingLeft ? -1 : 1) * 0.7f, throwSpawnPoint.localPosition.y, 0);
+            throwSpawnPoint.localPosition = new Vector3((isFacingLeft ? -1 : 1) * 0.1f, throwSpawnPoint.localPosition.y, 0);
         }
     }
 
@@ -169,13 +173,20 @@ public class PlayerInventory : MonoBehaviour
         _aiming = false;
         StopCoroutine(ShowAimArc());
 
+        anim.SetBool("throwing", true);
+    }
+    public void Throw()
+    {
         var newHolyWater = Instantiate(holyWaterPrefab, throwSpawnPoint.position, Quaternion.identity);
         newHolyWater.GetComponent<HolyWater>().OnThrown(playerRb.linearVelocity, isFacingLeft);
         itemUseTimer = itemUseCooldown;
         currentHolyWater--;
         OnHolyWaterCountChanged?.Invoke(currentHolyWater);
     }
-
+    public void EndThrow()
+    {
+        anim.SetBool("throwing", false);
+    }
     private void ProcessUse()
     {
         if (isUseRequested && itemUseTimer <= 0 && currentHolyWater > 0)
