@@ -138,8 +138,6 @@ public class Enemy : MonoBehaviour, IDamagable, IMovebale, ITriggerCheckable, IA
         {
             Die();
         }
-      
-       Debug.Log(IsThereWall());
     }
 
     void FixedUpdate()
