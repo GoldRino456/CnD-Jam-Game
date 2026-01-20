@@ -264,7 +264,7 @@ MonoBehaviour:
       Data2: 1197806637
       Data3: -364976768
       Data4: -2129407244
-    Path: event:/HolyWaterBreak
+    Path: event:/HolyWater/HolyWaterBreak
   _visualRotationSpeed: 10
   throwForce: 5
   stunTime: 4

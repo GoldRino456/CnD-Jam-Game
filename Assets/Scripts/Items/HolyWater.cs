@@ -9,6 +9,7 @@ public class HolyWater : MonoBehaviour, IItem
     [SerializeField] private Rigidbody2D _projectileRb;
     [SerializeField] private int infectionCureAmount = 35;
     [SerializeField] private int pickupAmount = 2;
+    [SerializeField] private FMODUnity.EventReference _pickupSFX;
     [SerializeField] private FMODUnity.EventReference _splashSFX;
     [SerializeField] private float _visualRotationSpeed = 5f;
 
@@ -38,6 +39,7 @@ public class HolyWater : MonoBehaviour, IItem
         }
         else
         {
+            FMODUnity.RuntimeManager.PlayOneShot(_pickupSFX, transform.position);
             return true;
         }
     }

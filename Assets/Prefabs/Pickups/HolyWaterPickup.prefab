@@ -258,13 +258,20 @@ MonoBehaviour:
   _projectileRb: {fileID: 531045806246160205}
   infectionCureAmount: 35
   pickupAmount: 2
+  _pickupSFX:
+    Guid:
+      Data1: 1233467996
+      Data2: 1304724978
+      Data3: 277559989
+      Data4: 2100887810
+    Path: event:/HolyWater/HolyWaterPickup
   _splashSFX:
     Guid:
       Data1: -883155763
       Data2: 1197806637
       Data3: -364976768
       Data4: -2129407244
-    Path: event:/HolyWaterBreak
+    Path: event:/HolyWater/HolyWaterBreak
   _visualRotationSpeed: 5
   throwForce: 5
   stunTime: 4

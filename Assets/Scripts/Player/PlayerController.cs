@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
     [Header("Movement Settings")]
     [SerializeField] private PlayerMoveSettings _humanMoveSettings;
     [SerializeField] private PlayerMoveSettings _werewolfMoveSettings;
-
+    [SerializeField] private AmbienceManager _ambMan;
     private void Awake()
     {
         _movement = GetComponent<PlayerMovement>();
@@ -73,6 +73,7 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("cdc");
                 GameObject.FindWithTag("GameManager").GetComponent<GameManager>().CheckLoseCondition();
                 _onlyOneTransition = false;
+                _ambMan.StopAmbience();
             }
             
         }
