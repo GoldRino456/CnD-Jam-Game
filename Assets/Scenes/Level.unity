@@ -1256,7 +1256,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.1
+    widthMultiplier: 0.2
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -1269,13 +1269,22 @@ LineRenderer:
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0.2
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 1, g: 0, b: 0, a: 0.78431374}
+      key1: {r: 0.5019608, g: 0, b: 0, a: 0.39215687}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -1299,11 +1308,11 @@ LineRenderer:
       atime6: 0
       atime7: 0
       m_Mode: 0
-      m_ColorSpace: -1
+      m_ColorSpace: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
-    numCornerVertices: 0
-    numCapVertices: 0
+    numCornerVertices: 2
+    numCapVertices: 3
     alignment: 0
     textureMode: 0
     textureScale: {x: 1, y: 1}
@@ -36725,7 +36734,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1638555875067423987, guid: 4bff559acb6740a41a109e8ff218c1ec, type: 3}
       propertyPath: aimLineSpeed
-      value: 0.01
+      value: 0.005
       objectReference: {fileID: 0}
     - target: {fileID: 1638555875067423987, guid: 4bff559acb6740a41a109e8ff218c1ec, type: 3}
       propertyPath: aimResolution
@@ -36734,6 +36743,10 @@ PrefabInstance:
     - target: {fileID: 1638555875067423987, guid: 4bff559acb6740a41a109e8ff218c1ec, type: 3}
       propertyPath: holyWaterDamping
       value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1638555875067423987, guid: 4bff559acb6740a41a109e8ff218c1ec, type: 3}
+      propertyPath: collisionLayers.m_Bits
+      value: 904
       objectReference: {fileID: 0}
     - target: {fileID: 3447851524882129095, guid: 4bff559acb6740a41a109e8ff218c1ec, type: 3}
       propertyPath: _ambMan

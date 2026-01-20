@@ -17,6 +17,7 @@ public class PlayerInventory : MonoBehaviour
     [SerializeField] private float aimLineSpeed;
     [SerializeField] private float holyWaterDamping;
     [SerializeField] private LineRenderer aimLine;
+    [SerializeField] private LayerMask collisionLayers;
     private bool _aiming;
     private int currentHolyWater;
 
@@ -53,6 +54,16 @@ public class PlayerInventory : MonoBehaviour
         CheckForInventoryInput();
         //ProcessThrow();
         ProcessUse();
+
+        if (!_aiming && aimLine.enabled)
+        {
+            for (int i = 0; i < Mathf.RoundToInt(aimMaxTime / aimResolution); i++)
+            {
+                aimLine.SetPosition(i, Vector3.zero);
+            }
+
+            aimLine.enabled = false;
+        }
     }
 
     private void ProcessItemTimer()
@@ -80,6 +91,8 @@ public class PlayerInventory : MonoBehaviour
                 isFacingLeft = isMovingLeft;
                 isDirectionChange = true;
             }
+
+            throwSpawnPoint.localPosition = new Vector3((isFacingLeft ? -1 : 1) * 0.7f, throwSpawnPoint.localPosition.y, 0);
         }
     }
 
@@ -107,6 +120,7 @@ public class PlayerInventory : MonoBehaviour
         if (itemUseTimer > 0 || currentHolyWater <= 0) return;
 
         _aiming = true;
+        aimLine.enabled = true;
 
         StartCoroutine(ShowAimArc());
     }
@@ -128,8 +142,8 @@ public class PlayerInventory : MonoBehaviour
     }
     private IEnumerator DrawArc(bool redraw)
     {
-        Vector2 velocity = new Vector2(playerRb.linearVelocity.x, 0) + (Vector2)(transform.up * 5f + transform.right * 5f);
-        Vector2 prevPos = transform.position;
+        Vector2 velocity = new Vector2(playerRb.linearVelocity.x, 0) + (Vector2)(throwSpawnPoint.up * 5f + throwSpawnPoint.right * 5f * (isFacingLeft ? -1 : 1));
+        Vector2 prevPos = throwSpawnPoint.position;
 
         for (float i = 0; i < aimMaxTime; i += aimResolution)
         {
@@ -137,18 +151,20 @@ public class PlayerInventory : MonoBehaviour
             {
                 aimLine.SetPosition(j, prevPos);
             }
-            
+
             velocity += Physics2D.gravity * aimResolution;
             velocity /= 1 + holyWaterDamping * aimResolution;
 
             prevPos += velocity * aimResolution;
 
-            if(!redraw) yield return new WaitForSeconds(aimLineSpeed);
+            if (Physics2D.OverlapCircle(prevPos, 0.01f, collisionLayers)) yield break;
+
+            if (!redraw) yield return new WaitForSeconds(aimLineSpeed);
         }
     }
     private void ProcessThrow()
     {
-        if (itemUseTimer > 0 || currentHolyWater <= 0) return;
+        if (itemUseTimer > 0 || currentHolyWater <= 0 || !_aiming) return;
 
         _aiming = false;
         StopCoroutine(ShowAimArc());
