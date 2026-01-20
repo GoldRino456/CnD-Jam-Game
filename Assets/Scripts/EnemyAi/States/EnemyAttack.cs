@@ -8,6 +8,7 @@ public class EnemyAttack : EnemyState
     }
 
 
+
     public override void EnterState()
     {
         base.EnterState();
@@ -28,6 +29,11 @@ public class EnemyAttack : EnemyState
         if(!enemy.IsAttacking)
         {
             stateMachine.ChangeState(enemy.enemyChase);
+        }
+
+        else if (enemy.IsAttacking)
+        {
+            
         }
         enemy.ProcessItemTimer();
 

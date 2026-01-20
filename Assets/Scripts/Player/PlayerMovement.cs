@@ -219,7 +219,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.TryGetComponent<HolyWater>(out _))
+        if(collision.gameObject.TryGetComponent<HolyWater>(out _) || collision.gameObject.TryGetComponent<Wolf>(out _))
         {
             _damageFlash.CallCouroutine();
             FindAnyObjectByType<HitStop>().StopTime(0.2f);

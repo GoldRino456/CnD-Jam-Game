@@ -1,5 +1,6 @@
 using System;
 using UnityEditor.Animations;
+using UnityEditor.Callbacks;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour, IDamagable, IMovebale, ITriggerCheckable, IAttackable
@@ -10,6 +11,8 @@ public class Enemy : MonoBehaviour, IDamagable, IMovebale, ITriggerCheckable, IA
     public Vector2 currentVelocity;
     private float acceleration = 12f;
     public float enemySpeed = 5.2f;
+
+    public float distance;
     #endregion
     
     [Header("Collision Settings")]
@@ -43,6 +46,8 @@ public class Enemy : MonoBehaviour, IDamagable, IMovebale, ITriggerCheckable, IA
     protected Vector2 _lastPlayerPosition;
     public HolyWater holyWater;
     DamageFlash damageFlash;
+
+    PlayerController _player;
     #endregion
 
     [Space]
@@ -111,6 +116,7 @@ public class Enemy : MonoBehaviour, IDamagable, IMovebale, ITriggerCheckable, IA
 
         holyWater = FindAnyObjectByType<HolyWater>();
         anim = GetComponent<Animator>();
+        _player = FindFirstObjectByType<PlayerController>();
     }
     void Start()
     {
@@ -133,7 +139,7 @@ public class Enemy : MonoBehaviour, IDamagable, IMovebale, ITriggerCheckable, IA
             Die();
         }
       
-       
+       Debug.Log(IsThereWall());
     }
 
     void FixedUpdate()
@@ -196,6 +202,13 @@ public class Enemy : MonoBehaviour, IDamagable, IMovebale, ITriggerCheckable, IA
         return false;
     }
 
+    // public void DistanceBetweenPlayerAndEnemy()
+    // {   
+        
+    //     distance = Vector2.Distance(transform.position, _player.transform.position);
+       
+    //  }
+    
     public bool RaycastAttackSweep()
     {
         if(stateMachine.currentState == enemyStun) { return false; } //Ignore player while stunned

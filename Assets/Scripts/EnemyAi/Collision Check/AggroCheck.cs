@@ -4,6 +4,8 @@ public class AggroCheck : MonoBehaviour
 {
     GameObject Player;
     Enemy enemy;
+
+    float agroDistance = 4f;
     void Awake()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
@@ -14,6 +16,7 @@ public class AggroCheck : MonoBehaviour
     {
         AgroCheck();
         AttackCheck();
+        //enemy.DistanceBetweenPlayerAndEnemy();
     }
 
     private void AgroCheck()
@@ -36,10 +39,11 @@ public class AggroCheck : MonoBehaviour
             enemy.SetAttackStatus(true);
         }
 
-        else
+        else if(enemy.RaycastAttackSweep() == false)
         {
             enemy.SetAttackStatus(false);
         }
+
     }
 
 

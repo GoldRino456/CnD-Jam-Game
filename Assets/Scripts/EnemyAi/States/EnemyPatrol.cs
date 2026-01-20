@@ -64,12 +64,7 @@ public class EnemyPatrol : EnemyState
          if(enemy.IsTherGround())
         {   
             enemy.MoveEnemy(direction * enemy.enemySpeed * enemy.facingDir); 
-        }
-
-        
-        
-        
-              
+        }   
         base.FrameUpdate(); 
     }
 
