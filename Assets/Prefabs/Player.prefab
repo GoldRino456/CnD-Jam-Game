@@ -5447,7 +5447,7 @@ MonoBehaviour:
       Data2: 1303009933
       Data3: 661252030
       Data4: 1691706956
-    Path: event:/PlayerTransform
+    Path: event:/Player/PlayerTransform
   anim: {fileID: 6313558120882625173}
   _humanMoveSettings: {fileID: 11400000, guid: 7ec7e7347f21e1d4d9a87a091a3fd944, type: 2}
   _werewolfMoveSettings: {fileID: 11400000, guid: 480407c1e88e79042801509b00606b1e, type: 2}
@@ -5521,7 +5521,7 @@ MonoBehaviour:
       Data2: 1113085781
       Data3: -636865638
       Data4: 2074653873
-    Path: event:/Footstep
+    Path: event:/Player/Footstep
   _parameter: isLanding
   _jumpEvent:
     Guid:
@@ -5529,21 +5529,21 @@ MonoBehaviour:
       Data2: 1178145040
       Data3: -76691806
       Data4: 1768642312
-    Path: event:/Jump
+    Path: event:/Player/Jump
   _throwEvent:
     Guid:
       Data1: 650459659
       Data2: 1307395238
       Data3: 1724108438
       Data4: 268641014
-    Path: event:/BottleThrow
+    Path: event:/HolyWater/BottleThrow
   _useEvent:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 727895500
+      Data2: 1179863523
+      Data3: -1341945210
+      Data4: -564648064
+    Path: event:/HolyWater/HolyWaterDrink
 --- !u!95 &6313558120882625173
 Animator:
   serializedVersion: 7

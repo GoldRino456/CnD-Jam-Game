@@ -1,32 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-9163210734565628488
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e14b1d0f626bda4ebc0fb8b91c96e8c, type: 3}
-  m_Name: event:/WolfGrowl
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/WolfGrowl
-  Guid:
-    Data1: 1282619529
-    Data2: 1298194155
-    Data3: 1147107748
-    Data4: -611088799
-  Banks:
-  - {fileID: 8106261129611594618}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &-5698178402443531953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42,12 +15,12 @@ MonoBehaviour:
   Path: CnD-Jam-Game-FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639044447753370558
+  lastModified: 639044474375171634
   FileSizes:
   - Name: Desktop
-    Value: 1230
+    Value: 1374
   Exists: 1
---- !u!114 &-3885694445682196227
+--- !u!114 &-4184838619969681955
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -57,22 +30,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e14b1d0f626bda4ebc0fb8b91c96e8c, type: 3}
-  m_Name: event:/HolyWaterBreak
+  m_Name: event:/Player/Footstep
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/HolyWaterBreak
+  Path: event:/Player/Footstep
   Guid:
-    Data1: -883155763
-    Data2: 1197806637
-    Data3: -364976768
-    Data4: -2129407244
+    Data1: -501050477
+    Data2: 1113085781
+    Data3: -636865638
+    Data4: 2074653873
   Banks:
   - {fileID: 8106261129611594618}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
-  Parameters: []
+  Parameters:
+  - {fileID: -838662345986044496}
   MinDistance: 1
-  MaxDistance: 25
+  MaxDistance: 20
   Length: 0
 --- !u!114 &-3654172439631779525
 MonoBehaviour:
@@ -98,7 +72,7 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
---- !u!114 &-375201422363685806
+--- !u!114 &-1912455184746454279
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,19 +82,97 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e14b1d0f626bda4ebc0fb8b91c96e8c, type: 3}
-  m_Name: event:/DoctorQuestion
+  m_Name: event:/HolyWater/HolyWaterPickup
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/DoctorQuestion
+  Path: event:/HolyWater/HolyWaterPickup
   Guid:
-    Data1: -1106215772
-    Data2: 1201296284
-    Data3: -1732333670
-    Data4: -2125860238
+    Data1: 1233467996
+    Data2: 1304724978
+    Data3: 277559989
+    Data4: 2100887810
   Banks:
   - {fileID: 8106261129611594618}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-838662345986044496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fcfab8a98b1d5d418d164e964555c81, type: 3}
+  m_Name: parameter:/Footstep/isLanding
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: isLanding
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2363747097
+    data2: 1906438993
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-810642931012677192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e14b1d0f626bda4ebc0fb8b91c96e8c, type: 3}
+  m_Name: event:/Player/Jump
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Player/Jump
+  Guid:
+    Data1: -946422758
+    Data2: 1178145040
+    Data3: -76691806
+    Data4: 1768642312
+  Banks:
+  - {fileID: 8106261129611594618}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-373760513425953767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e14b1d0f626bda4ebc0fb8b91c96e8c, type: 3}
+  m_Name: event:/Player/PlayerTransform
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Player/PlayerTransform
+  Guid:
+    Data1: 1816630324
+    Data2: 1303009933
+    Data3: 661252030
+    Data4: 1691706956
+  Banks:
+  - {fileID: 8106261129611594618}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
@@ -141,14 +193,16 @@ MonoBehaviour:
   - {fileID: -5698178402443531953}
   - {fileID: 8106261129611594618}
   EditorEvents:
-  - {fileID: 4675138288019561386}
   - {fileID: 1431362868243343829}
-  - {fileID: -9163210734565628488}
-  - {fileID: 4648949151507120840}
-  - {fileID: -3885694445682196227}
-  - {fileID: 1323454102170151435}
-  - {fileID: -375201422363685806}
-  - {fileID: 7222183177315317529}
+  - {fileID: 1549220724643142997}
+  - {fileID: -810642931012677192}
+  - {fileID: -373760513425953767}
+  - {fileID: -1912455184746454279}
+  - {fileID: 3602008341042597290}
+  - {fileID: -4184838619969681955}
+  - {fileID: 2875067064136448454}
+  - {fileID: 110403744947833370}
+  - {fileID: 2692649965735665161}
   EditorParameters:
   - {fileID: -3654172439631779525}
   MasterBanks:
@@ -156,25 +210,29 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: -5698178402443531953}
   cacheVersion: 131857
-  cacheTime: 639044447753370558
+  cacheTime: 639044474375171634
   SerializableEventsDict:
-  - key: event:/Jump
-    index: 0
   - key: event:/Ambience
+    index: 0
+  - key: event:/HolyWater/BottleThrow
     index: 1
-  - key: event:/WolfGrowl
+  - key: event:/Player/Jump
     index: 2
-  - key: event:/Footstep
+  - key: event:/Player/PlayerTransform
     index: 3
-  - key: event:/HolyWaterBreak
+  - key: event:/HolyWater/HolyWaterPickup
     index: 4
-  - key: event:/BottleThrow
+  - key: event:/Enemy/WolfGrowl
     index: 5
-  - key: event:/DoctorQuestion
+  - key: event:/Player/Footstep
     index: 6
-  - key: event:/PlayerTransform
+  - key: event:/Enemy/DoctorQuestion
     index: 7
---- !u!114 &1323454102170151435
+  - key: event:/HolyWater/HolyWaterDrink
+    index: 8
+  - key: event:/HolyWater/HolyWaterBreak
+    index: 9
+--- !u!114 &110403744947833370
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -184,14 +242,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e14b1d0f626bda4ebc0fb8b91c96e8c, type: 3}
-  m_Name: event:/BottleThrow
+  m_Name: event:/HolyWater/HolyWaterDrink
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/BottleThrow
+  Path: event:/HolyWater/HolyWaterDrink
   Guid:
-    Data1: 650459659
-    Data2: 1307395238
-    Data3: 1724108438
-    Data4: 268641014
+    Data1: 727895500
+    Data2: 1179863523
+    Data3: -1341945210
+    Data4: -564648064
   Banks:
   - {fileID: 8106261129611594618}
   IsStream: 0
@@ -228,7 +286,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &4648949151507120840
+--- !u!114 &1549220724643142997
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -238,42 +296,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e14b1d0f626bda4ebc0fb8b91c96e8c, type: 3}
-  m_Name: event:/Footstep
+  m_Name: event:/HolyWater/BottleThrow
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/Footstep
+  Path: event:/HolyWater/BottleThrow
   Guid:
-    Data1: -501050477
-    Data2: 1113085781
-    Data3: -636865638
-    Data4: 2074653873
-  Banks:
-  - {fileID: 8106261129611594618}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters:
-  - {fileID: 7488717901373655014}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &4675138288019561386
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e14b1d0f626bda4ebc0fb8b91c96e8c, type: 3}
-  m_Name: event:/Jump
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/Jump
-  Guid:
-    Data1: -946422758
-    Data2: 1178145040
-    Data3: -76691806
-    Data4: 1768642312
+    Data1: 650459659
+    Data2: 1307395238
+    Data3: 1724108438
+    Data4: 268641014
   Banks:
   - {fileID: 8106261129611594618}
   IsStream: 0
@@ -283,7 +313,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &7222183177315317529
+--- !u!114 &2692649965735665161
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -293,14 +323,68 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e14b1d0f626bda4ebc0fb8b91c96e8c, type: 3}
-  m_Name: event:/PlayerTransform
+  m_Name: event:/HolyWater/HolyWaterBreak
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/PlayerTransform
+  Path: event:/HolyWater/HolyWaterBreak
   Guid:
-    Data1: 1816630324
-    Data2: 1303009933
-    Data3: 661252030
-    Data4: 1691706956
+    Data1: -883155763
+    Data2: 1197806637
+    Data3: -364976768
+    Data4: -2129407244
+  Banks:
+  - {fileID: 8106261129611594618}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 25
+  Length: 0
+--- !u!114 &2875067064136448454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e14b1d0f626bda4ebc0fb8b91c96e8c, type: 3}
+  m_Name: event:/Enemy/DoctorQuestion
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Enemy/DoctorQuestion
+  Guid:
+    Data1: -1106215772
+    Data2: 1201296284
+    Data3: -1732333670
+    Data4: -2125860238
+  Banks:
+  - {fileID: 8106261129611594618}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &3602008341042597290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e14b1d0f626bda4ebc0fb8b91c96e8c, type: 3}
+  m_Name: event:/Enemy/WolfGrowl
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Enemy/WolfGrowl
+  Guid:
+    Data1: 1282619529
+    Data2: 1298194155
+    Data3: 1147107748
+    Data4: -611088799
   Banks:
   - {fileID: 8106261129611594618}
   IsStream: 0
@@ -310,30 +394,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &7488717901373655014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fcfab8a98b1d5d418d164e964555c81, type: 3}
-  m_Name: parameter:/Footstep/isLanding
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
-  Name: isLanding
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 2363747097
-    data2: 1906438993
-  Type: 0
-  IsGlobal: 1
-  Labels: []
-  Exists: 1
 --- !u!114 &8106261129611594618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -349,8 +409,8 @@ MonoBehaviour:
   Path: CnD-Jam-Game-FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639044447753360906
+  lastModified: 639044474375153391
   FileSizes:
   - Name: Desktop
-    Value: 1558240
+    Value: 1642624
   Exists: 1

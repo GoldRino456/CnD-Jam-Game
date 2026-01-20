@@ -35907,9 +35907,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3447851524882129095, guid: 4bff559acb6740a41a109e8ff218c1ec, type: 3}
-      propertyPath: _infectionIncrement
-      value: 0
-      objectReference: {fileID: 0}
+      propertyPath: _ambMan
+      value: 
+      objectReference: {fileID: 1299623650}
     - target: {fileID: 5203531098818095916, guid: 4bff559acb6740a41a109e8ff218c1ec, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -54844,6 +54844,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 815703580787478622, guid: ac5522d5bef4445328f430c21b811203, type: 3}
   m_PrefabInstance: {fileID: 1299623647}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1299623650 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6400021627818177858, guid: ac5522d5bef4445328f430c21b811203, type: 3}
+  m_PrefabInstance: {fileID: 1299623647}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fff503eb6238841319d88a03a2f84a4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AmbienceManager
 --- !u!1 &1347278359
 GameObject:
   m_ObjectHideFlags: 0
