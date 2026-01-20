@@ -22,6 +22,8 @@ public class PlayerInventory : MonoBehaviour
     private float itemUseTimer = 0f;
 
     public Action<int> OnHolyWaterCountChanged;
+    public Action OnThrow;
+    public Action OnUse;
     private void Awake()
     {
         currentHolyWater = startingHolyWater;
@@ -87,6 +89,7 @@ public class PlayerInventory : MonoBehaviour
             itemUseTimer = itemUseCooldown;
             currentHolyWater--;
             OnHolyWaterCountChanged?.Invoke(currentHolyWater);
+            OnThrow?.Invoke();
         }
     }
 
@@ -100,6 +103,7 @@ public class PlayerInventory : MonoBehaviour
             itemUseTimer = itemUseCooldown;
             currentHolyWater--;
             OnHolyWaterCountChanged?.Invoke(currentHolyWater);
+            OnUse?.Invoke();
         }
     }
 

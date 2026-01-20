@@ -35,12 +35,14 @@ public class PlayerController : MonoBehaviour
             {
                 transformParticle.Play();
                 anim.SetInteger("form", (int)value);
+                FMODUnity.RuntimeManager.PlayOneShot(transformSFX, transform.position);
 
                 currentForm = value;
             }
         }
     }
     [SerializeField] private ParticleSystem transformParticle;
+    [SerializeField] private FMODUnity.EventReference transformSFX;
     [SerializeField] private Animator anim;
 
     [Header("Movement Settings")]

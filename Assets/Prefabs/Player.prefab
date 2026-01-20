@@ -5441,6 +5441,13 @@ MonoBehaviour:
   _infectionThreshold2: 75
   currentForm: 0
   transformParticle: {fileID: 5123526632817210174}
+  transformSFX:
+    Guid:
+      Data1: 1816630324
+      Data2: 1303009933
+      Data3: 661252030
+      Data4: 1691706956
+    Path: event:/PlayerTransform
   anim: {fileID: 6313558120882625173}
   _humanMoveSettings: {fileID: 11400000, guid: 7ec7e7347f21e1d4d9a87a091a3fd944, type: 2}
   _werewolfMoveSettings: {fileID: 11400000, guid: 480407c1e88e79042801509b00606b1e, type: 2}
@@ -5507,6 +5514,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAudio
   _playerMovement: {fileID: 5043890006959118447}
+  _playerInventory: {fileID: 1638555875067423987}
   _footstepEvent:
     Guid:
       Data1: -501050477
@@ -5522,6 +5530,20 @@ MonoBehaviour:
       Data3: -76691806
       Data4: 1768642312
     Path: event:/Jump
+  _throwEvent:
+    Guid:
+      Data1: 650459659
+      Data2: 1307395238
+      Data3: 1724108438
+      Data4: 268641014
+    Path: event:/BottleThrow
+  _useEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!95 &6313558120882625173
 Animator:
   serializedVersion: 7

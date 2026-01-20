@@ -42,10 +42,10 @@ MonoBehaviour:
   Path: CnD-Jam-Game-FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639042805346382748
+  lastModified: 639044447753370558
   FileSizes:
   - Name: Desktop
-    Value: 1096
+    Value: 1230
   Exists: 1
 --- !u!114 &-3885694445682196227
 MonoBehaviour:
@@ -98,6 +98,33 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
+--- !u!114 &-375201422363685806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e14b1d0f626bda4ebc0fb8b91c96e8c, type: 3}
+  m_Name: event:/DoctorQuestion
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/DoctorQuestion
+  Guid:
+    Data1: -1106215772
+    Data2: 1201296284
+    Data3: -1732333670
+    Data4: -2125860238
+  Banks:
+  - {fileID: 8106261129611594618}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,6 +146,9 @@ MonoBehaviour:
   - {fileID: -9163210734565628488}
   - {fileID: 4648949151507120840}
   - {fileID: -3885694445682196227}
+  - {fileID: 1323454102170151435}
+  - {fileID: -375201422363685806}
+  - {fileID: 7222183177315317529}
   EditorParameters:
   - {fileID: -3654172439631779525}
   MasterBanks:
@@ -126,7 +156,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: -5698178402443531953}
   cacheVersion: 131857
-  cacheTime: 639042805346382748
+  cacheTime: 639044447753370558
   SerializableEventsDict:
   - key: event:/Jump
     index: 0
@@ -138,6 +168,39 @@ MonoBehaviour:
     index: 3
   - key: event:/HolyWaterBreak
     index: 4
+  - key: event:/BottleThrow
+    index: 5
+  - key: event:/DoctorQuestion
+    index: 6
+  - key: event:/PlayerTransform
+    index: 7
+--- !u!114 &1323454102170151435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e14b1d0f626bda4ebc0fb8b91c96e8c, type: 3}
+  m_Name: event:/BottleThrow
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/BottleThrow
+  Guid:
+    Data1: 650459659
+    Data2: 1307395238
+    Data3: 1724108438
+    Data4: 268641014
+  Banks:
+  - {fileID: 8106261129611594618}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &1431362868243343829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,6 +283,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &7222183177315317529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e14b1d0f626bda4ebc0fb8b91c96e8c, type: 3}
+  m_Name: event:/PlayerTransform
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/PlayerTransform
+  Guid:
+    Data1: 1816630324
+    Data2: 1303009933
+    Data3: 661252030
+    Data4: 1691706956
+  Banks:
+  - {fileID: 8106261129611594618}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &7488717901373655014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,8 +349,8 @@ MonoBehaviour:
   Path: CnD-Jam-Game-FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639042805346382748
+  lastModified: 639044447753360906
   FileSizes:
   - Name: Desktop
-    Value: 1343520
+    Value: 1558240
   Exists: 1

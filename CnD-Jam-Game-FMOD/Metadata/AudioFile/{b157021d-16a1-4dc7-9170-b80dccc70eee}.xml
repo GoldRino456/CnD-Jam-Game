@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{b157021d-16a1-4dc7-9170-b80dccc70eee}">
+		<property name="assetPath">
+			<value>SFX_BottleThrow_03.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>1</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{85e9b998-bed5-4a5b-901c-c81409d43383}</destination>
+		</relationship>
+	</object>
+</objects>
