@@ -228,7 +228,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 0
+  m_LinearDamping: 0.01
   m_AngularDamping: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
@@ -258,6 +258,13 @@ MonoBehaviour:
   _projectileRb: {fileID: 3458692105890133554}
   infectionCureAmount: 35
   pickupAmount: 2
+  _pickupSFX:
+    Guid:
+      Data1: 1233467996
+      Data2: 1304724978
+      Data3: 277559989
+      Data4: 2100887810
+    Path: event:/HolyWater/HolyWaterPickup
   _splashSFX:
     Guid:
       Data1: -883155763

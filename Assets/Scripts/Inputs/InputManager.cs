@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -13,6 +14,9 @@ public class InputManager : MonoBehaviour
     public static bool isThrowPressed;
     public static bool isUsePressed;
 
+    public static Action onThrowPress;
+    public static Action onThrowRelease;
+
     private InputAction moveAction, crouchAction, jumpAction, throwAction, useAction;
 
     private void Awake()
@@ -23,6 +27,9 @@ public class InputManager : MonoBehaviour
         crouchAction = playerActionMap.FindAction("Crouch");
         throwAction = playerActionMap.FindAction("Throw");
         useAction = playerActionMap.FindAction("Use");
+
+        throwAction.performed += _ => onThrowPress?.Invoke();
+        throwAction.canceled += _ => onThrowRelease?.Invoke();
     }
 
     private void Update()
