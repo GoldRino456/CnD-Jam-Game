@@ -70,6 +70,13 @@ public class PlayerTracking : MonoBehaviour
 
         if (trackedItems.Count > 0)
         {
+            if(trackedItems.Count > 1)
+            {
+                var altar = trackedItems.Find((x) => x.IsAltar == true);
+                trackedItems.Remove(altar);
+                trackedItems.Add(altar); //Push altar to end of list
+            }
+
             currentlyTrackedPosition = trackedItems[0].GetWorldLocation();
         }
         else

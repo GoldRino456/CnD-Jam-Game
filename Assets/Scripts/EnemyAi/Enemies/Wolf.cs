@@ -70,6 +70,7 @@ public class Wolf : EnemyTest
             {
                 ContactFilter2D filter = new ContactFilter2D();
                 filter.layerMask = playerLayer;
+                filter.useLayerMask = true;
                 filter.useTriggers = false;
 
                 Collider2D[] hits = new Collider2D[1];
@@ -78,7 +79,7 @@ public class Wolf : EnemyTest
 
                 if (hits[0] != null)
                 {
-                    PlayerController player = hits[0].GetComponent<PlayerController>();
+                    PlayerController player = hits[0].GetComponentInParent<PlayerController>();
                     if (player != null)
                     {
                         player.ChangeInfection(infectionDamage);

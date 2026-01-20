@@ -9,6 +9,7 @@ public class HolyWater : MonoBehaviour, IItem
     [SerializeField] private Rigidbody2D _projectileRb;
     [SerializeField] private int infectionCureAmount = 35;
     [SerializeField] private int pickupAmount = 2;
+    [SerializeField] private FMODUnity.EventReference _pickupSFX;
     [SerializeField] private FMODUnity.EventReference _splashSFX;
     [SerializeField] private float _visualRotationSpeed = 5f;
 
@@ -38,6 +39,7 @@ public class HolyWater : MonoBehaviour, IItem
         }
         else
         {
+            FMODUnity.RuntimeManager.PlayOneShot(_pickupSFX, transform.position);
             return true;
         }
     }
@@ -57,7 +59,8 @@ public class HolyWater : MonoBehaviour, IItem
 
         if(collision.gameObject.tag == "Player")
         {
-
+            var controller = collision.gameObject.GetComponent<PlayerController>();
+            controller.ChangeInfection(-infectionCureAmount);
         }
 
         if(collision.gameObject.tag == "Enemy")
@@ -86,10 +89,10 @@ public class HolyWater : MonoBehaviour, IItem
     {
         //Trigger any vfx/sfx
 
-        if(user.CompareTag("player"))
+        if(user.CompareTag("Player"))
         {
             var controller = user.GetComponent<PlayerController>();
-            controller.ChangeInfection(infectionCureAmount);
+            controller.ChangeInfection(-infectionCureAmount);
         }
     }
 

@@ -16,11 +16,14 @@ public class PlayerInventory : MonoBehaviour
 
     private Rigidbody2D playerRb;
     private bool isThrowRequested;
+    private bool isUseRequested;
     private bool isFacingLeft = true;
     private bool isDirectionChange = false;
     private float itemUseTimer = 0f;
 
     public Action<int> OnHolyWaterCountChanged;
+    public Action OnThrow;
+    public Action OnUse;
     private void Awake()
     {
         currentHolyWater = startingHolyWater;
@@ -40,6 +43,7 @@ public class PlayerInventory : MonoBehaviour
         ProcessItemTimer();
         CheckForInventoryInput();
         ProcessThrow();
+        ProcessUse();
     }
 
     private void ProcessItemTimer()
@@ -55,6 +59,7 @@ public class PlayerInventory : MonoBehaviour
     private void CheckForInventoryInput()
     {
         isThrowRequested = InputManager.isThrowPressed;
+        isUseRequested = InputManager.isUsePressed;
         var moveX = InputManager.moveDirection.x;
         
         if(moveX != 0)
@@ -84,6 +89,21 @@ public class PlayerInventory : MonoBehaviour
             itemUseTimer = itemUseCooldown;
             currentHolyWater--;
             OnHolyWaterCountChanged?.Invoke(currentHolyWater);
+            OnThrow?.Invoke();
+        }
+    }
+
+    private void ProcessUse()
+    {
+        if (isUseRequested && itemUseTimer <= 0 && currentHolyWater > 0)
+        {
+            var newHolyWater = Instantiate(holyWaterPrefab, throwSpawnPoint.position, Quaternion.identity);
+            newHolyWater.GetComponent<HolyWater>().OnUse(gameObject);
+            Destroy(newHolyWater);
+            itemUseTimer = itemUseCooldown;
+            currentHolyWater--;
+            OnHolyWaterCountChanged?.Invoke(currentHolyWater);
+            OnUse?.Invoke();
         }
     }
 

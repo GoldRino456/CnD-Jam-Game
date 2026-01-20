@@ -1,8 +1,12 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
+
 public class GameManager : MonoBehaviour
 {
-    private int HowManyIngredientsArePickedUp = 0;
+    [SerializeField] GameObject LoseScreenTransition;
+    public int HowManyIngredientsArePickedUp = 0;
+    public int IngredientsNeededForWin = 3;
     public static GameManager Instance;
     private void Awake()
     {
@@ -40,16 +44,37 @@ public class GameManager : MonoBehaviour
         HowManyIngredientsArePickedUp++;
     }
 
-    public void CheckWinCondition()
+    public bool CheckWinCondition()
     {
-        if (HowManyIngredientsArePickedUp == 3)
+        if (HowManyIngredientsArePickedUp == IngredientsNeededForWin)
         {
-            Debug.Log("You won");
+            Instantiate(LoseScreenTransition, new Vector2(0, 0), Quaternion.identity);
+            StartCoroutine(WinTransitionDelay());
+            return true;
         }
+
+        return false;
     }
 
     public void CheckLoseCondition()
     {
-        Debug.Log("You lose");
+        Instantiate(LoseScreenTransition, new Vector2(0, 0), Quaternion.identity);
+        StartCoroutine(LostTransitionDelay());     
+    }
+
+    private IEnumerator LostTransitionDelay()
+    {
+        yield return new WaitForSeconds(2.5f);
+        SceneManager.LoadScene("LoseScreen");
+    }
+    private IEnumerator WinTransitionDelay()
+    {
+        yield return new WaitForSeconds(2.5f);
+        SceneManager.LoadScene("WinScreen");
+    }
+
+    public void BackToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }
