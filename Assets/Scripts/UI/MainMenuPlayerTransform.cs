@@ -5,7 +5,7 @@ public class MainMenuPlayerTransform : MonoBehaviour
 {
     [SerializeField] Animator animator;
     [SerializeField] GameObject transformationParticles;
-
+    
     void Start()
     {
         StartCoroutine(PlayerTransform());

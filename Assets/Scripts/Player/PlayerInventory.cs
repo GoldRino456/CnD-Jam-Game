@@ -10,7 +10,6 @@ public class PlayerInventory : MonoBehaviour
     [SerializeField] private float itemUseCooldown = 1f;
 
     [SerializeField] private PlayerPickup _pickUpLogic;
-    [SerializeField] private float humanPickupRadius = 0.5f;
 
     [SerializeField] private float aimResolution;
     [SerializeField] private float aimMaxTime;
@@ -26,7 +25,6 @@ public class PlayerInventory : MonoBehaviour
     //private bool isThrowRequested;
     private bool isUseRequested;
     private bool isFacingLeft = true;
-    private bool isDirectionChange = false;
     private float itemUseTimer = 0f;
 
     public Action<int> OnHolyWaterCountChanged;
@@ -92,7 +90,6 @@ public class PlayerInventory : MonoBehaviour
             if (isMovingLeft != isFacingLeft)
             {
                 isFacingLeft = isMovingLeft;
-                isDirectionChange = true;
                 anim.SetBool("facingLeft", isFacingLeft);
             }
 

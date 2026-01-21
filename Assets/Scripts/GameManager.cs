@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public int HowManyIngredientsArePickedUp = 0;
     public int IngredientsNeededForWin = 3;
     public static GameManager Instance;
+    [SerializeField] private FMODUnity.EventReference uiClick;
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -24,11 +25,13 @@ public class GameManager : MonoBehaviour
 
     public void PlayButton()
     {
+        FMODUnity.RuntimeManager.PlayOneShot(uiClick, transform.position);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void QuitButton()
     {
+        FMODUnity.RuntimeManager.PlayOneShot(uiClick, transform.position);
         Debug.Log("Quit Game Request Received...");
 
         #if UNITY_EDITOR
@@ -75,6 +78,7 @@ public class GameManager : MonoBehaviour
 
     public void BackToMainMenu()
     {
+        FMODUnity.RuntimeManager.PlayOneShot(uiClick, transform.position);
         SceneManager.LoadScene("MainMenu");
     }
 }
