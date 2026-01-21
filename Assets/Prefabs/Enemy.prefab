@@ -237,6 +237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlagueDoctor
   currentVelocity: {x: 0, y: 0}
   enemySpeed: 2
+  distance: 0
   wallCheckPostion: {fileID: 652219150072082306}
   wallCheckDistance: -0.58
   IsThatWall:
@@ -282,6 +283,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94048814a62a36c479b5a700138166c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AggroCheck
+  patrolSound:
+    Guid:
+      Data1: -1106215772
+      Data2: 1201296284
+      Data3: -1732333670
+      Data4: -2125860238
+    Path: event:/Enemy/DoctorQuestion
+  attackSound:
+    Guid:
+      Data1: -410848289
+      Data2: 1130619297
+      Data3: -2075145307
+      Data4: -1280068072
+    Path: event:/Enemy/DoctorAngry
 --- !u!70 &5013532353061169651
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

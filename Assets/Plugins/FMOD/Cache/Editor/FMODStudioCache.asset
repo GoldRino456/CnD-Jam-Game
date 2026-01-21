@@ -15,10 +15,10 @@ MonoBehaviour:
   Path: CnD-Jam-Game-FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639044474375171634
+  lastModified: 639045299085530401
   FileSizes:
   - Name: Desktop
-    Value: 1374
+    Value: 1462
   Exists: 1
 --- !u!114 &-4184838619969681955
 MonoBehaviour:
@@ -203,6 +203,8 @@ MonoBehaviour:
   - {fileID: 2875067064136448454}
   - {fileID: 110403744947833370}
   - {fileID: 2692649965735665161}
+  - {fileID: 5176878047525054752}
+  - {fileID: 7668779133114233244}
   EditorParameters:
   - {fileID: -3654172439631779525}
   MasterBanks:
@@ -210,7 +212,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: -5698178402443531953}
   cacheVersion: 131857
-  cacheTime: 639044474375171634
+  cacheTime: 639045299085530401
   SerializableEventsDict:
   - key: event:/Ambience
     index: 0
@@ -232,6 +234,10 @@ MonoBehaviour:
     index: 8
   - key: event:/HolyWater/HolyWaterBreak
     index: 9
+  - key: event:/UI/UIClick
+    index: 10
+  - key: event:/Enemy/DoctorAngry
+    index: 11
 --- !u!114 &110403744947833370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -361,7 +367,7 @@ MonoBehaviour:
   Banks:
   - {fileID: 8106261129611594618}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
@@ -388,7 +394,61 @@ MonoBehaviour:
   Banks:
   - {fileID: 8106261129611594618}
   IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &5176878047525054752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e14b1d0f626bda4ebc0fb8b91c96e8c, type: 3}
+  m_Name: event:/UI/UIClick
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/UI/UIClick
+  Guid:
+    Data1: -1267707814
+    Data2: 1266407874
+    Data3: -834887260
+    Data4: -1661098614
+  Banks:
+  - {fileID: 8106261129611594618}
+  IsStream: 0
   Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &7668779133114233244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e14b1d0f626bda4ebc0fb8b91c96e8c, type: 3}
+  m_Name: event:/Enemy/DoctorAngry
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Enemy/DoctorAngry
+  Guid:
+    Data1: -410848289
+    Data2: 1130619297
+    Data3: -2075145307
+    Data4: -1280068072
+  Banks:
+  - {fileID: 8106261129611594618}
+  IsStream: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -409,8 +469,8 @@ MonoBehaviour:
   Path: CnD-Jam-Game-FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639044474375153391
+  lastModified: 639045299085521017
   FileSizes:
   - Name: Desktop
-    Value: 1642624
+    Value: 1698688
   Exists: 1
