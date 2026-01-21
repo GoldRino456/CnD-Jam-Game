@@ -107,7 +107,6 @@ public class Enemy : MonoBehaviour, IMovebale, ITriggerCheckable, IAttackable
         enemyAttack = new EnemyAttack(this, stateMachine);
         enemyStun = new EnemyStun(this, stateMachine);
 
-        holyWater = FindAnyObjectByType<HolyWater>();
         anim = GetComponent<Animator>();
         _player = FindFirstObjectByType<PlayerController>();
     }
@@ -297,9 +296,7 @@ public class Enemy : MonoBehaviour, IMovebale, ITriggerCheckable, IAttackable
     #region Collision Enter
     void OnCollisionEnter2D(Collision2D collision)
     {   
-
-        holyWater = collision.gameObject.GetComponent<HolyWater>();
-        if(holyWater)
+        if(collision.gameObject.TryGetComponent<HolyWater>(out _))
         {
             damageFlash.CallCouroutine();
             FindAnyObjectByType<HitStop>().StopTime(0.2f);

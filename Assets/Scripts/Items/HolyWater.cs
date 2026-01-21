@@ -20,6 +20,7 @@ public class HolyWater : MonoBehaviour, IItem
 
     public int PickupAmount { get => pickupAmount; }
     private bool isThrown = false;
+    public bool isThrownByPlayer = false;
 
     private void FixedUpdate()
     {
@@ -45,26 +46,31 @@ public class HolyWater : MonoBehaviour, IItem
         }
     }
 
-    public void OnThrown(Vector2 initialVelocity, bool isThrownLeft)
+    public void OnThrown(Vector2 initialVelocity, bool isThrownLeft, bool isThrownByPlayer = false)
     {
         _projectileRb.linearVelocity = new Vector2(initialVelocity.x, 0);
         _projectileCollider.enabled = true;
+        this.isThrownByPlayer = isThrownByPlayer;
         ApplyThrowForce(isThrownLeft);
     }
 
     public void OnCollisionEnter2D(Collision2D collision) //Collision of Holy Water
-    {   
+    {
+        if (collision.gameObject.CompareTag("Player") && isThrownByPlayer) { return; } //Player ignores their own thrown holy water
+
         isThrown = false;
         FMODUnity.RuntimeManager.PlayOneShot(_splashSFX, transform.position);
         _projectileRb.linearVelocity = Vector2.zero;
+        print("Holy water collision detected.");
 
-        if(collision.gameObject.tag == "Player")
+        if(collision.gameObject.CompareTag("Player"))
         {
+            print("Hit player.");
             var controller = collision.gameObject.GetComponent<PlayerController>();
             controller.ChangeInfection(-infectionCureAmount);
         }
 
-        if(collision.gameObject.tag == "Enemy")
+        if(collision.gameObject.CompareTag("Enemy"))
         {
             if(collision.gameObject.TryGetComponent<EnemyTest>(out var wolf))
             {
@@ -84,7 +90,7 @@ public class HolyWater : MonoBehaviour, IItem
 
     public void OnTriggerEnter2D(Collider2D collision) //AOE Effect Range
     {
-       
+        print("Ping - OnTriggerEnter2D is called on HolyWater obj.");
     }
 
     public void OnUse(GameObject user)

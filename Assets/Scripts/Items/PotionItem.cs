@@ -44,7 +44,7 @@ public class PotionItem : MonoBehaviour, IItem, ITrackable
         return true;
     }
 
-    public void OnThrown(Vector2 initialVelocity, bool isThrownLeft)
+    public void OnThrown(Vector2 initialVelocity, bool isThrownLeft, bool isThrownByPlayer)
     {
         return;
     }

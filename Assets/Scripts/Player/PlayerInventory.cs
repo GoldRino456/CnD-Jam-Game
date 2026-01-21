@@ -181,7 +181,7 @@ public class PlayerInventory : MonoBehaviour
     public void Throw()
     {
         var newHolyWater = Instantiate(holyWaterPrefab, throwSpawnPoint.position, Quaternion.identity);
-        newHolyWater.GetComponent<HolyWater>().OnThrown(playerRb.linearVelocity, isFacingLeft);
+        newHolyWater.GetComponent<HolyWater>().OnThrown(playerRb.linearVelocity, isFacingLeft, true);
         itemUseTimer = itemUseCooldown;
         currentHolyWater--;
         OnHolyWaterCountChanged?.Invoke(currentHolyWater);
