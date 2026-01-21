@@ -64,3 +64,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ed4bccc377da469cb47f613ef033510, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MusicManager
+  lerpSpeed: 0.1
+  pCon: {fileID: 0}
+  _musicEvent:
+    Guid:
+      Data1: 1775298713
+      Data2: 1225236186
+      Data3: 159564447
+      Data4: -903956872
+    Path: event:/Music/MainMusic
+  _parameter: infectionLevel

@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     private bool _onlyOneTransition = true;
 
     [Header("Infection Stats")]
-    [SerializeField] private int _infectionProgress;
+    public int _infectionProgress;
     [SerializeField][Range(25, 75)] private int _startingInfectionProgress = 25;
     [SerializeField] private int _infectionIncrement = 5;
     [SerializeField] private float _infectionRate = 2.5f;
@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private PlayerMoveSettings _humanMoveSettings;
     [SerializeField] private PlayerMoveSettings _werewolfMoveSettings;
     [SerializeField] private AmbienceManager _ambMan;
+    [SerializeField] private MusicManager _musMan;
     private void Awake()
     {
         _movement = GetComponent<PlayerMovement>();
@@ -61,6 +62,7 @@ public class PlayerController : MonoBehaviour
                 GameObject.FindWithTag("GameManager").GetComponent<GameManager>().CheckLoseCondition();
                 _onlyOneTransition = false;
                 _ambMan.StopAmbience();
+                _musMan.StopMusic();
             }
 
         }

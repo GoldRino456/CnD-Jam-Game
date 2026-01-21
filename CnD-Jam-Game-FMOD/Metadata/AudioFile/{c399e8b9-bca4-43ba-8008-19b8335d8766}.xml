@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{c399e8b9-bca4-43ba-8008-19b8335d8766}">
+		<property name="assetPath">
+			<value>(human) exploration loop 121 bpm.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>37.685895833333333</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{85e9b998-bed5-4a5b-901c-c81409d43383}</destination>
+		</relationship>
+	</object>
+</objects>

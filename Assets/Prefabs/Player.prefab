@@ -10034,7 +10034,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4236033554129060093
 Transform:
   m_ObjectHideFlags: 0
@@ -10608,11 +10608,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   _infectionProgress: 0
   _startingInfectionProgress: 25
-  _infectionIncrement: 5
+  _infectionIncrement: 1
   _infectionRate: 2.5
-  _infectionThreshold1: 50
-  _infectionThreshold2: 75
-  currentForm: 0
+  _infectionThreshold1: 40
+  _infectionThreshold2: 65
+  _currentForm: 0
   transformParticle: {fileID: 5123526632817210174}
   transformSFX:
     Guid:
@@ -10622,9 +10622,11 @@ MonoBehaviour:
       Data4: 1691706956
     Path: event:/Player/PlayerTransform
   anim: {fileID: 6313558120882625173}
+  throwPoint: {fileID: 7838229610428229458}
   _humanMoveSettings: {fileID: 11400000, guid: 7ec7e7347f21e1d4d9a87a091a3fd944, type: 2}
   _werewolfMoveSettings: {fileID: 11400000, guid: 480407c1e88e79042801509b00606b1e, type: 2}
   _ambMan: {fileID: 0}
+  _musMan: {fileID: 0}
 --- !u!114 &5043890006959118447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10659,7 +10661,6 @@ MonoBehaviour:
   startingHolyWater: 5
   itemUseCooldown: 1
   _pickUpLogic: {fileID: 3119555255652095718}
-  humanPickupRadius: 0.5
   aimResolution: 0.05
   aimMaxTime: 5
   aimLineSpeed: 0.005

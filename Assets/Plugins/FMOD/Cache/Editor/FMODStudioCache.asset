@@ -1,5 +1,33 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6341951601709275530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e14b1d0f626bda4ebc0fb8b91c96e8c, type: 3}
+  m_Name: event:/Music/MainMusic
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Music/MainMusic
+  Guid:
+    Data1: 1775298713
+    Data2: 1225236186
+    Data3: 159564447
+    Data4: -903956872
+  Banks:
+  - {fileID: 8106261129611594618}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 1253447075537745608}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 37685
 --- !u!114 &-5698178402443531953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,10 +43,10 @@ MonoBehaviour:
   Path: CnD-Jam-Game-FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639045299085530401
+  lastModified: 639045321462179839
   FileSizes:
   - Name: Desktop
-    Value: 1462
+    Value: 1564
   Exists: 1
 --- !u!114 &-4184838619969681955
 MonoBehaviour:
@@ -99,6 +127,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-881319125936212755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fcfab8a98b1d5d418d164e964555c81, type: 3}
+  m_Name: parameter:/infectionLevel
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: infectionLevel
+  StudioPath: parameter:/infectionLevel
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 783778175
+    data2: 1720163856
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-838662345986044496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,14 +257,16 @@ MonoBehaviour:
   - {fileID: 2692649965735665161}
   - {fileID: 5176878047525054752}
   - {fileID: 7668779133114233244}
+  - {fileID: -6341951601709275530}
   EditorParameters:
   - {fileID: -3654172439631779525}
+  - {fileID: -881319125936212755}
   MasterBanks:
   - {fileID: 8106261129611594618}
   StringsBanks:
   - {fileID: -5698178402443531953}
   cacheVersion: 131857
-  cacheTime: 639045299085530401
+  cacheTime: 639045321462179839
   SerializableEventsDict:
   - key: event:/Ambience
     index: 0
@@ -238,6 +292,8 @@ MonoBehaviour:
     index: 10
   - key: event:/Enemy/DoctorAngry
     index: 11
+  - key: event:/Music/MainMusic
+    index: 12
 --- !u!114 &110403744947833370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,6 +321,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &1253447075537745608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fcfab8a98b1d5d418d164e964555c81, type: 3}
+  m_Name: parameter:/MainMusic/infectionLevel
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: infectionLevel
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 783778175
+    data2: 1720163856
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &1431362868243343829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -469,8 +549,8 @@ MonoBehaviour:
   Path: CnD-Jam-Game-FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639045299085521017
+  lastModified: 639045321462167996
   FileSizes:
   - Name: Desktop
-    Value: 1698688
+    Value: 2586272
   Exists: 1
