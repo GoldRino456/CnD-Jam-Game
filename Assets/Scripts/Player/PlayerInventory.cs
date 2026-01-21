@@ -28,6 +28,7 @@ public class PlayerInventory : MonoBehaviour
     private bool isFacingLeft = true;
     private bool isDirectionChange = false;
     private float itemUseTimer = 0f;
+    private Coroutine aimArcCoroutine = null;
 
     public Action<int> OnHolyWaterCountChanged;
     public Action OnThrow;
@@ -126,7 +127,7 @@ public class PlayerInventory : MonoBehaviour
         _aiming = true;
         aimLine.enabled = true;
 
-        StartCoroutine(ShowAimArc());
+        aimArcCoroutine = StartCoroutine(ShowAimArc());
     }
     private IEnumerator ShowAimArc()
     {
@@ -171,7 +172,12 @@ public class PlayerInventory : MonoBehaviour
         if (itemUseTimer > 0 || currentHolyWater <= 0 || !_aiming) return;
 
         _aiming = false;
-        StopCoroutine(ShowAimArc());
+        if(aimArcCoroutine != null)
+        {
+            print("Throw stop called.");
+            StopCoroutine(aimArcCoroutine);
+            aimArcCoroutine = null;
+        }
 
         anim.SetBool("throwing", true);
     }

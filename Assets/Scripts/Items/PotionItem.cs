@@ -19,7 +19,13 @@ public class PotionItem : MonoBehaviour, IItem, ITrackable
     }
     private void OnDestroy()
     {
-        GameObject.FindWithTag("GameManager").GetComponent<GameManager>().PickedUpOneIngredient();
+        var gameManager = GameObject.FindWithTag("GameManager");
+
+        if(gameManager != null)
+        {
+            gameManager.GetComponent<GameManager>().PickedUpOneIngredient();
+        }
+        
         OnDestroyCalled?.Invoke(TrackableId);
     }
 
