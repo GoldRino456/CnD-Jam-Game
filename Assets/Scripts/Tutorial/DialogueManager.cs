@@ -6,11 +6,19 @@ using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
+    [SerializeField] GameObject HolyWaterIndicator;
+    [SerializeField] GameObject PlayerIndicator;
+    [SerializeField] GameObject InfectionIndicator;
     public TextMeshProUGUI dialogueText;
     [SerializeField] float LetterDelay;
     public Dialogue dialogue;
+    [SerializeField] TutorialManager tutorialManager;
+    public bool isThisFirstDialog = true;
+    public bool isThisThirdDialogue = false;
 
-    private Queue<string> sentences;
+    private bool sentenceTyped = true;
+    public Queue<string> sentences;
+    private string currentSentence = "";
 
     private void Start()
     {
@@ -22,7 +30,16 @@ public class DialogueManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            DisplayNextSentence();
+            if (sentenceTyped == true)
+            {
+                DisplayNextSentence();
+            }
+            else
+            {
+                StopAllCoroutines();
+                dialogueText.text = currentSentence;
+                sentenceTyped = true;
+            }
         }
     }
 
@@ -40,29 +57,56 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
-        if (sentences.Count == 0)
+        if (sentences.Count == 0 && isThisFirstDialog && !isThisThirdDialogue)
         {
-            EndDialogue();
+            HolyWaterIndicator.SetActive(false);
+            tutorialManager.EndOfFirstDialogue();
             return;
         }
-        string sentence = sentences.Dequeue();
+        else if(sentences.Count == 0 && !isThisFirstDialog && !isThisThirdDialogue)
+        {
+            tutorialManager.EndOfSecondDialogue();
+            return;
+        }
+        if (sentences.Count == 0 && isThisThirdDialogue)
+        {
+            tutorialManager.EndOfThirdDialogue();
+            return;
+        }
+        if (sentences.Count == 3 && isThisFirstDialog)
+        {
+            PlayerIndicator.SetActive(true);
+        }
+        if (sentences.Count == 2 && isThisFirstDialog)
+        {
+            PlayerIndicator.SetActive(false);
+            InfectionIndicator.SetActive(true);
+        }
+        if (sentences.Count == 1 && isThisFirstDialog)
+        {
+            InfectionIndicator.SetActive(false);
+            HolyWaterIndicator.SetActive(true);
+        }
+
+        currentSentence = sentences.Dequeue();
+
         StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
+        StartCoroutine(TypeSentence(currentSentence));
     }
 
     IEnumerator TypeSentence(string sentence)
     {
+        sentenceTyped = false;
         dialogueText.text = "";
+
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
-
             yield return new WaitForSecondsRealtime(LetterDelay);
         }
+
+        sentenceTyped = true;
     }
 
-    public void EndDialogue()
-    {
-        // SceneManager.LoadScene(5);
-    }
+
 }

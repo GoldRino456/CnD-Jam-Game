@@ -183,3 +183,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f017918e609ae4841918e4d6bc25bef3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Altar
+  isThisTutorial: 0
+  LoseScreenTransition: {fileID: 4150131673370699481, guid: 2518a0011c4cfbf4b9a438ff662a951d, type: 3}

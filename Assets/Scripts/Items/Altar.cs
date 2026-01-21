@@ -1,10 +1,14 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class Altar : MonoBehaviour, ITrackable
 {
+    [SerializeField] float transitionTime = 2.5f;
+    [SerializeField] bool isThisTutorial;
     public int TrackableId { get; set; }
-
+    [SerializeField] GameObject LoseScreenTransition;
     public event Action<int> OnDestroyCalled;
     public bool IsAltar { get; } = true;
 
@@ -23,14 +27,26 @@ public class Altar : MonoBehaviour, ITrackable
         if(collision.gameObject.CompareTag("Player") && collision.isTrigger == false)
         {
             //Check GameManager for Win Con
-            if(GameManager.Instance.CheckWinCondition())
+            if(GameManager.Instance.CheckWinCondition() && !isThisTutorial)
             {
-                Debug.Log("All collected and brought to altar.");
+                Instantiate(LoseScreenTransition, new Vector2(0, 0), Quaternion.identity);
+                StartCoroutine(WinTransitionDelay("WinScreen"));
+            }
+            else if(GameManager.Instance.CheckWinCondition() && isThisTutorial)
+            {
+                Instantiate(LoseScreenTransition, new Vector2(0, 0), Quaternion.identity);
+                StartCoroutine(WinTransitionDelay("Level"));
             }
             else
             {
                 Debug.Log("Missing some stuff.");
             }
         }
+    }
+
+    private IEnumerator WinTransitionDelay(string sceneName)
+    {
+        yield return new WaitForSeconds(transitionTime);
+        SceneManager.LoadScene(sceneName);
     }
 }
