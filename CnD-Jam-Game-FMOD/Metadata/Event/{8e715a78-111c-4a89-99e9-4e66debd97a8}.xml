@@ -72,6 +72,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{b2900cfe-08a6-43e2-8c6e-333916cd4566}">
+		<property name="volume">
+			<value>-5</value>
+		</property>
 		<relationship name="modulators">
 			<destination>{7385e5fc-24f7-4754-92b4-08838199244e}</destination>
 		</relationship>
@@ -124,6 +127,9 @@
 	</object>
 	<object class="MixerBusPanner" id="{9eb58632-ed22-495b-826b-7bbed7fe2550}" />
 	<object class="MultiSound" id="{d1df2e81-7fe7-446d-81c9-c003f378d5c4}">
+		<property name="volume">
+			<value>-5</value>
+		</property>
 		<property name="looping">
 			<value>true</value>
 		</property>
@@ -136,6 +142,9 @@
 		</relationship>
 	</object>
 	<object class="SingleSound" id="{7269bf80-8e95-43ee-ac12-8b9cb8849a82}">
+		<property name="volume">
+			<value>-5</value>
+		</property>
 		<property name="looping">
 			<value>true</value>
 		</property>

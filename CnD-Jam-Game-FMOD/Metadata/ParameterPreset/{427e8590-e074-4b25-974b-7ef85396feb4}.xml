@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="ParameterPreset" id="{427e8590-e074-4b25-974b-7ef85396feb4}">
+		<property name="name">
+			<value>infectionLevel</value>
+		</property>
+		<relationship name="folder">
+			<destination>{4a23cfc2-b061-41ab-9ba2-f1e088a0c2d5}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{0237f761-39ca-4f19-8452-fbda759dfb39}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{0237f761-39ca-4f19-8452-fbda759dfb39}">
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>
