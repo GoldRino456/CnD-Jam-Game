@@ -210,7 +210,7 @@ MonoBehaviour:
   pounceForce: 14
   pounceCooldown: 1.5
   damageRadius: 1
-  infectionDamage: 10
+  infectionDamage: 15
   pounceArcTimeStep: 0.05
   pounceArcMaxTime: 2.25
   pounceArcRadius: 0.2

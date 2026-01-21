@@ -37725,6 +37725,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1638555875067423987, guid: 4bff559acb6740a41a109e8ff218c1ec, type: 3}
+      propertyPath: itemUseCooldown
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1638555875067423987, guid: 4bff559acb6740a41a109e8ff218c1ec, type: 3}
+      propertyPath: startingHolyWater
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3447851524882129095, guid: 4bff559acb6740a41a109e8ff218c1ec, type: 3}
       propertyPath: _ambMan
       value: 
@@ -37733,6 +37741,10 @@ PrefabInstance:
       propertyPath: _musMan
       value: 
       objectReference: {fileID: 1299623651}
+    - target: {fileID: 3447851524882129095, guid: 4bff559acb6740a41a109e8ff218c1ec, type: 3}
+      propertyPath: _infectionIncrement
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5203531098818095916, guid: 4bff559acb6740a41a109e8ff218c1ec, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

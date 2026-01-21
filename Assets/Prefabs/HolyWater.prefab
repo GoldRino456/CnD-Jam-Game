@@ -256,7 +256,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HolyWater
   _projectileCollider: {fileID: 3721607565027396538}
   _projectileRb: {fileID: 3458692105890133554}
-  infectionCureAmount: 35
+  infectionCureAmount: 20
   pickupAmount: 2
   _pickupSFX:
     Guid:
@@ -276,3 +276,4 @@ MonoBehaviour:
   impactPrefab: {fileID: 4582273696623221839, guid: d344ab6abe98a400481b9f9963026f59, type: 3}
   throwForce: 5
   stunTime: 4
+  isThrownByPlayer: 0

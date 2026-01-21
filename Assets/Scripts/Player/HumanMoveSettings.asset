@@ -18,7 +18,7 @@ MonoBehaviour:
   SnapInput: 1
   VerticalDeadZoneThreshold: 0.3
   HorizontalDeadZoneThreshold: 0.1
-  DetectionRadius: 5
+  DetectionRadius: 4
   CrouchedDetectionRadius: 2
   MaxSpeed: 7
   MaxCrouchedSpeed: 4
@@ -27,7 +27,7 @@ MonoBehaviour:
   AirDeceleration: 30
   GroundingForce: -1.5
   GrounderDistance: 0.05
-  JumpPower: 25
+  JumpPower: 27
   MaxFallSpeed: 35
   FallAcceleration: 80
   JumpEndEarlyGravityModifier: 3
