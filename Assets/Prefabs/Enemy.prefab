@@ -242,7 +242,7 @@ MonoBehaviour:
   wallCheckDistance: -0.58
   IsThatWall:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 768
   groundCheckPosition: {fileID: 772622004275684788}
   radius: 0.22
   IsThatGround:
@@ -252,7 +252,7 @@ MonoBehaviour:
   minDectime: 4
   maxDectime: 8
   holyWater: {fileID: 0}
-  playerDetectDistance: 4
+  playerDetectDistance: 9
   playerDetectResolution: 12
   playerLayer:
     serializedVersion: 2
@@ -263,11 +263,11 @@ MonoBehaviour:
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 256
-  playerAttackDistance: 3
+  playerAttackDistance: 1.2
   playerAttackResolution: 15
   holyWaterPrefab: {fileID: 3062180124263963466, guid: cd3bc38fb31f7c040a091593a660d71e, type: 3}
   throwSpawnPoint: {fileID: 3971631793657959809}
-  itemUseCooldown: 12
+  itemUseCooldown: 2
   isThrown: 0
   itemUseTimer: 0
   anim: {fileID: 5986500468805106909}
@@ -395,7 +395,7 @@ Transform:
   m_GameObject: {fileID: 6541235522092502556}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.043, y: 0, z: 0}
+  m_LocalPosition: {x: 0.818, y: -0.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -510,7 +510,7 @@ Transform:
   m_GameObject: {fileID: 6988570352607235288}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.309, z: 0}
+  m_LocalPosition: {x: 0.008, y: -0.337, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

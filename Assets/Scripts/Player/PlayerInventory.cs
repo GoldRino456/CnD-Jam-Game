@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Data.Common;
 using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
@@ -55,7 +56,10 @@ public class PlayerInventory : MonoBehaviour
         ProcessItemTimer();
         CheckForInventoryInput();
         //ProcessThrow();
-        ProcessUse();
+        if(!GameManager.Instance.isPaused)
+        {
+            ProcessUse();
+        }
 
         if (!_aiming && aimLine.enabled)
         {
@@ -124,6 +128,7 @@ public class PlayerInventory : MonoBehaviour
         _aiming = true;
         aimLine.enabled = true;
 
+        if(GameManager.Instance.isPaused) return;
         aimArcCoroutine = StartCoroutine(ShowAimArc());
     }
     private IEnumerator ShowAimArc()
@@ -143,7 +148,9 @@ public class PlayerInventory : MonoBehaviour
         }
     }
     private IEnumerator DrawArc(bool redraw)
-    {
+    {   
+        
+            
         Vector2 velocity = new Vector2(playerRb.linearVelocity.x, 0) + (Vector2)(throwSpawnPoint.up * 5f + throwSpawnPoint.right * 5f * (isFacingLeft ? -1 : 1));
         Vector2 prevPos = throwSpawnPoint.position;
 
@@ -163,10 +170,11 @@ public class PlayerInventory : MonoBehaviour
 
             if (!redraw) yield return new WaitForSeconds(aimLineSpeed);
         }
-    }
+    
+        }
     private void ProcessThrow()
     {
-        if (itemUseTimer > 0 || currentHolyWater <= 0 || !_aiming) return;
+        if (itemUseTimer > 0 || currentHolyWater <= 0 || !_aiming || GameManager.Instance.isPaused) return;
 
         _aiming = false;
         if(aimArcCoroutine != null)
@@ -179,12 +187,15 @@ public class PlayerInventory : MonoBehaviour
         anim.SetBool("throwing", true);
     }
     public void Throw()
-    {
+    {   
+        if(!GameManager.Instance.isPaused)
+        {
         var newHolyWater = Instantiate(holyWaterPrefab, throwSpawnPoint.position, Quaternion.identity);
         newHolyWater.GetComponent<HolyWater>().OnThrown(playerRb.linearVelocity, isFacingLeft, true);
         itemUseTimer = itemUseCooldown;
         currentHolyWater--;
         OnHolyWaterCountChanged?.Invoke(currentHolyWater);
+        }
     }
     public void EndThrow()
     {

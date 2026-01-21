@@ -1,10 +1,13 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using UnityEngine.EventSystems;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] GameObject LoseScreenTransition;
+    [SerializeField] GameObject PauseScreen;
+    public bool isPaused = false;
     public int HowManyIngredientsArePickedUp = 0;
     public int IngredientsNeededForWin = 3;
     public static GameManager Instance;
@@ -20,6 +23,8 @@ public class GameManager : MonoBehaviour
         Instance = this;
 
         DontDestroyOnLoad(gameObject);
+
+        PauseScreen.SetActive(false);
     }
 
 
@@ -74,5 +79,37 @@ public class GameManager : MonoBehaviour
     {
         FMODUnity.RuntimeManager.PlayOneShot(uiClick, transform.position);
         SceneManager.LoadScene("MainMenu");
+    }
+
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape) && !isPaused)
+        {
+            TogglePause();
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape) && isPaused)
+        {
+            Resumegame();
+        }
+
+        if(!isPaused)
+        {
+            EventSystem.current.SetSelectedGameObject(null);
+        }
+    }
+
+    void TogglePause()
+    {
+        PauseScreen.SetActive(true);
+        Time.timeScale = 0f;
+        isPaused = true;
+        
+    }
+    public void Resumegame()
+    {
+        PauseScreen.SetActive(false);
+        Time.timeScale = 1f;
+        isPaused = false;
+        FMODUnity.RuntimeManager.PlayOneShot(uiClick, transform.position);
     }
 }

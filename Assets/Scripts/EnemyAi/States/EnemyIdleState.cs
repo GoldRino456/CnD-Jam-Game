@@ -1,5 +1,6 @@
 using UnityEngine;
 
+
 public class EnemyIdleState : EnemyState
 {
     public EnemyIdleState(Enemy _enemy, StateMachine _stateMachine) : base(_enemy, _stateMachine)
@@ -40,7 +41,6 @@ public class EnemyIdleState : EnemyState
         {
             stateMachine.ChangeState(enemy.enemyChase);
         }
-
         //Debug.Log(stateTimer);
         
     }

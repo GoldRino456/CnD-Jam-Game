@@ -1,5 +1,3 @@
-using System.Collections;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class EnemyPatrol : EnemyState
@@ -12,10 +10,11 @@ public class EnemyPatrol : EnemyState
     private Vector2 direction;
     private float decisionTimer;
 
-   
+  
    
     public override void EnterState()
     {   
+        enemy.CheckIsFacingRight(direction);
         direction = Vector2.right;
         decisionTimer = Random.Range(enemy.minDectime, enemy.maxDectime);
         enemy.anim.SetBool("Move", true);
@@ -50,7 +49,8 @@ public class EnemyPatrol : EnemyState
 
             else
 
-            {
+            {   
+                if(enemy.IsTherGround())
                 enemy.MoveEnemy(direction * enemy.enemySpeed * enemy.facingDir); 
             }
         }
@@ -64,7 +64,12 @@ public class EnemyPatrol : EnemyState
          if(enemy.IsTherGround())
         {   
             enemy.MoveEnemy(direction * enemy.enemySpeed * enemy.facingDir); 
-        }   
+        } 
+
+        if(!enemy.IsTherGround())
+        {
+            stateMachine.ChangeState(enemy.enemyIdle);
+        }
         base.FrameUpdate(); 
     }
 

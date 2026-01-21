@@ -1,6 +1,3 @@
-using System;
-using UnityEditor.Animations;
-using UnityEditor.Callbacks;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour, IMovebale, ITriggerCheckable, IAttackable
@@ -304,4 +301,6 @@ public class Enemy : MonoBehaviour, IMovebale, ITriggerCheckable, IAttackable
         
     }
     #endregion
+
+    
 }

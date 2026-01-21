@@ -33,7 +33,9 @@ public class InputManager : MonoBehaviour
     }
 
     private void Update()
-    {
+    {   
+        if(!GameManager.Instance.isPaused)
+        {
         moveDirection = moveAction.ReadValue<Vector2>();
 
         isCrouchHeld = crouchAction.IsPressed();
@@ -44,5 +46,6 @@ public class InputManager : MonoBehaviour
 
         isThrowPressed = throwAction.WasPressedThisFrame();
         isUsePressed = useAction.WasPressedThisFrame();
+        }
     }
 }
