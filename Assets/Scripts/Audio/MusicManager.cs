@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
 public class MusicManager : MonoBehaviour
@@ -22,7 +23,10 @@ public class MusicManager : MonoBehaviour
     }
     void Update()
     {
-        _paramValue = Mathf.Lerp(pCon._infectionProgress / 100f, _paramValue, Time.deltaTime * lerpSpeed);
-        FMODUnity.RuntimeManager.StudioSystem.setParameterByName(_parameter, _paramValue);
+        if (SceneManager.GetActiveScene().name == "Level")
+        {
+            _paramValue = Mathf.Lerp(pCon._infectionProgress / 100f, _paramValue, Time.deltaTime * lerpSpeed);
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName(_parameter, _paramValue);
+        }
     }
 }
