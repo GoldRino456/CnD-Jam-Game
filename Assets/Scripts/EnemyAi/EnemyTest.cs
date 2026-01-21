@@ -83,7 +83,12 @@ public class EnemyTest : MonoBehaviour
         _inSight = false;
         suspicionSettings.noticedPlayer = 0;
         suspicionSettings.suspicion = 0;
-        StopCoroutine(_currentCoroutine);
+        
+        if(_currentCoroutine != null)
+        {
+            StopCoroutine(_currentCoroutine);
+        }
+
         _currentCoroutine = StartCoroutine(StunState());
     }
 
