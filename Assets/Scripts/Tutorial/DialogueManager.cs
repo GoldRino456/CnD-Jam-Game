@@ -73,16 +73,16 @@ public class DialogueManager : MonoBehaviour
             tutorialManager.EndOfThirdDialogue();
             return;
         }
-        if (sentences.Count == 3 && isThisFirstDialog)
+        if (sentences.Count == 4 && isThisFirstDialog)
         {
             PlayerIndicator.SetActive(true);
         }
-        if (sentences.Count == 2 && isThisFirstDialog)
+        if (sentences.Count == 3 && isThisFirstDialog)
         {
             PlayerIndicator.SetActive(false);
             InfectionIndicator.SetActive(true);
         }
-        if (sentences.Count == 1 && isThisFirstDialog)
+        if (sentences.Count == 2 && isThisFirstDialog)
         {
             InfectionIndicator.SetActive(false);
             HolyWaterIndicator.SetActive(true);

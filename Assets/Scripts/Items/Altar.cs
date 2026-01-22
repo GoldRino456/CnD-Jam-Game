@@ -47,6 +47,7 @@ public class Altar : MonoBehaviour, ITrackable
     private IEnumerator WinTransitionDelay(string sceneName)
     {
         yield return new WaitForSeconds(transitionTime);
+        GameManager.Instance.HowManyIngredientsArePickedUp = 0;
         SceneManager.LoadScene(sceneName);
     }
 }
