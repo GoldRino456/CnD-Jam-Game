@@ -7,6 +7,7 @@ public class MusicManager : MonoBehaviour
     [SerializeField] private float lerpSpeed;
     [SerializeField] private PlayerController pCon;
     [SerializeField] private FMODUnity.EventReference _musicEvent;
+    [SerializeField] private FMODUnity.EventReference _titleEvent;
     [FMODUnity.ParamRef]
     [FormerlySerializedAs("parameter")]
     public string _parameter;
@@ -14,8 +15,17 @@ public class MusicManager : MonoBehaviour
     private FMOD.Studio.EventInstance _musicInstance;
     private void Start()
     {
-        _musicInstance = FMODUnity.RuntimeManager.CreateInstance(_musicEvent);
-        _musicInstance.start();
+
+        if (SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            _musicInstance = FMODUnity.RuntimeManager.CreateInstance(_titleEvent);
+            _musicInstance.start();
+        }
+        else if (SceneManager.GetActiveScene().name == "Level")
+        {
+            _musicInstance = FMODUnity.RuntimeManager.CreateInstance(_musicEvent);
+            _musicInstance.start();
+        }
     }
     public void StopMusic()
     {

@@ -496,7 +496,7 @@ RectTransform:
   m_Father: {fileID: 137852747}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1081,7 +1081,14 @@ MonoBehaviour:
       Data3: 159564447
       Data4: -903956872
     Path: event:/Music/MainMusic
-  _parameter: 
+  _titleEvent:
+    Guid:
+      Data1: 1479153630
+      Data2: 1232216045
+      Data3: -226382434
+      Data4: 1717858319
+    Path: event:/Music/MenuMusic
+  _parameter: infectionLevel
 --- !u!4 &492257631
 Transform:
   m_ObjectHideFlags: 0
@@ -3125,7 +3132,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1253626466
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3474,6 +3481,7 @@ GameObject:
   - component: {fileID: 1377379975}
   - component: {fileID: 1377379974}
   - component: {fileID: 1377379977}
+  - component: {fileID: 1377379978}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3599,6 +3607,20 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &1377379978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377379973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8d2ff21875a4ef41a9c2888a05dee87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioListener
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 0}
 --- !u!1 &1386957532
 GameObject:
   m_ObjectHideFlags: 0
@@ -4617,15 +4639,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   LoseScreenTransition: {fileID: 4150131673370699481, guid: 2518a0011c4cfbf4b9a438ff662a951d, type: 3}
+  PauseScreen: {fileID: 0}
+  isPaused: 0
   HowManyIngredientsArePickedUp: 0
   IngredientsNeededForWin: 3
   uiClick:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -1267707814
+      Data2: 1266407874
+      Data3: -834887260
+      Data4: -1661098614
+    Path: event:/UI/UIClick
+  musMan: {fileID: 492257630}
+  loseParam: lose
+  winParama: win
 --- !u!4 &2072598387
 Transform:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,11 +13,18 @@ public class GameManager : MonoBehaviour
     public int IngredientsNeededForWin = 3;
     public static GameManager Instance;
     [SerializeField] private FMODUnity.EventReference uiClick;
+    [SerializeField] private MusicManager musMan;
+    [FMODUnity.ParamRef]
+    [FormerlySerializedAs("parameter")]
+    public string loseParam;
+    [FMODUnity.ParamRef]
+    [FormerlySerializedAs("parameter")]
+    public string winParama;
     private void Awake()
     {
         if (Instance != null && Instance != this)
         {
-            Destroy(gameObject); 
+            Destroy(gameObject);
             return;
         }
 
@@ -31,6 +39,8 @@ public class GameManager : MonoBehaviour
     public void PlayButton()
     {
         FMODUnity.RuntimeManager.PlayOneShot(uiClick, transform.position);
+        musMan.StopMusic();
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
@@ -39,12 +49,12 @@ public class GameManager : MonoBehaviour
         FMODUnity.RuntimeManager.PlayOneShot(uiClick, transform.position);
         Debug.Log("Quit Game Request Received...");
 
-        #if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-        
-        #else
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+
+#else
             Application.Quit();
-        #endif
+#endif
     }
 
     public void PickedUpOneIngredient()
@@ -56,6 +66,7 @@ public class GameManager : MonoBehaviour
     {
         if (HowManyIngredientsArePickedUp == IngredientsNeededForWin)
         {
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName(winParama, 1);
             return true;
         }
 
@@ -64,8 +75,9 @@ public class GameManager : MonoBehaviour
 
     public void CheckLoseCondition()
     {
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName(loseParam, 1);
         Instantiate(LoseScreenTransition, new Vector2(0, 0), Quaternion.identity);
-        StartCoroutine(LostTransitionDelay());     
+        StartCoroutine(LostTransitionDelay());
     }
 
     private IEnumerator LostTransitionDelay()
@@ -73,7 +85,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(2.5f);
         SceneManager.LoadScene("LoseScreen");
     }
-    
+
 
     public void BackToMainMenu()
     {
@@ -83,7 +95,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape) && !isPaused)
+        if (Input.GetKeyDown(KeyCode.Escape) && !isPaused)
         {
             TogglePause();
         }
@@ -92,7 +104,7 @@ public class GameManager : MonoBehaviour
             Resumegame();
         }
 
-        if(!isPaused)
+        if (!isPaused)
         {
             EventSystem.current.SetSelectedGameObject(null);
         }
@@ -103,7 +115,7 @@ public class GameManager : MonoBehaviour
         PauseScreen.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
-        
+
     }
     public void Resumegame()
     {
