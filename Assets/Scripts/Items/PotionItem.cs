@@ -4,6 +4,7 @@ using UnityEngine;
 public class PotionItem : MonoBehaviour, IItem, ITrackable
 {
     public ItemType Type { get; } = ItemType.PotionItem;
+    [SerializeField] private Sprite _UISprite;
     [SerializeField] private SpriteRenderer _potionSpriteRenderer;
     [SerializeField] private int _trackableId;
 
@@ -23,7 +24,7 @@ public class PotionItem : MonoBehaviour, IItem, ITrackable
 
         if(gameManager != null)
         {
-            gameManager.GetComponent<GameManager>().PickedUpOneIngredient();
+            gameManager.GetComponent<GameManager>().PickedUpOneIngredient(_UISprite);
         }
         
         OnDestroyCalled?.Invoke(TrackableId);

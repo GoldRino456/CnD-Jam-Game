@@ -7,9 +7,12 @@ public class PlayerUI : MonoBehaviour
     [SerializeField] private GameObject _holyWaterUIContainer;
     [SerializeField] private GameObject _holyWaterIconPrefab;
     [SerializeField] private RectTransform _infectionBarProgress;
+    [SerializeField] private Image[] potionItems;
 
     private List<GameObject> _holyWaterUIIcons;
     private float _infectionBarMaxWidth;
+    private PlayerController playerController;
+    private PlayerInventory playerInventory;
 
     private void Start()
     {
@@ -25,12 +28,13 @@ public class PlayerUI : MonoBehaviour
         _holyWaterUIIcons = new();
         _infectionBarMaxWidth = _infectionBarProgress.sizeDelta.x;
 
-        var playerInventory = playerObj.GetComponent<PlayerInventory>();
-        var playerController = playerObj.GetComponent<PlayerController>();
+        playerInventory = playerObj.GetComponent<PlayerInventory>();
+        playerController = playerObj.GetComponent<PlayerController>();
 
         //Player Event Subscriptions
         playerInventory.OnHolyWaterCountChanged += PlayerInventory_OnHolyWaterCountChanged;
         playerController.OnInfectionProgressChanged += PlayerController_OnInfectionProgressChanged;
+        GameManager.Instance.OnPotionItemPickedUp += GameManager_OnPotionItemPickedUp;
     }
 
     private void PlayerInventory_OnHolyWaterCountChanged(int newCount)
@@ -57,5 +61,17 @@ public class PlayerUI : MonoBehaviour
         _infectionBarProgress.sizeDelta = new Vector2(
             progressDecimal * _infectionBarMaxWidth, 
             _infectionBarProgress.sizeDelta.y);
+    }
+
+    private void GameManager_OnPotionItemPickedUp(Sprite image, int index)
+    {
+        potionItems[index].sprite = image;
+    }
+
+    private void OnDestroy()
+    {
+        playerInventory.OnHolyWaterCountChanged -= PlayerInventory_OnHolyWaterCountChanged;
+        playerController.OnInfectionProgressChanged -= PlayerController_OnInfectionProgressChanged;
+        GameManager.Instance.OnPotionItemPickedUp -= GameManager_OnPotionItemPickedUp;
     }
 }

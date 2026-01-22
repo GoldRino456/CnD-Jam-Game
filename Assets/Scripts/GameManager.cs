@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -20,6 +21,9 @@ public class GameManager : MonoBehaviour
     [FMODUnity.ParamRef]
     [FormerlySerializedAs("parameter")]
     public string winParama;
+
+    public Action<Sprite, int> OnPotionItemPickedUp;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -64,9 +68,10 @@ public class GameManager : MonoBehaviour
 #endif
     }
 
-    public void PickedUpOneIngredient()
+    public void PickedUpOneIngredient(Sprite uiSprite)
     {
         HowManyIngredientsArePickedUp++;
+        OnPotionItemPickedUp?.Invoke(uiSprite, HowManyIngredientsArePickedUp - 1);
     }
 
     public bool CheckWinCondition()

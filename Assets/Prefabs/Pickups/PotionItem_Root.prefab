@@ -131,6 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52bc5d110af1dc344ad0704d6c3c883c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PotionItem
+  _UISprite: {fileID: -5060975134258970793, guid: 9c85fb777fc87a34cb20aacdd38f3b88, type: 3}
   _potionSpriteRenderer: {fileID: 2863032233235828303}
   _trackableId: 0
 --- !u!61 &5742152704768953954
