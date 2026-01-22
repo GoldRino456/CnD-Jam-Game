@@ -1197,7 +1197,7 @@ PrefabInstance:
     - target: {fileID: 7628069633009838032, guid: 980cbc11f41e8d84fb697ebf74186b44, type: 3}
       propertyPath: PauseScreen
       value: 
-      objectReference: {fileID: 1033483109}
+      objectReference: {fileID: 0}
     - target: {fileID: 7936597253795495061, guid: 980cbc11f41e8d84fb697ebf74186b44, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -37676,14 +37676,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1638555875067423987, guid: 4bff559acb6740a41a109e8ff218c1ec, type: 3}
-      propertyPath: itemUseCooldown
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1638555875067423987, guid: 4bff559acb6740a41a109e8ff218c1ec, type: 3}
-      propertyPath: startingHolyWater
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 3447851524882129095, guid: 4bff559acb6740a41a109e8ff218c1ec, type: 3}
       propertyPath: _ambMan
       value: 
@@ -37692,10 +37684,6 @@ PrefabInstance:
       propertyPath: _musMan
       value: 
       objectReference: {fileID: 1299623651}
-    - target: {fileID: 3447851524882129095, guid: 4bff559acb6740a41a109e8ff218c1ec, type: 3}
-      propertyPath: _infectionIncrement
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 5203531098818095916, guid: 4bff559acb6740a41a109e8ff218c1ec, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -38753,11 +38741,6 @@ Transform:
   - {fileID: 945449502}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1033483109 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3120351636260236877, guid: dcf38b6bcac54a44dabfb8e8ce620aa1, type: 3}
-  m_PrefabInstance: {fileID: 1879077340}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1068527600
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57551,6 +57534,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 914711038}
+    - target: {fileID: 5898505592378796924, guid: dcf38b6bcac54a44dabfb8e8ce620aa1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

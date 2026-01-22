@@ -3,9 +3,11 @@ using System.Collections;
 using UnityEngine;
 public enum Form
 {
+    Death = -1,
     Human = 0,
     Middle = 1,
-    Werewolf = 2
+    Werewolf = 2,
+    FullWolf = 3
 };
 [RequireComponent(typeof(PlayerMovement), typeof(PlayerTracking))]
 public class PlayerController : MonoBehaviour
@@ -35,6 +37,7 @@ public class PlayerController : MonoBehaviour
     [Header("Movement Settings")]
     [SerializeField] private PlayerMoveSettings _humanMoveSettings;
     [SerializeField] private PlayerMoveSettings _werewolfMoveSettings;
+    [SerializeField] private PlayerMoveSettings _deathMoveSettings; //All zeros
     [SerializeField] private AmbienceManager _ambMan;
     [SerializeField] private MusicManager _musMan;
     private void Awake()
@@ -73,6 +76,16 @@ public class PlayerController : MonoBehaviour
     {
         switch (_infectionProgress)
         {
+            case int n when (n == 100):
+                _currentForm = Form.FullWolf;
+                _tracking.SetTrackingEnabled(false);
+                _movement.UpdateMoveSettings(_deathMoveSettings);
+                break;
+            case int n when (n == 0):
+                _currentForm = Form.Death;
+                _tracking.SetTrackingEnabled(false);
+                _movement.UpdateMoveSettings(_deathMoveSettings);
+                break;
             case int n when (n >= _infectionThreshold2):
                 _currentForm = Form.Werewolf;
                 _tracking.SetTrackingEnabled(true);
