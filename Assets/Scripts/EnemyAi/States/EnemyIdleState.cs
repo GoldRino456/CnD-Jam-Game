@@ -18,11 +18,14 @@ public class EnemyIdleState : EnemyState
         hasChanged = false;
         enemy.MoveEnemy(Vector2.zero);
         enemy.anim.SetTrigger("Idle");
+
+        Debug.Log("I am In Idle");
     }
 
     public override void ExitState()
     {
         base.ExitState(); 
+        Debug.Log("I am leavign idle");
         
     }
 

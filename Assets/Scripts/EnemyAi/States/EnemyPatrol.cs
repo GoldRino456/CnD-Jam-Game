@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.LightTransport;
 
 public class EnemyPatrol : EnemyState
 {
@@ -14,17 +15,18 @@ public class EnemyPatrol : EnemyState
    
     public override void EnterState()
     {   
-        enemy.CheckIsFacingRight(direction);
-        direction = Vector2.right;
+        direction = Vector2.right * enemy.facingDir;
         decisionTimer = Random.Range(enemy.minDectime, enemy.maxDectime);
         enemy.anim.SetBool("Move", true);
+        Debug.Log("I am in patrol");
         base.EnterState();
     }
 
     public override void ExitState()
     {
         base.ExitState();
-         enemy.anim.SetBool("Move", false);
+        enemy.anim.SetBool("Move", false);
+        Debug.Log("I am leaving patrol");
     }
 
     public override void FrameUpdate()
@@ -48,28 +50,30 @@ public class EnemyPatrol : EnemyState
             }
 
             else
-
-            {   
-                if(enemy.IsTherGround())
-                enemy.MoveEnemy(direction * enemy.enemySpeed * enemy.facingDir); 
+            { 
+             if(enemy.IsTherGround())
+                {
+                enemy.MoveEnemy(direction * enemy.enemySpeed); 
+                }
             }
         }
 
-        if(enemy.IsThereWall())
-            {
+        if(enemy.IsThereWall() || !enemy.IsTherGround())
+            {   
+                
+                enemy.MoveEnemy(Vector2.zero);
+                enemy.FlipSprite();
                 stateMachine.ChangeState(enemy.enemyIdle);
-                direction = -direction;  
+                return;
+                
             }  
 
          if(enemy.IsTherGround())
         {   
-            enemy.MoveEnemy(direction * enemy.enemySpeed * enemy.facingDir); 
+            enemy.MoveEnemy(direction * enemy.enemySpeed); 
         } 
 
-        if(!enemy.IsTherGround())
-        {
-            stateMachine.ChangeState(enemy.enemyIdle);
-        }
+        
         base.FrameUpdate(); 
     }
 
@@ -83,5 +87,7 @@ public class EnemyPatrol : EnemyState
     {
         base.PhysicsUpdate();
     }
+
+    
 
 }

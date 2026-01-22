@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour, IMovebale, ITriggerCheckable, IAttackable
         [SerializeField] LayerMask IsThatWall; 
         
         [SerializeField] Transform groundCheckPosition;
-        [SerializeField] float radius;
+        [SerializeField] float groundCheckDistance;
         [SerializeField] LayerMask IsThatGround;
          [SerializeField] private float activeRange = 20f;
 
@@ -160,7 +160,7 @@ public class Enemy : MonoBehaviour, IMovebale, ITriggerCheckable, IAttackable
     }
 
     public bool IsThereWall() => Physics2D.Raycast(wallCheckPostion.position, Vector2.right * facingDir, wallCheckDistance * facingDir, IsThatWall);
-    public bool IsTherGround() => Physics2D.CircleCast(groundCheckPosition.position, radius, Vector2.down, 0f, IsThatGround);
+    public bool IsTherGround() => Physics2D.Raycast(groundCheckPosition.position, Vector2.down, groundCheckDistance, IsThatGround );
     public bool RaycastChaseSweep()
     {
         if (stateMachine.currentState == enemyStun) { return false; } //Ignore player while stunned
@@ -214,7 +214,7 @@ public class Enemy : MonoBehaviour, IMovebale, ITriggerCheckable, IAttackable
         Gizmos.DrawLine(wallCheckPostion.position, wallCheckPostion.position + rayDir);
 
         Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(groundCheckPosition.position, radius);
+        Gizmos.DrawLine(groundCheckPosition.position, new Vector3(groundCheckPosition.position.x, groundCheckPosition.position.y - groundCheckDistance)); //Draw line for ground check
 
          Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, activeRange);
