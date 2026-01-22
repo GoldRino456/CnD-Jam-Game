@@ -113,6 +113,7 @@ GameObject:
   - component: {fileID: 6009484474144562195}
   - component: {fileID: 7628069633009838032}
   - component: {fileID: -6579738185721404138}
+  - component: {fileID: 7449097882705481686}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameManager
@@ -160,7 +161,7 @@ MonoBehaviour:
       Data3: -834887260
       Data4: -1661098614
     Path: event:/UI/UIClick
-  musMan: {fileID: 0}
+  musMan: {fileID: 7449097882705481686}
   loseParam: 
   winParama: 
 --- !u!114 &-6579738185721404138
@@ -175,6 +176,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d61d1ece16530044b643a5c6b2e927a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HitStop
+--- !u!114 &7449097882705481686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7936597253795495061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ed4bccc377da469cb47f613ef033510, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MusicManager
+  lerpSpeed: 0
+  pCon: {fileID: 0}
+  _musicEvent:
+    Guid:
+      Data1: 1775298713
+      Data2: 1225236186
+      Data3: 159564447
+      Data4: -903956872
+    Path: event:/Music/MainMusic
+  _titleEvent:
+    Guid:
+      Data1: 1479153630
+      Data2: 1232216045
+      Data3: -226382434
+      Data4: 1717858319
+    Path: event:/Music/MenuMusic
+  _parameter: infectionLevel
 --- !u!1001 &3969863419671735137
 PrefabInstance:
   m_ObjectHideFlags: 0
