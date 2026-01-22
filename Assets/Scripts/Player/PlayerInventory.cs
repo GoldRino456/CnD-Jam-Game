@@ -179,7 +179,7 @@ public class PlayerInventory : MonoBehaviour
         _aiming = false;
         if(aimArcCoroutine != null)
         {
-            print("Throw stop called.");
+            print("LN 183 - PlayerInventory.cs StopCoroutine: coroutine is null? - " + aimArcCoroutine == null);
             StopCoroutine(aimArcCoroutine);
             aimArcCoroutine = null;
         }

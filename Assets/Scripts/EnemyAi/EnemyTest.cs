@@ -86,6 +86,7 @@ public class EnemyTest : MonoBehaviour
         
         if(_currentCoroutine != null)
         {
+            print("LN 90 - EnemyTest.cs StopCoroutine: coroutine is null? - " + (_currentCoroutine == null).ToString());
             StopCoroutine(_currentCoroutine);
         }
 
@@ -225,11 +226,19 @@ public class EnemyTest : MonoBehaviour
         {
             if (RaycastSweep() && !_inSight)
             {
-                if (_currentCoroutine != null) StopCoroutine(_currentCoroutine);
+                if (_currentCoroutine != null)
+                {
+                    print("LN 231 - EnemyTest.cs StopCoroutine: coroutine is null? - " + (_currentCoroutine == null).ToString());
+                    StopCoroutine(_currentCoroutine);
+                }
 
                 if (suspicionSettings.noticedPlayer == 0)
                 {
-                    if (suspicionSettings.decayRoutine != null) StopCoroutine(suspicionSettings.decayRoutine);
+                    if (suspicionSettings.decayRoutine != null)
+                    {
+                        print("LN 239 - EnemyTest.cs StopCoroutine: coroutine is null? - " + (suspicionSettings.decayRoutine == null).ToString());
+                        StopCoroutine(suspicionSettings.decayRoutine);
+                    }
                     suspicionSettings.suspicion += 0.25f;
                 }
 
@@ -241,9 +250,13 @@ public class EnemyTest : MonoBehaviour
         }
         else if ((!_active && _currentState != State.Idle) || (_currentCoroutine == null && _currentState != State.Aggro))
         {
-            if (_currentCoroutine != null) StopCoroutine(_currentCoroutine);
+            if (_currentCoroutine != null)
+            {
+                print("LN 256 - EnemyTest.cs StopCoroutine: coroutine is null? - " + (_currentCoroutine == null).ToString());
+                StopCoroutine(_currentCoroutine);
+            }
 
-            _currentCoroutine = StartCoroutine(IdleState());
+                _currentCoroutine = StartCoroutine(IdleState());
         }
     }
 

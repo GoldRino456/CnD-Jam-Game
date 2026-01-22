@@ -496,7 +496,7 @@ RectTransform:
   m_Father: {fileID: 137852747}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3125,7 +3125,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1253626466
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4617,15 +4617,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   LoseScreenTransition: {fileID: 4150131673370699481, guid: 2518a0011c4cfbf4b9a438ff662a951d, type: 3}
+  PauseScreen: {fileID: 0}
+  isPaused: 0
   HowManyIngredientsArePickedUp: 0
   IngredientsNeededForWin: 3
   uiClick:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -1267707814
+      Data2: 1266407874
+      Data3: -834887260
+      Data4: -1661098614
+    Path: event:/UI/UIClick
 --- !u!4 &2072598387
 Transform:
   m_ObjectHideFlags: 0

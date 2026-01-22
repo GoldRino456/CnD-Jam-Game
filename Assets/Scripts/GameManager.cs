@@ -24,7 +24,10 @@ public class GameManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
 
-        PauseScreen.SetActive(false);
+        if(PauseScreen != null)
+        {
+            PauseScreen.SetActive(false);
+        }
     }
 
 
