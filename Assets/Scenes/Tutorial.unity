@@ -10408,13 +10408,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue
   sentences:
-  - Hi! How is it going?
-  - I see you new in here. Let me explain what is going on
-  - This is YOU, a player. You can move with WASD and jump with SPACE
-  - This is an indicator which shows your Infection level. If it reach 100 percent
-    you wil die and if it reach 0 percent you will die too. So yeah, watch out
-  - 'Also you can throw holy water by holding MOUSE BUTTON to stun enemies and decrease
-    Infection. Here you can see how many holy water bottles you have '
+  - Ah, infected are we?
+  - Lest you want to become a mindless wolf like the others, you need to find a proper
+    cure.
+  - You can move with WASD and jump with SPACE.
+  - The progress of your infection is shown here.
+  - 'Press E to drink some of your holy water, but beware it''s effects too can deadly.
+    If you completely cure the infection, you will succumb to it''s side effects. '
+  - 'Holy Water can also be thrown to stun your foes by pressing LEFT CLICK on your
+    mouse. Holding down the button will allow you to see the arc of your throw. '
 --- !u!222 &907915734
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -38420,11 +38422,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue
   sentences:
-  - See this glowing thing?
-  - This is one of three ingredients you need to get. They will glow with differend
-    colors
-  - You have to get all three and then go to altar and bring them to sacrifice to
-    be finally free from this infection
+  - This is one of three ingredients you need to cure your affliction.
+  - Once all three have been gathered, find the altar to craft the potion.
+  - The altar too can be found by scent, but only after collection all three ingredients.
 --- !u!222 &1538740301
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -62963,9 +62963,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue
   sentences:
-  - See this blue thing?
-  - 'This is the trail which show the direction where is the closest ingredient is.
-    And it only appears in wolf forms '
+  - Being a wolf, even partially, has some benefits though. Allow your infection
+    to progress and you will be able to leap to greater heights.
+  - Your wolf form and partially transformed states will also give you a scent trail
+    to follow. This will lead you to what you need to craft a cure.
 --- !u!222 &2108032223
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -63364,7 +63365,7 @@ PrefabInstance:
     - target: {fileID: 7628069633009838032, guid: 980cbc11f41e8d84fb697ebf74186b44, type: 3}
       propertyPath: PauseScreen
       value: 
-      objectReference: {fileID: 5875791684013341293}
+      objectReference: {fileID: 0}
     - target: {fileID: 7936597253795495061, guid: 980cbc11f41e8d84fb697ebf74186b44, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -63580,6 +63581,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 45374238780645939, guid: dcf38b6bcac54a44dabfb8e8ce620aa1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 45374238780645939, guid: dcf38b6bcac54a44dabfb8e8ce620aa1, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 45374238780645939, guid: dcf38b6bcac54a44dabfb8e8ce620aa1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 45374238780645939, guid: dcf38b6bcac54a44dabfb8e8ce620aa1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1597212823183438954, guid: dcf38b6bcac54a44dabfb8e8ce620aa1, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -63676,8 +63693,40 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5607763178199563330, guid: dcf38b6bcac54a44dabfb8e8ce620aa1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607763178199563330, guid: dcf38b6bcac54a44dabfb8e8ce620aa1, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607763178199563330, guid: dcf38b6bcac54a44dabfb8e8ce620aa1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5607763178199563330, guid: dcf38b6bcac54a44dabfb8e8ce620aa1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5898505592378796924, guid: dcf38b6bcac54a44dabfb8e8ce620aa1, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9139249588843256208, guid: dcf38b6bcac54a44dabfb8e8ce620aa1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9139249588843256208, guid: dcf38b6bcac54a44dabfb8e8ce620aa1, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9139249588843256208, guid: dcf38b6bcac54a44dabfb8e8ce620aa1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9139249588843256208, guid: dcf38b6bcac54a44dabfb8e8ce620aa1, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -63685,11 +63734,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcf38b6bcac54a44dabfb8e8ce620aa1, type: 3}
---- !u!1 &5875791684013341293 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5898505592378796924, guid: dcf38b6bcac54a44dabfb8e8ce620aa1, type: 3}
-  m_PrefabInstance: {fileID: 5875791684013341292}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6345103004822995635
 PrefabInstance:
   m_ObjectHideFlags: 0
