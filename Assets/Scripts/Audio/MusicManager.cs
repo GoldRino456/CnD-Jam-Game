@@ -35,8 +35,17 @@ public class MusicManager : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "Level")
         {
-            _paramValue = Mathf.Lerp(pCon._infectionProgress / 100f, _paramValue, Time.deltaTime * lerpSpeed);
-            FMODUnity.RuntimeManager.StudioSystem.setParameterByName(_parameter, _paramValue);
+            if(pCon != null)
+            {
+                _paramValue = Mathf.Lerp(pCon._infectionProgress / 100f, _paramValue, Time.deltaTime * lerpSpeed);
+                FMODUnity.RuntimeManager.StudioSystem.setParameterByName(_parameter, _paramValue);
+            }
+            else
+            {
+                pCon = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+            }
+
+                
         }
     }
 }

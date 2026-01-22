@@ -51,6 +51,12 @@ public class PlayerInventory : MonoBehaviour
         anim.SetBool("facingLeft", true);
     }
 
+    private void OnDestroy()
+    {
+        InputManager.onThrowPress -= ProcessAim;
+        InputManager.onThrowRelease -= ProcessThrow;
+    }
+
     public void Update()
     {
         ProcessItemTimer();
