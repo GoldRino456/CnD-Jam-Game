@@ -274,6 +274,9 @@ MonoBehaviour:
     Path: event:/HolyWater/HolyWaterBreak
   _visualRotationSpeed: 10
   impactPrefab: {fileID: 4582273696623221839, guid: d344ab6abe98a400481b9f9963026f59, type: 3}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 64
   throwForce: 5
   stunTime: 4
   isThrownByPlayer: 0

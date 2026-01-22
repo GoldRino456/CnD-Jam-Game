@@ -97,43 +97,4 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(2.5f);
         SceneManager.LoadScene("LoseScreen");
     }
-
-
-    public void BackToMainMenu()
-    {
-        FMODUnity.RuntimeManager.PlayOneShot(uiClick, transform.position);
-        SceneManager.LoadScene("MainMenu");
-    }
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape) && !isPaused)
-        {
-            TogglePause();
-        }
-        else if (Input.GetKeyDown(KeyCode.Escape) && isPaused)
-        {
-            Resumegame();
-        }
-
-        if (!isPaused)
-        {
-            EventSystem.current.SetSelectedGameObject(null);
-        }
-    }
-
-    void TogglePause()
-    {
-        PauseScreen.SetActive(true);
-        Time.timeScale = 0f;
-        isPaused = true;
-
-    }
-    public void Resumegame()
-    {
-        PauseScreen.SetActive(false);
-        Time.timeScale = 1f;
-        isPaused = false;
-        FMODUnity.RuntimeManager.PlayOneShot(uiClick, transform.position);
-    }
 }

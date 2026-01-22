@@ -13,6 +13,7 @@ public class HolyWater : MonoBehaviour, IItem
     [SerializeField] private FMODUnity.EventReference _splashSFX;
     [SerializeField] private float _visualRotationSpeed = 5f;
     [SerializeField] private GameObject impactPrefab;
+    [SerializeField] private LayerMask playerLayer;
 
     [Header("Throw Settings")]
     [SerializeField] private float throwForce = 5f;
@@ -49,6 +50,7 @@ public class HolyWater : MonoBehaviour, IItem
     public void OnThrown(Vector2 initialVelocity, bool isThrownLeft, bool isThrownByPlayer = false)
     {
         _projectileRb.linearVelocity = new Vector2(initialVelocity.x, 0);
+        if(isThrownByPlayer) _projectileCollider.excludeLayers = playerLayer;
         _projectileCollider.enabled = true;
         this.isThrownByPlayer = isThrownByPlayer;
         ApplyThrowForce(isThrownLeft);

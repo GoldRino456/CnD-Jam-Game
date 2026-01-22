@@ -129,7 +129,7 @@ public class PlayerInventory : MonoBehaviour
 
     private void ProcessAim()
     {
-        if (itemUseTimer > 0 || currentHolyWater <= 0) return;
+        if (itemUseTimer > 0 || currentHolyWater <= 0 || PauseMenu.isPaused) return;
 
         _aiming = true;
         aimLine.enabled = true;
@@ -180,7 +180,7 @@ public class PlayerInventory : MonoBehaviour
         }
     private void ProcessThrow()
     {
-        if (itemUseTimer > 0 || currentHolyWater <= 0 || !_aiming || GameManager.Instance.isPaused) return;
+        if (itemUseTimer > 0 || currentHolyWater <= 0 || !_aiming || PauseMenu.isPaused) return;
 
         _aiming = false;
         if(aimArcCoroutine != null)
