@@ -73,8 +73,8 @@ MonoBehaviour:
   IsOneShot: 0
   Parameters:
   - {fileID: 1253447075537745608}
-  - {fileID: -7012724341284567941}
-  - {fileID: -9001099167302707587}
+  - {fileID: 2156916436255934280}
+  - {fileID: -5201648616685391369}
   MinDistance: 1
   MaxDistance: 20
   Length: 115041
@@ -93,10 +93,34 @@ MonoBehaviour:
   Path: CnD-Jam-Game-FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639046154385677734
+  lastModified: 639046238851791355
   FileSizes:
   - Name: Desktop
     Value: 1684
+  Exists: 1
+--- !u!114 &-5201648616685391369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fcfab8a98b1d5d418d164e964555c81, type: 3}
+  m_Name: parameter:/MainMusic/lose
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: lose
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 98674410
+    data2: 3920556159
+  Type: 0
+  IsGlobal: 1
+  Labels: []
   Exists: 1
 --- !u!114 &-4184838619969681955
 MonoBehaviour:
@@ -276,6 +300,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-626164769689779406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fcfab8a98b1d5d418d164e964555c81, type: 3}
+  m_Name: parameter:/win
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: win
+  StudioPath: parameter:/win
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 4095116075
+    data2: 1021011960
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-373760513425953767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -332,18 +380,18 @@ MonoBehaviour:
   - {fileID: 5176878047525054752}
   - {fileID: 7668779133114233244}
   - {fileID: -6341951601709275530}
-  - {fileID: 6150557250682890520}
+  - {fileID: 3843267631558129201}
   EditorParameters:
   - {fileID: -3654172439631779525}
   - {fileID: -881319125936212755}
-  - {fileID: 1061933968451430040}
-  - {fileID: -3166333156669286405}
+  - {fileID: 604585666616313246}
+  - {fileID: -626164769689779406}
   MasterBanks:
   - {fileID: 8106261129611594618}
   StringsBanks:
   - {fileID: -5698178402443531953}
   cacheVersion: 131857
-  cacheTime: 639046154385677734
+  cacheTime: 639046238851791355
   SerializableEventsDict:
   - key: event:/Ambience
     index: 0
@@ -400,6 +448,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &604585666616313246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fcfab8a98b1d5d418d164e964555c81, type: 3}
+  m_Name: parameter:/lose
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: lose
+  StudioPath: parameter:/lose
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 98674410
+    data2: 3920556159
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &1061933968451430040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -502,6 +574,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &2156916436255934280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fcfab8a98b1d5d418d164e964555c81, type: 3}
+  m_Name: parameter:/MainMusic/win
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: win
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 4095116075
+    data2: 1021011960
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &2692649965735665161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -583,6 +679,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &3843267631558129201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e14b1d0f626bda4ebc0fb8b91c96e8c, type: 3}
+  m_Name: event:/Music/MenuMusic
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Music/MenuMusic
+  Guid:
+    Data1: 1479153630
+    Data2: 1232216045
+    Data3: -226382434
+    Data4: 1717858319
+  Banks:
+  - {fileID: 8106261129611594618}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 23571
 --- !u!114 &5176878047525054752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -679,7 +802,7 @@ MonoBehaviour:
   Path: CnD-Jam-Game-FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639046154385661677
+  lastModified: 639046238851702078
   FileSizes:
   - Name: Desktop
     Value: 3379232
