@@ -1423,10 +1423,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7628069633009838032, guid: 980cbc11f41e8d84fb697ebf74186b44, type: 3}
-      propertyPath: PauseScreen
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 7936597253795495061, guid: 980cbc11f41e8d84fb697ebf74186b44, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -38655,17 +38651,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2840218237703344926, guid: 449e7bd0eb47c2046a8e972d9ad6b433, type: 3}
   m_PrefabInstance: {fileID: 852131308}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &914711038 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7628069633009838032, guid: 980cbc11f41e8d84fb697ebf74186b44, type: 3}
-  m_PrefabInstance: {fileID: 283707563}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 298cefb034d7c054ba4cb8f9a5a4969e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GameManager
 --- !u!1001 &928883904
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -59263,21 +59248,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3559007815259037005, guid: dcf38b6bcac54a44dabfb8e8ce620aa1, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 914711038}
     - target: {fileID: 3924012390653614627, guid: dcf38b6bcac54a44dabfb8e8ce620aa1, type: 3}
       propertyPath: m_Name
       value: PlayerUI
-      objectReference: {fileID: 0}
-    - target: {fileID: 5587731910490992715, guid: dcf38b6bcac54a44dabfb8e8ce620aa1, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 914711038}
-    - target: {fileID: 5898505592378796924, guid: dcf38b6bcac54a44dabfb8e8ce620aa1, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
